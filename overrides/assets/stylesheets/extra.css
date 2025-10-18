@@ -1,0 +1,190 @@
+/* Dark mode by default */
+:root {
+  color-scheme: dark;
+}
+
+/* Hero Section - Two Column Layout */
+.hero-section {
+  margin: 3rem 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.hero-quote {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.hero-quote blockquote {
+  border-left: 4px solid #2b7fff;
+  padding-left: 1.5rem;
+  margin: 0;
+  font-style: normal;
+}
+
+/* Testimonials - Three Column Grid */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial-image {
+  margin-bottom: 1rem;
+}
+
+.testimonial-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.testimonial-card strong {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #8ec5ff;
+}
+
+.testimonial-card em {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-style: normal;
+}
+
+.testimonial-card blockquote {
+  border-left: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.cta-section .md-button {
+  font-size: 1.2rem;
+  padding: 1rem 3rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: none;
+  transition: all 0.3s;
+}
+
+.cta-section .md-button--primary {
+  background-color: #2b7fff;
+  color: white;
+  border: none;
+}
+
+.cta-section .md-button--primary:hover {
+  background-color: #1d6ed4;
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(43, 127, 255, 0.4);
+}
+
+/* Grid cards styling improvements for dark mode */
+.grid.cards > * {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.grid.cards > *:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border-color: rgba(139, 197, 255, 0.3);
+}
+
+/* Section spacing */
+h2 {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid rgba(43, 127, 255, 0.3);
+  padding-bottom: 0.5rem;
+}
+
+/* Hide "On This Page" sidebar */
+.xl\:flex.w-72 {
+  display: none !important;
+}
+
+/* Hide GitHub icon and repo link */
+header a[href*="github"],
+header a[rel="noreferrer"][target="_blank"]:has(svg[viewBox="0 0 438.549 438.549"]) {
+  display: none !important;
+}
+
+/* Remove underline from all buttons */
+.cta-section .md-button,
+.md-button,
+a.md-button {
+  text-decoration: none !important;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-image img {
+    max-width: 200px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .cta-section .md-button {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
