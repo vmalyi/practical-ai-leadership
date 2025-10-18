@@ -159,6 +159,42 @@ a.md-button {
   text-decoration: none !important;
 }
 
+/* Hide left sidebar navigation for single-page site */
+div[data-slot="sidebar"] {
+  display: none !important;
+}
+
+/* Adjust main content to full width when sidebar is hidden */
+div[data-slot="sidebar-wrapper"] {
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+
+/* Back to home button on imprint page - subtle styling */
+.md-button:not(.md-button--primary) {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0.6rem 1.5rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  transition: all 0.2s;
+  display: inline-block;
+}
+
+.md-button:not(.md-button--primary):hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 1);
+  transform: translateY(-1px);
+}
+
+/* Make header site name much bigger */
+header h1 {
+  font-size: 1.75rem !important;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
 /* Responsive Design */
 @media screen and (max-width: 768px) {
   .hero-grid {
@@ -180,6 +216,11 @@ a.md-button {
   .cta-section .md-button {
     font-size: 1rem;
     padding: 0.8rem 2rem;
+  }
+
+  /* Adjust header size for mobile */
+  header h1 {
+    font-size: 1.25rem !important;
   }
 }
 

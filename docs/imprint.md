@@ -29,3 +29,9 @@ We are not willing or obligated to participate in dispute resolution proceedings
 ## Copyright
 
 The content and works created by the site operator on these pages are subject to German copyright law. The reproduction, editing, distribution and any kind of use outside the limits of copyright require the written consent of the respective author or creator.
+
+---
+
+<div style="margin-top: 2rem; text-align: center;">
+    <a href="/" class="md-button">← Back to Home</a>
+</div>
