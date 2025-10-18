@@ -37,3 +37,4 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Imprint: imprint.md
