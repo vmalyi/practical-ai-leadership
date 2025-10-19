@@ -141,6 +141,74 @@ h2 {
   padding-bottom: 0.5rem;
 }
 
+/* Feature List - "What I Take Off Your Plate" section - Based on mkdocs-material mdx-expect */
+.feature-section {
+  margin: 48px 0 0 !important;
+}
+
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
+}
+
+.feature-section .feature-list .feature-list__item {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 12px !important;
+  flex: 1 0 calc((100% - 32px) / 2) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.feature-list__icon {
+  display: block;
+  width: 44px;
+  height: 44px;
+  padding: 8px;
+  background-color: rgba(226, 228, 233, 0.12);
+  border-radius: 100%;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.feature-list__icon svg {
+  width: 28px;
+  height: 28px;
+  fill: rgba(226, 228, 233, 0.82);
+  display: block;
+}
+
+.feature-list__description {
+  display: block;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+.feature-list__description h2 {
+  font-size: 25px !important;
+  font-weight: 700 !important;
+  line-height: 35px !important;
+  color: rgba(226, 228, 233, 0.82) !important;
+  margin: 4.375px 0 16px !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+.feature-list__description p {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 25.6px !important;
+  color: rgba(226, 228, 233, 0.82) !important;
+  margin: 16px 0 0 -56px !important;
+  padding: 0 !important;
+}
+
 /* Hide "On This Page" sidebar */
 .xl\:flex.w-72 {
   display: none !important;
@@ -211,6 +279,19 @@ header h1 {
   .testimonials-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  .feature-list {
+    gap: 24px;
+  }
+
+  .feature-list__item {
+    width: 100%;
+    gap: 16px;
+  }
+
+  .feature-list__description p {
+    margin-left: 0;
   }
 
   .cta-section .md-button {
