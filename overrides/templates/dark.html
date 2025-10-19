@@ -1,0 +1,14 @@
+<script>
+    // Force dark mode permanently - ignore system preferences
+    // This overrides the default mkdocs-shadcn dark.html template
+
+    // Always set dark mode on page load
+    document.documentElement.classList.add("dark");
+    localStorage.setItem("theme", "dark");
+
+    // Set the layout based on localStorage (preserve layout functionality)
+    document.documentElement.classList.add(localStorage.getItem("html-layout") || "layout-fixed");
+
+    // Prevent any theme changes - no listeners for system preference changes
+    // This ensures dark mode is locked regardless of user's OS settings
+</script>
