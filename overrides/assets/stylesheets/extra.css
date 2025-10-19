@@ -273,6 +273,40 @@ header a[data-slot="button"] {
   display: flex !important;
 }
 
+/* Language Switcher */
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+}
+
+.lang-flag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  text-decoration: none !important;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lang-flag:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.flag-emoji {
+  font-size: 24px;
+  line-height: 1;
+  user-select: none;
+}
+
 /* Mobile header: stack vertically with menu left, title centered */
 @media screen and (max-width: 1023px) {
   header .flex.items-center.gap-2 {
@@ -309,6 +343,24 @@ header a[data-slot="button"] {
     white-space: normal !important;
     word-wrap: break-word !important;
     overflow-wrap: break-word !important;
+  }
+
+  /* Language switcher on mobile - stays visible in header, NOT in menu */
+  .language-switcher {
+    position: absolute;
+    top: 12px;
+    right: 1rem;
+    gap: 8px;
+    z-index: 100;
+  }
+
+  .lang-flag {
+    width: 36px;
+    height: 36px;
+  }
+
+  .flag-emoji {
+    font-size: 20px;
   }
 }
 
