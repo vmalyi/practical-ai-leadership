@@ -285,9 +285,9 @@ header h1 {
     gap: 24px;
   }
 
-  .feature-list__item {
-    width: 100%;
-    gap: 16px;
+  .feature-section .feature-list .feature-list__item {
+    flex: 1 0 100% !important;
+    gap: 16px !important;
   }
 
   .feature-list__description p {
