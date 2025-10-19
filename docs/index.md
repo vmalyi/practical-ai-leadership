@@ -8,11 +8,8 @@ twitter_card: "summary_large_image"
 twitter_site: "@victormalyy"
 ---
 
-# Viktor Malyi | AI Strategy & Engineering Consultant
+...
 
-### Practical AI Leadership & Implementation
-
----
 
 <div class="hero-section" markdown>
 
@@ -42,16 +39,16 @@ twitter_site: "@victormalyy"
 <ul class="feature-list">
   <li class="feature-list__item md-typeset">
     <div class="feature-list__icon">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 14l5-5 5 5z"/><path d="M7 10l5 5 5-5z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M220-520 80-600v-160l140-80 140 80v160l-140 80Zm0-92 60-34v-68l-60-34-60 34v68l60 34Zm440 123v-93l140 82v280L560-80 320-220v-280l140-82v93l-60 35v188l160 93 160-93v-188l-60-35Zm-140 89v-480h360l-80 120 80 120H600v240h-80Zm40 69ZM220-680Z"/></svg>
     </div>
     <div class="feature-list__description">
-      <h2>The Strategy-to-Code Gap</h2>
+      <h2>The AI Strategy-to-Value Gap</h2>
       <p>I'm the person who both designs the plan and supports with your engineers to build it. Nothing gets lost in translation.</p>
     </div>
   </li>
   <li class="feature-list__item md-typeset">
     <div class="feature-list__icon">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42A8.962 8.962 0 0 0 13 4.07V2h-2v2.07c-1.95.41-3.63 1.53-4.62 3.05L4.96 5.7c-.51.42-.99.9-1.41 1.41l1.42 1.42C3.53 9.63 2.41 11.3 2 13.07V15h2v-1.93c.41-1.95 1.53-3.63 3.05-4.62l-1.42-1.42c.42-.51.9-.99 1.41-1.41l1.42 1.42A8.962 8.962 0 0 0 11 4.07V2h2v2.07c1.95.41 3.63 1.53 4.62 3.05l1.42-1.42c.51.42.99.9 1.41 1.41l-1.42 1.42c.58 1.1 1 2.31 1 3.62V15h2v-1.93c-.41-1.95-1.53-3.63-3.05-4.62z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M280-720v520-520Zm170 600H280q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v172q-17-5-39.5-8.5T680-560v-160H280v520h132q6 21 16 41.5t22 38.5Zm-90-160h40q0-63 20-103.5l20-40.5v-216h-80v360Zm160-230q17-11 38.5-22t41.5-16v-92h-80v130ZM680-80q-83 0-141.5-58.5T480-280q0-83 58.5-141.5T680-480q83 0 141.5 58.5T880-280q0 83-58.5 141.5T680-80Zm66-106 28-28-74-74v-112h-40v128l86 86Z"/></svg>
     </div>
     <div class="feature-list__description">
       <h2>Wasted Time on "What If" Projects</h2>
@@ -60,7 +57,7 @@ twitter_site: "@victormalyy"
   </li>
   <li class="feature-list__item md-typeset">
     <div class="feature-list__icon">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M200-120q-33 0-56.5-23.5T120-200v-160h80v160h160v80H200Zm560 0H600v-80h160v-160h80v160q0 33-23.5 56.5T760-120ZM120-760q0-33 23.5-56.5T200-840h160v80H200v160h-80v-160Zm720 0v160h-80v-160H600v-80h160q33 0 56.5 23.5T840-760ZM480-240q21 0 35.5-14.5T530-290q0-21-14.5-35.5T480-340q-21 0-35.5 14.5T430-290q0 21 14.5 35.5T480-240Zm-36-153h73q0-34 8-52t35-45q35-35 46.5-56.5T618-598q0-54-39-88t-99-34q-50 0-86 26t-52 74l66 27q7-26 26.5-42.5T480-652q29 0 46.5 15.5T544-595q0 20-9.5 37.5T502-521q-33 29-45.5 56T444-393Z"/></svg>
     </div>
     <div class="feature-list__description">
       <h2>Team Bottlenecks and Inefficiency</h2>
@@ -69,20 +66,11 @@ twitter_site: "@victormalyy"
   </li>
   <li class="feature-list__item md-typeset">
     <div class="feature-list__icon">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M40-160v-160q0-34 23.5-57t56.5-23h131q20 0 38 10t29 27q29 39 71.5 61t90.5 22q49 0 91.5-22t70.5-61q13-17 30.5-27t36.5-10h131q34 0 57 23t23 57v160H640v-91q-35 25-75.5 38T480-200q-43 0-84-13.5T320-252v92H40Zm440-160q-38 0-72-17.5T351-386q-17-25-42.5-39.5T253-440q22-37 93-58.5T480-520q63 0 134 21.5t93 58.5q-29 0-55 14.5T609-386q-22 32-56 49t-73 17ZM160-440q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T280-560q0 50-34.5 85T160-440Zm640 0q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T920-560q0 50-34.5 85T800-440ZM480-560q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T600-680q0 50-34.5 85T480-560Z"/></svg>
     </div>
     <div class="feature-list__description">
       <h2>The Guesswork of Building a Team</h2>
       <p>I define the exact roles you need for the long term and mentor your engineers as we build, so they are ready to succeed on their own.</p>
-    </div>
-  </li>
-  <li class="feature-list__item md-typeset">
-    <div class="feature-list__icon">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/><path d="M15.5 16c.28 0 .5.22.5.5s-.22.5-.5.5-.5-.22-.5-.5.22-.5.5-.5m0-2c-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5 2.5-1.12 2.5-2.5-1.12-2.5-2.5-2.5z"/></svg>
-    </div>
-    <div class="feature-list__description">
-      <h2>Uncertainty in Hiring AI Leaders</h2>
-      <p>If you need to fill a key leadership role, I can step in to define the position, help vet candidates, and refine your hiring process.</p>
     </div>
   </li>
 </ul>
