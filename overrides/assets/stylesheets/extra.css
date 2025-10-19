@@ -5,7 +5,7 @@
 
 /* Hero Section - Two Column Layout */
 .hero-section {
-  margin: 3rem 0;
+  margin: 0.5rem 0;
 }
 
 .hero-grid {
@@ -13,7 +13,7 @@
   grid-template-columns: 1fr 2fr;
   gap: 3rem;
   align-items: center;
-  margin: 2rem 0;
+  margin: 0 0 2rem 0;
 }
 
 .hero-image img {
@@ -35,12 +35,16 @@
   font-style: normal;
 }
 
-/* Testimonials - Three Column Grid */
+/* Testimonials - Centered Grid (adapts from 1 to 3 columns) */
 .testimonials-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
   gap: 2rem;
   margin: 2rem 0;
+  justify-content: center;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .testimonial-card {
@@ -96,12 +100,13 @@
 /* CTA Section */
 .cta-section {
   text-align: center;
-  margin: 4rem 0;
+  margin: 5rem 0 1.5rem 0;
+  padding: 2rem 0;
 }
 
 .cta-section .md-button {
   font-size: 1.2rem;
-  padding: 1rem 3rem;
+  padding: 1.25rem 3rem;
   border-radius: 8px;
   font-weight: 600;
   text-transform: none;
@@ -321,7 +326,7 @@ header h1 {
 
 .ai-loop-feature .md-typeset h2,
 .ai-loop-feature h2 {
-  font-size: 25px !important;
+  font-size: 20px !important;
   font-weight: 700 !important;
   line-height: 35px !important;
   color: rgba(226, 228, 233, 0.87) !important;
