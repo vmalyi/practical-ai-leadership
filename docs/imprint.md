@@ -1,3 +1,8 @@
+---
+title: "Imprint - Legal Notice | Viktor Malyi"
+description: "Legal notice and contact information for Viktor Malyi AI consulting services"
+---
+
 # Imprint
 
 ## Information pursuant to § 5 TMG (German Telemedia Act)

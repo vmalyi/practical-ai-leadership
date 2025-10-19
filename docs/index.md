@@ -1,4 +1,14 @@
-# Viktor Malyi | AI Strategy & Engineering
+---
+title: "Viktor Malyi | AI Strategy & Engineering Consultant - Practical AI Leadership"
+description: "I help companies build, scale, and reliably ship AI initiatives. Bridge the R&D-to-production gap with 8 years of hands-on AI engineering leadership. From diagnostic to shipped systems - co-build with your team."
+keywords: "ai strategy consultant, ai engineering consultant, ai implementation, production ai systems, ai platform architecture, mlops consultant, ai team building, ai leadership, ship ai initiatives, practical ai"
+author: "Viktor Malyi"
+image: "https://practical-ai-leadership.com/assets/photo_crop.jpg"
+twitter_card: "summary_large_image"
+twitter_site: "@victormalyy"
+---
+
+# Viktor Malyi | AI Strategy & Engineering Consultant
 
 ### Practical AI Leadership & Implementation
 
