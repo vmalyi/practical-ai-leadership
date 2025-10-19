@@ -55,19 +55,6 @@ mkdocs build
 - **Custom Templates**: `overrides/templates/` (header, footer, page, bottom_navigation, main)
 - **Custom CSS**: `overrides/assets/stylesheets/extra.css`
 
-## 🎯 Strategic Role
-
-**Content Funnel**: LinkedIn (awareness) → vmalyi.com (authority) → Newsletter (qualification) → **practical-ai-leadership.com (conversion)**
-
-**vs. vmalyi.com:**
-- **This site**: Client conversion, CTOs/CEOs, service offering
-- **vmalyi.com**: Authority building, broad tech audience, educational content
-
-## 📝 Maintenance
-
-Update `docs/index.md` when services, testimonials, or framework change.
-Update `docs/imprint.md` for legal/contact changes.
-
 ---
 
-Built with MkDocs, deployed via GitHub Actions. Integrated into Singularity repo as git submodule at `projects/websites/practical-ai-leadership/`.
+Built with MkDocs, deployed via GitHub Actions.
