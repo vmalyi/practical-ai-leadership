@@ -18,7 +18,7 @@ twitter_site: "@victormalyy"
 </div>
 
 <div class="hero-quote" markdown>
-> **Ich helfe Unternehmen, ihre KI-Initiativen aufzubauen, zu skalieren und zuverlässig auszuliefern.** Ich überbrücke die Lücke zwischen F&E und Produktion, indem ich ihre Landschaft diagnostiziere, um einen strategischen Pfad zu entwickeln. Dann liefere ich die praxisorientierte Engineering-Führung, um das System aufzubauen, das Team zusammenzustellen und zu mentoren sowie eine vollständige Übergabe sicherzustellen.
+> **Ich helfe Unternehmen, ihre KI-Initiativen aufzubauen, zu skalieren und zuverlässig auszuliefern.** Ich überbrücke die Lücke zwischen R&D und Produktion durch Diagnose ihrer Landschaft und Entwicklung eines strategischen Pfads. Dann liefere ich die praxisorientierte Engineering-Führung zum Systemaufbau, stelle das Team zusammen, begleite es als Mentor und sichere eine vollständige Übergabe.
 </div>
 
 </div>
@@ -50,7 +50,7 @@ twitter_site: "@victormalyy"
     </div>
     <div class="feature-list__description">
       <h2>Verschwendete Zeit bei "Was-wäre-wenn"-Projekten</h2>
-      <p>Ich stoppe die endlosen Meetings und baue stattdessen 2-3-tägige Prototypen. Wir investieren Zeit nur in das Skalieren dessen, was tatsächlich funktioniert.</p>
+      <p>Ich stoppe endlose Meetings und baue stattdessen 2-3-tägige Prototypen. Wir skalieren nur, was tatsächlich funktioniert.</p>
     </div>
   </li>
   <li class="feature-list__item md-typeset">
@@ -59,7 +59,7 @@ twitter_site: "@victormalyy"
     </div>
     <div class="feature-list__description">
       <h2>Team-Engpässe und Ineffizienz</h2>
-      <p>Ich arbeite direkt mit Ihrem Team, um moderne, KI-unterstützte Coding-Praktiken einzuführen und bessere Engineering-Workflows aufzubauen.</p>
+      <p>Ich arbeite direkt mit Ihrem Team, um moderne, KI-unterstützte Coding-Praktiken und bessere Engineering-Workflows einzuführen.</p>
     </div>
   </li>
   <li class="feature-list__item md-typeset">
@@ -68,7 +68,7 @@ twitter_site: "@victormalyy"
     </div>
     <div class="feature-list__description">
       <h2>Das Rätselraten beim Aufbau eines KI-Teams</h2>
-      <p>Ich definiere die exakten Rollen, die Sie langfristig benötigen, und mentore Ihre Ingenieure während des Aufbaus, damit sie bereit sind, eigenständig erfolgreich zu sein.</p>
+      <p>Ich definiere die exakten Rollen, die Sie langfristig benötigen, und begleite Ihre Ingenieure während des Aufbaus als Mentor, damit sie erfolgreich eigenständig arbeiten können.</p>
     </div>
   </li>
 </ul>
@@ -84,7 +84,7 @@ twitter_site: "@victormalyy"
   </a>
   <figcaption class="md-typeset">
     <h2>Ich teste Ideen mit Prototypen</h2>
-    <p>Anstatt wochenlang über eine Idee zu diskutieren, baue ich in 2-3 Tagen mit Ihrem Team einen funktionierenden Prototyp. Dies liefert Feedback aus der realen Welt, sodass wir Entscheidungen basierend darauf treffen, was <strong>tatsächlich</strong> funktioniert.</p>
+    <p>Statt wochenlang über eine Idee zu diskutieren, baue ich in 2-3 Tagen mit Ihrem Team einen funktionierenden Prototyp. Dies liefert Feedback aus der Praxis, sodass wir Entscheidungen basierend auf dem treffen, was <strong>tatsächlich</strong> funktioniert.</p>
   </figcaption>
 </figure>
 
@@ -94,7 +94,7 @@ twitter_site: "@victormalyy"
   </a>
   <figcaption class="md-typeset">
     <h2>Ich konzentriere mich auf das Reale</h2>
-    <p>Ich beginne mit zwei wesentlichen Fragen. Erstens: Sind Ihre Daten bereit? Dies ist der häufigste Blocker. Zweitens: Wie messen wir den Erfolg von Tag eins an? Wenn ein Projekt keinen echten Wert zeigt, verschwenden wir keine Zeit damit und pivotieren stattdessen.</p>
+    <p>Ich beginne mit zwei wesentlichen Fragen. Erstens: Sind Ihre Daten bereit? Dies ist der häufigste Blocker. Zweitens: Wie messen wir Erfolg von Tag eins an? Zeigt ein Projekt keinen echten Wert, ändern wir die Richtung.</p>
   </figcaption>
 </figure>
 
@@ -124,7 +124,7 @@ twitter_site: "@victormalyy"
   </a>
   <figcaption class="md-typeset">
     <h2>Ich konzentriere mich auf die Befähigung Ihres Teams</h2>
-    <p>Mein Ziel ist es, die langfristige Fähigkeit Ihres Teams aufzubauen, keine Abhängigkeit zu schaffen. Während ich baue, mentore ich aktiv Ihre Ingenieure und dokumentiere unseren Prozess. Dies ist ein vollständiger Wissenstransfer, der sicherstellt, dass Ihr Team die Autonomie hat, das System selbstständig zu besitzen, zu betreiben und weiterzuentwickeln.</p>
+    <p>Mein Ziel ist es, die langfristige Fähigkeit Ihres Teams aufzubauen, keine Abhängigkeit zu schaffen. Während ich baue, begleite ich aktiv Ihre Ingenieure als Mentor und dokumentiere unseren Prozess. Dies ist ein vollständiger Wissenstransfer, der Ihrem Team die Autonomie gibt, das System selbstständig zu besitzen, zu betreiben und weiterzuentwickeln.</p>
   </figcaption>
 </figure>
 
@@ -168,7 +168,7 @@ twitter_site: "@victormalyy"
     </div>
     <div class="feature-list__description">
       <h2>Sie haben skalierbare KI-Plattform-Fähigkeiten</h2>
-      <p>Anstelle von Einzellösungen haben Sie eine robuste, sichere und wartbare Architektur (z.B. eine interne LLM-Plattformebene), auf der zukünftige Projekte aufbauen können.</p>
+      <p>Statt Einzellösungen haben Sie eine robuste, sichere und wartbare Architektur (z.B. eine interne LLM-Plattformebene), auf der zukünftige Projekte aufbauen können.</p>
     </div>
   </li>
   <li class="feature-list__item md-typeset">
@@ -186,7 +186,7 @@ twitter_site: "@victormalyy"
     </div>
     <div class="feature-list__description">
       <h2>Sie haben ein befähigtes, autonomes KI-Team</h2>
-      <p>Ihr Team ist vollständig kompetent und selbstbewusst im Betreiben, Warten und Weiterentwickeln der Systeme, die ich Ihnen beim Aufbau helfe.</p>
+      <p>Ihr Team ist vollständig kompetent und sicher im Betreiben, Warten und Weiterentwickeln der Systeme, die ich mit Ihnen aufbaue.</p>
     </div>
   </li>
   <li class="feature-list__item md-typeset">
@@ -195,7 +195,7 @@ twitter_site: "@victormalyy"
     </div>
     <div class="feature-list__description">
       <h2>Sie haben klare, interne Eigentümerschaft</h2>
-      <p>Ihr Team verfügt über das Wissen, die Dokumentation und den klaren Leitfaden, um die KI-Roadmap eigenständig voranzutreiben.</p>
+      <p>Ihr Team hat das Wissen, die Dokumentation und den klaren Leitfaden, um die KI-Roadmap eigenständig voranzutreiben.</p>
     </div>
   </li>
   <li class="feature-list__item md-typeset">
@@ -204,7 +204,7 @@ twitter_site: "@victormalyy"
     </div>
     <div class="feature-list__description">
       <h2>Ihre Einstellung ist fokussiert und effektiv</h2>
-      <p>Sie haben einen klaren Plan für die Gewinnung neuer KI-nativer Talente mit klar definierten Rollen und Interviewprozessen, die die richtigen Ingenieure anziehen.</p>
+      <p>Sie haben einen klaren Plan zur Gewinnung neuer KI-nativer Talente mit klar definierten Rollen und Interviewprozessen, die die richtigen Ingenieure anziehen.</p>
     </div>
   </li>
   <li class="feature-list__item md-typeset">
