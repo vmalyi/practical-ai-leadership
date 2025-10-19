@@ -98,5 +98,62 @@ Built mkdocs-material style feature grid for "What I Take Off Your Plate" sectio
 
 ---
 
+# AI Loop Section (Spotlight Layout) Implementation
+
+## Overview
+Built alternating left/right feature layout ("Pragmatic AI Loop") matching mkdocs-material spotlight style.
+
+## Approach
+
+### 1. Research Phase
+- Reference: https://squidfunk.github.io/mkdocs-material/#more-than-just-a-static-site
+- Inspected `.mdx-spotlight` component at 1440px viewport
+- Key findings:
+  - Desktop: alternates `row-reverse` → `row` → `row-reverse`
+  - Icon container: `500px`, `padding: 0`, `background: transparent`, `border-radius: 0`
+  - No hover effects (clean design)
+  - Mobile: all `column`, `gap: 0`
+
+### 2. Implementation Decisions
+**Icon size**: Changed from reference 500px → **200px** (user requirement)
+- SVG stays 200×200 to fill container
+- Mobile: SVG scales down to 150×150
+
+**Alternating pattern**: CSS nth-child instead of manual classes
+```css
+.ai-loop-feature:nth-child(odd) { flex-direction: row-reverse; }
+.ai-loop-feature:nth-child(even) { flex-direction: row; }
+```
+
+**Mobile override**: Must use `!important` to override nth-child specificity
+```css
+@media (max-width: 768px) {
+  .ai-loop-feature {
+    flex-direction: column !important;
+  }
+}
+```
+
+### 3. Text Alignment Fix
+**Problem**: `.md-typeset` class causes center alignment
+**Solution**: Add specific selectors with `!important`
+```css
+.ai-loop-feature .md-typeset h2,
+.ai-loop-feature .md-typeset p {
+  text-align: left !important;
+}
+```
+**Critical**: Must restart mkdocs server for CSS changes to apply (browser cache issue)
+
+## Key Lessons
+
+6. **nth-child for alternating** - Cleaner than manual `--reverse` classes
+7. **Mobile needs !important** - Override nth-child specificity in media queries
+8. **Restart server for CSS** - mkdocs caches CSS, reload not enough
+9. **Target .md-typeset explicitly** - Theme classes override without specific selectors
+10. **Clean design = no backgrounds** - Reference uses `transparent`, `padding: 0`, no hover
+
+---
+
 **Built**: 2025-10-19
-**Commits**: d6477db, 925bb92, 07221d2
+**Commits**: d6477db, 925bb92, 07221d2, [AI Loop implementation]
