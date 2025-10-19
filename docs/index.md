@@ -41,7 +41,7 @@ twitter_site: "@victormalyy"
     </div>
     <div class="feature-list__description">
       <h2>The AI Strategy-to-Value Gap</h2>
-      <p>I'm the person who both designs the plan and supports with your engineers to build it. Nothing gets lost in translation.</p>
+      <p>I'm the person who both designs the plan and supports your engineers to build it. Nothing gets lost in translation.</p>
     </div>
   </li>
   <li class="feature-list__item md-typeset">
@@ -222,7 +222,7 @@ twitter_site: "@victormalyy"
     </div>
     <div class="feature-list__description">
       <h2>You Have Reduced Uncertainty</h2>
-      <p>The focus has shifted to what your team can actually build instead of what theoretically possible.</p>
+      <p>The focus has shifted to what your team can actually build instead of what is theoretically possible.</p>
     </div>
   </li>
 </ul>
