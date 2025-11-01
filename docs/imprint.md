@@ -16,6 +16,10 @@ Germany
 
 Email: viktor@practical-ai-leadership.com
 
+## Tax Information
+
+Wirtschafts-Identifikationsnummer: DE457838750
+
 ## Responsible for content
 
 Viktor Malyi<br>
