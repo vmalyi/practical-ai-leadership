@@ -137,7 +137,7 @@ twitter_site: "@victormalyy"
 <div class="testimonial-card" markdown>
 
 <div class="testimonial-image" markdown>
-![Customer Name](https://media.licdn.com/dms/image/v2/D5603AQHcY9ofpzU41g/profile-displayphoto-scale_400_400/B56ZjFJILdHQAg-/0/1755654162850?e=1762387200&v=beta&t=Pcez6DE8iqyvZdDGsPtyRut2TbqsSEIw105hQE-Q8AE)
+![Christian L.](assets/1755654162750.png)
 </div>
 
 **Christian L.**
