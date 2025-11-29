@@ -14,32 +14,35 @@ posthog.init('phc_8vaqqy1HdH46zgpioDjVq1rQb0yHaBGXMXOYKA16XsM', {
 // Track key conversion actions
 document.addEventListener('DOMContentLoaded', function() {
 
-  // Track service section views (anchors like #services, #consulting, etc.)
-  var serviceLinks = document.querySelectorAll('a[href^="#"]');
-  serviceLinks.forEach(function(link) {
-    link.addEventListener('click', function() {
-      var section = this.getAttribute('href');
-      posthog.capture('service_section_viewed', {
-        section: section,
-        link_text: this.innerText || this.textContent
-      });
-    });
-  });
-
-  // Track contact/booking button clicks
-  var contactButtons = document.querySelectorAll('a[href*="mailto"], a[href*="calendly"], a[href*="cal.com"], button[type="submit"]');
-  contactButtons.forEach(function(button) {
+  // Track CTA button clicks (Google Calendar booking)
+  var ctaButtons = document.querySelectorAll('a[href*="calendar.google.com"], a.md-button--primary');
+  ctaButtons.forEach(function(button) {
     button.addEventListener('click', function() {
-      posthog.capture('contact_initiated', {
+      posthog.capture('booking_cta_clicked', {
         button_text: this.innerText || this.textContent,
-        button_type: this.tagName.toLowerCase(),
-        href: this.href || 'form_submit'
+        href: this.href,
+        page_section: this.closest('section, div')?.className || 'unknown'
       });
     });
   });
 
-  // Track external links (LinkedIn, case studies, etc.)
-  var externalLinks = document.querySelectorAll('a[href^="http"]:not([href*="practical-ai-leadership.com"])');
+  // Track scroll to sections (testimonials, features, etc.)
+  var sections = document.querySelectorAll('.hero-section, .feature-section, .testimonials-grid, .ai-loop-section, .cta-section');
+  var observedSections = new Set();
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && !observedSections.has(entry.target.className)) {
+        observedSections.add(entry.target.className);
+        posthog.capture('section_viewed', {
+          section: entry.target.className
+        });
+      }
+    });
+  }, { threshold: 0.5 });
+  sections.forEach(function(section) { observer.observe(section); });
+
+  // Track external links (LinkedIn, etc.)
+  var externalLinks = document.querySelectorAll('a[href^="http"]:not([href*="practical-ai-leadership.com"]):not([href*="calendar.google.com"])');
   externalLinks.forEach(function(link) {
     link.addEventListener('click', function() {
       posthog.capture('external_link_clicked', {
