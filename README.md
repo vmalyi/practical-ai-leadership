@@ -55,6 +55,17 @@ mkdocs build
 - **Custom Templates**: `overrides/templates/` (header, footer, page, bottom_navigation, main)
 - **Custom CSS**: `overrides/assets/stylesheets/extra.css`
 
+## 📊 Analytics
+
+**PostHog** (EU Cloud, cookieless) - No GDPR consent banner required.
+
+Tracked events:
+- `booking_cta_clicked` - Google Calendar booking CTA clicks
+- `section_viewed` - Scroll tracking (hero, features, testimonials, etc.)
+- `external_link_clicked` - Outbound link clicks
+
+Config: `docs/assets/javascripts/posthog.js`
+
 ---
 
 Built with MkDocs, deployed via GitHub Actions.
