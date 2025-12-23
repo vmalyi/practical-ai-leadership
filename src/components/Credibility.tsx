@@ -1,22 +1,23 @@
+import Image from "next/image";
+
 import { credibilityContent } from "@/config/content";
 import { siteConfig } from "@/config/site";
 
 import { Container } from "./Container";
 
 export function Credibility() {
-  const initials = siteConfig.name
-    .split(" ")
-    .map((part) => part.charAt(0))
-    .join("")
-    .slice(0, 2)
-    .toUpperCase();
-
   return (
     <section className="bg-gray-900/50">
-      <Container className="py-16 lg:py-24">
+      <Container className="py-8 lg:py-12">
         <div className="flex flex-col items-center gap-8 md:flex-row md:items-center md:gap-12">
-          <div className="flex h-40 w-40 items-center justify-center rounded-full bg-gray-700 text-3xl font-bold text-gray-200">
-            {initials}
+          <div className="relative h-40 w-40 flex-shrink-0 overflow-hidden rounded-full">
+            <Image
+              src={siteConfig.images.profile}
+              alt={siteConfig.name}
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
           <div className="space-y-4">
             <div>

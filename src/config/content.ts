@@ -1,9 +1,6 @@
 export interface HeroContent {
-  hook: string;
-  subHook: string;
-  offer: string;
-  outcome: string;
-  guarantee: string;
+  headline: string;
+  description: string;
   cta: string;
 }
 
@@ -83,35 +80,30 @@ export interface FinalCtaContent {
 }
 
 export const heroContent: HeroContent = {
-  hook: "90% of dev teams already have AI coding agents, yet velocity hasn't caught up.",
-  subHook:
-    "Only a handful are tapping their full potential; most are stuck babysitting prompts, reconciling brittle diffs, and rerunning tasks by hand.",
-  offer:
-    "In 24 hours, I audit your AI agent stack to surface exactly what's slowing it down.",
-  outcome:
-    "You get a prioritized roadmap with the fixes that unlock predictable shipping speed, quality, and safety.",
-  guarantee: "If my audit doesn't identify real blockers, full refund.",
+  headline: "Fix What's Slowing Your AI Coding Agents",
+  description:
+    "In 24 hours, I audit your AI coding agent stack to surface exactly what's slowing it down. You get a prioritized roadmap with the fixes that unlock predictable shipping speed, quality, and safety. If my audit doesn't identify real blockers, full refund.",
   cta: "Book the Velocity Audit",
 };
 
 export const problemContent: ProblemContent = {
   title:
-    "AI agents should feel like leverage, not another junior dev to manage.",
+    "AI coding agents should feel like leverage, not another junior dev to manage.",
   subtitle:
     "When adoption outpaces operational rigor, you end up with more overhead than output.",
   points: [
     {
-      title: "Inconsistent outputs",
+      title: "Inconsistent Outputs",
       description:
         "Agents drift from architecture decisions with each run, forcing manual cleanup and repeated context handoffs.",
     },
     {
-      title: "Context gaps",
+      title: "Context Gaps",
       description:
         "Specs, domain rules, and edge cases fall outside the prompt window, so agents guess and miss requirements.",
     },
     {
-      title: "No guardrails",
+      title: "No Guardrails",
       description:
         "Linting, tests, and dependency policies aren't embedded in the workflow, so brittle changes slip through and fail CI.",
     },
@@ -126,7 +118,7 @@ export const problemContent: ProblemContent = {
 };
 
 export const frameworkContent: FrameworkContent = {
-  title: "The 4 Velocity Blockers I look for",
+  title: "The 4 Velocity Blockers I Look For",
   subtitle:
     "A focused audit that isolates friction before we scale adoption further.",
   blockers: [
@@ -184,7 +176,7 @@ export const frameworkContent: FrameworkContent = {
 };
 
 export const howItWorksContent: HowItWorksContent = {
-  title: "How the Velocity Audit works",
+  title: "How the Velocity Audit Works",
   subtitle: "A tight, 24-hour engagement designed for fast answers.",
   steps: [
     {
@@ -206,13 +198,13 @@ export const howItWorksContent: HowItWorksContent = {
 };
 
 export const tiersContent: TiersContent = {
-  title: "Pick the engagement that fits your team",
+  title: "Pick the Engagement That Fits Your Team",
   subtitle:
     "Each option delivers the audit; choose how much implementation support you want alongside it.",
   tiers: [
     {
       name: "Discovery Audit",
-      price: "Starts at $X,XXX",
+      price: "Starts at €990,00",
       description: "Rapid assessment with fast, actionable fixes.",
       features: [
         "24-hour velocity audit across codebase and agent workflows",
@@ -224,7 +216,7 @@ export const tiersContent: TiersContent = {
     },
     {
       name: "Discovery + Implementation",
-      price: "Starts at $X,XXX+",
+      price: "Custom engagement",
       description:
         "Audit plus hands-on implementation of the highest-impact fixes.",
       features: [
@@ -254,7 +246,7 @@ export const tiersContent: TiersContent = {
 
 export const credibilityContent: CredibilityContent = {
   name: "Viktor Malyi",
-  title: "AI engineering leader specializing in agent velocity",
+  title: "AI Engineering Leader Specializing in Agent Velocity",
   bio: "I help dev teams turn AI coding agents into reliable leverage—by fixing the plumbing, guardrails, and playbooks that keep work moving.",
   highlights: [
     "Shipped agentic workflows that cut spec-to-PR time from days to hours.",
@@ -301,7 +293,7 @@ export const faqContent: FaqContent = {
 };
 
 export const finalCtaContent: FinalCtaContent = {
-  title: "Ready to unstick your AI agents?",
+  title: "Ready to Unstick Your AI Coding Agents?",
   subtitle:
     "Book the 24-hour Velocity Audit and get a precise plan to unlock faster, safer shipping with your AI coding agents.",
   cta: "Book the Velocity Audit",

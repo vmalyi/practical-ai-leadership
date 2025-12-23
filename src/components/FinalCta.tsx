@@ -4,7 +4,7 @@ import { siteConfig } from "@/config/site";
 export function FinalCta() {
   return (
     <section className="bg-gradient-to-b from-gray-900 to-indigo-900/20">
-      <div className="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 lg:py-32">
+      <div className="mx-auto max-w-3xl px-4 py-10 text-center sm:px-6 lg:py-16">
         <h2 className="text-3xl font-bold text-white lg:text-4xl">
           {finalCtaContent.title}
         </h2>
