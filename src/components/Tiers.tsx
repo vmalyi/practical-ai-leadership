@@ -5,7 +5,7 @@ import { Container } from "./Container";
 
 export function Tiers() {
   return (
-    <section className="bg-gray-900">
+    <section id="investment-options" className="scroll-mt-16 bg-gray-900">
       <Container className="py-8 lg:py-12">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold text-white">
@@ -26,7 +26,7 @@ export function Tiers() {
                 }`}
               >
                 {isFeatured ? (
-                  <span className="absolute right-4 top-4 rounded-full bg-indigo-600 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-indigo-600 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
                     Most Popular
                   </span>
                 ) : null}
@@ -34,9 +34,11 @@ export function Tiers() {
                   <h3 className="text-xl font-semibold text-white">
                     {tier.name}
                   </h3>
-                  <p className="text-3xl font-bold text-indigo-200">
-                    {tier.price}
-                  </p>
+                  {tier.price ? (
+                    <p className="text-3xl font-bold text-indigo-200">
+                      {tier.price}
+                    </p>
+                  ) : null}
                   <p className="text-gray-300">{tier.description}</p>
                 </div>
                 <ul className="mt-6 space-y-3 text-sm text-gray-200">

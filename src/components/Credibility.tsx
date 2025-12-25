@@ -7,8 +7,11 @@ import { Container } from "./Container";
 
 export function Credibility() {
   return (
-    <section className="bg-gray-900/50">
+    <section id="about" className="scroll-mt-16 bg-gray-900/50">
       <Container className="py-8 lg:py-12">
+        <h2 className="mb-8 text-center text-3xl font-bold text-white">
+          {credibilityContent.sectionTitle}
+        </h2>
         <div className="flex flex-col items-center gap-8 md:flex-row md:items-center md:gap-12">
           <div className="relative h-40 w-40 flex-shrink-0 overflow-hidden rounded-full">
             <Image

@@ -13,9 +13,9 @@ export type SiteConfig = {
 
 export const siteConfig: SiteConfig = {
   name: "Viktor Malyi",
-  title: "AI Agent Velocity Audit | Fix What's Slowing Your AI Coding Agents",
+  title: "Make AI Coding Tools Actually Work | Viktor Malyi",
   description:
-    "Get a 24-hour audit revealing exactly what's blocking your AI coding agents from peak performance.",
+    "24-hour audit to identify what's blocking your team from adopting AI coding tools. Fix blockers or unlock fully autonomous AI coding.",
   url: "https://practical-ai-leadership.com",
   calendarUrl:
     "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0lqb2kvUx3MPxlvUIOd28Lzflc4LgzwWB9p3PHaPc3F1umAaTKDIkplzlPJcFZ9LoX2XyYjg3a?gv=true",

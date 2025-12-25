@@ -14,7 +14,7 @@ export function Faq() {
   };
 
   return (
-    <section className="bg-gray-900">
+    <section id="faq" className="scroll-mt-16 bg-gray-900">
       <Container className="py-8 lg:py-12">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold text-white">{faqContent.title}</h2>

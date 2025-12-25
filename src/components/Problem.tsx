@@ -4,7 +4,7 @@ import { Container } from "./Container";
 
 export function Problem() {
   return (
-    <section className="bg-gray-900/50">
+    <section id="problem" className="scroll-mt-16 bg-gray-900/50">
       <Container className="py-8 lg:py-12">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold text-white">
@@ -20,7 +20,7 @@ export function Problem() {
               key={point.title}
               className="flex gap-4 rounded-xl border border-gray-800 bg-gray-800/50 p-6"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-500/10 text-red-400">
+              <div className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-red-500/10 text-red-400">
                 <svg
                   aria-hidden="true"
                   className="h-5 w-5"
@@ -40,9 +40,6 @@ export function Problem() {
               </div>
             </div>
           ))}
-        </div>
-        <div className="mt-10 rounded-xl border border-indigo-500/30 bg-indigo-500/10 p-6 text-center text-indigo-100">
-          {problemContent.conclusion}
         </div>
       </Container>
     </section>

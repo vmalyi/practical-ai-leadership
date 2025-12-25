@@ -13,14 +13,12 @@ export interface ProblemContent {
   title: string;
   subtitle: string;
   points: ProblemPoint[];
-  conclusion: string;
 }
 
 export interface FrameworkBlocker {
   number: string;
   title: string;
   problem: string;
-  impact: string;
   indicators: string[];
 }
 
@@ -43,7 +41,7 @@ export interface HowItWorksContent {
 
 export interface Tier {
   name: string;
-  price: string;
+  price?: string;
   description: string;
   features: string[];
   cta: string;
@@ -56,6 +54,7 @@ export interface TiersContent {
 }
 
 export interface CredibilityContent {
+  sectionTitle: string;
   name: string;
   title: string;
   bio: string;
@@ -80,179 +79,171 @@ export interface FinalCtaContent {
 }
 
 export const heroContent: HeroContent = {
-  headline: "Fix What's Slowing Your AI Coding Agents",
+  headline: "Fix What's Breaking Your Team's AI Coding Tool Adoption",
   description:
-    "In 24 hours, I audit your AI coding agent stack to surface exactly what's slowing it down. You get a prioritized roadmap with the fixes that unlock predictable shipping speed, quality, and safety. If my audit doesn't identify real blockers, full refund.",
-  cta: "Book the Velocity Audit",
+    "In 24 hours, I audit your codebase for the issues preventing your team from leveraging AI coding tools to their full capabilities. You get a prioritized roadmap to make them work without constant hand-holding. From there, I can implement the fixes or help your team not only systematically adopt AI coding tools in their day-to-day work but make the step towards true AI agentic coding capabilities.",
+  cta: "Understand What Blocks Your Team",
 };
 
 export const problemContent: ProblemContent = {
   title:
-    "AI coding agents should feel like leverage, not another junior dev to manage.",
+    "AI coding tools should feel like leverage, not another junior dev to manage.",
   subtitle:
-    "When adoption outpaces operational rigor, you end up with more overhead than output.",
+    "Your team adopted Copilot, Cursor, maybe even experimented with AI coding agents. Yet engineers still don't fully trust the output and spend considerable time hand-holding the tools to produce quality results. Adoption happened. ROI-positive adoption didn't. There's still much to learn and implement before these tools deliver their full potential.",
   points: [
     {
-      title: "Inconsistent Outputs",
+      title: "Quality Gaps",
       description:
-        "Agents drift from architecture decisions with each run, forcing manual cleanup and repeated context handoffs.",
+        "67% of developers spend more time debugging AI-generated code because it often requires significant human intervention. 76% say it needs refactoring, contributing to technical debt. AI-assisted PRs are 2.6x larger due to verbose code generation.",
     },
     {
-      title: "Context Gaps",
+      title: "Review Bottlenecks",
       description:
-        "Specs, domain rules, and edge cases fall outside the prompt window, so agents guess and miss requirements.",
+        "AI-generated PRs wait 5.3x longer before review because reviewers distrust them and the code volume is larger. Only 32.7% get merged vs 84.4% for human-written code. Much of AI output is ultimately rejected or abandoned.",
     },
     {
-      title: "No Guardrails",
+      title: "Insufficient Context",
       description:
-        "Linting, tests, and dependency policies aren't embedded in the workflow, so brittle changes slip through and fail CI.",
+        "AI generates code that's syntactically correct but functionally wrong because it lacks awareness of system architecture or business logic. Most tools work best on one repository at a time and struggle with cross-repository context.",
     },
     {
-      title: "Unclear ROI",
+      title: "The Productivity Illusion",
       description:
-        "There's no telemetry or adoption playbook, so you can't tell where agents help versus slow engineers down.",
+        "Studies show developers using AI tools take 19% longer on tasks despite believing they were faster. Teams see 7.2% lower delivery stability because code volume moves faster than the system's ability to verify quality.",
     },
   ],
-  conclusion:
-    "Result: engineers keep hand-holding the AI, rework piles up, and velocity stalls.",
 };
 
 export const frameworkContent: FrameworkContent = {
-  title: "The 4 Velocity Blockers I Look For",
+  title: "The 4 Blockers I Look For",
   subtitle:
-    "A focused audit that isolates friction before we scale adoption further.",
+    "My audit focuses on fundamental issues preventing your team from using AI coding tools to their full potential, both at the codebase and SDLC levels.",
   blockers: [
     {
       number: "01",
-      title: "Context & Knowledge Flow",
+      title: "Inaccessible Coding Standards",
       problem:
-        "Agents operate on shallow prompts without the architecture, domain constraints, or recent decisions they need.",
-      impact:
-        "Outputs miss acceptance criteria and require rework, eroding trust in AI assistance.",
+        "Coding standards exist in developers' heads, outdated wikis, or aren't discoverable by AI coding tools during development. AI coding tools generate code that's syntactically correct but stylistically inconsistent, requiring rework during PR reviews.",
       indicators: [
-        "Engineers keep pasting the same docs or ADRs into prompts.",
-        "Agents ask clarifying questions mid-run or hallucinate missing pieces.",
-        "Pull requests repeatedly miss edge cases spelled out elsewhere.",
+        "No .editorconfig, prettier.config, or equivalent in repo root.",
+        "Style guide exists but isn't linked in contributing docs.",
+        "ADRs aren't discoverable or accessible.",
       ],
     },
     {
       number: "02",
-      title: "Workflow & Handoffs",
+      title: "Poor Context Engineering",
       problem:
-        "Agent handoffs between tools, repos, and humans are unclear, creating dropped context and duplicated effort.",
-      impact:
-        "Tasks bounce around and cycle times stay flat despite automation.",
+        "Core docs (README, ARCHITECTURE.md, AGENTS.md) are missing, stale, or don't communicate the mental model needed to contribute. AI coding tools lack context about module boundaries, dependency graphs, and workflows, producing solutions that work but violate design principles.",
       indicators: [
-        "Engineers rewrite agent-generated code before merge.",
-        "PRs need multiple human passes to stabilize after AI changes.",
-        "Agents stall waiting for manual unblocking or missing inputs.",
+        "README doesn't explain repo structure or key abstractions.",
+        "No agent instruction files (AGENTS.md, .cursorrules, etc.).",
+        "Missing or outdated onboarding process for an AI coding tool at the start of each working session.",
       ],
     },
     {
       number: "03",
-      title: "Quality & Guardrails",
+      title: "Broken Feedback Mechanisms",
       problem:
-        "Quality checks are bolted on instead of built into the agent loop.",
-      impact: "Bugs, security gaps, and flaky outputs sneak into branches.",
+        "Quality gates (linters, formatters, test suites) don't exist, aren't integrated into the AI coding tool workflow, or fail without actionable errors. AI coding tools introduce regressions that only surface in CI/CD or human review, creating redundant iteration cycles.",
       indicators: [
-        "CI fails because tests or dependency policies were skipped by the agent.",
-        "Hallucinated APIs or broken contracts appear in diffs.",
-        "Reviewers don't trust agent changes without deep re-verification.",
+        "Test coverage below 60% or missing completely.",
+        "No pre-commit hooks enforcement of linting/formatting.",
+        "AI coding tools can't execute test commands to validate changes.",
       ],
     },
     {
       number: "04",
-      title: "Adoption & Enablement",
+      title: "Insufficient Product Context",
       problem:
-        "Engineers lack clear guidance on when and how to rely on agents.",
-      impact: "Usage is inconsistent and perceived ROI drops across the team.",
+        "AI coding tools get vague directives without business logic, user needs, or acceptance criteria. They deliver code that passes tests but misses intent, resulting in low-value output which requires significant rework.",
       indicators: [
-        "Only a few champions use agents deeply while others avoid them.",
-        "No shared prompts, playbooks, or examples for common tasks.",
-        "Teams avoid letting agents own complex tasks end-to-end.",
+        "Task descriptions lack acceptance criteria or success metrics.",
+        "No project or feature docs explaining the WHY.",
+        "PRDs or specs not accessible or linked to tasks executed by AI coding assistants",
       ],
     },
   ],
 };
 
 export const howItWorksContent: HowItWorksContent = {
-  title: "How the Velocity Audit Works",
-  subtitle: "A tight, 24-hour engagement designed for fast answers.",
+  title: "How the AI Coding Tools Adoption Audit Works",
+  subtitle:
+    "A rapid, 24-hour engagement to identify what's blocking your team from adopting AI coding tools efficiently.",
   steps: [
     {
-      title: "Share Access",
+      title: "Discovery Call and Access Sharing",
       description:
-        "Provide read-only repo access, sample tasks, and a short context call so I can see real workflows and constraints.",
+        "We start with a short discovery call so I understand your team's workflow and constraints. You provide read-only repo access and sample tasks for me to begin the audit.",
     },
     {
-      title: "24-Hour Deep Dive",
+      title: "24-Hour Deep Dive & Interviews",
       description:
-        "I trace critical paths, run live agent tasks, review prompts, orchestration, and telemetry to pinpoint friction.",
+        "I analyze your codebase for best practices already in place and gaps that remain. If needed, I send engineers a quick survey to understand how they currently use AI coding tools.",
     },
     {
       title: "Get Your Roadmap",
       description:
-        "Receive a prioritized remediation plan with quick wins, medium-term fixes, and recommended guardrails for sustained velocity.",
+        "You receive a report with identified gaps and a prioritized roadmap: quick wins, medium-term fixes, and long-term improvements ready for immediate action.",
     },
   ],
 };
 
 export const tiersContent: TiersContent = {
-  title: "Pick the Engagement That Fits Your Team",
+  title: "Three Investment Options for Unblocking Your Team",
   subtitle:
-    "Each option delivers the audit; choose how much implementation support you want alongside it.",
+    "Understand what's blocking your team. Fix the blockers. Or unlock fully autonomous AI coding with unparalleled productivity gains.",
   tiers: [
     {
-      name: "Discovery Audit",
-      price: "Starts at €990,00",
-      description: "Rapid assessment with fast, actionable fixes.",
-      features: [
-        "24-hour velocity audit across codebase and agent workflows",
-        "Blocker scorecard and prioritized top 5 fixes",
-        "Risk and effort estimates for each recommendation",
-        "30-minute readout with Q&A",
-      ],
-      cta: "Book Discovery Audit",
-    },
-    {
-      name: "Discovery + Implementation",
-      price: "Custom engagement",
+      name: "Adoption Audit",
       description:
-        "Audit plus hands-on implementation of the highest-impact fixes.",
+        "Identify what's blocking efficient AI coding tool adoption in a single repository.",
       features: [
-        "Everything in Discovery Audit",
-        "Implement top fixes across prompts, retrieval, and guardrails",
-        "Telemetry and quality gates embedded in the agent loop",
-        "Updated playbooks and examples for recurring tasks",
-        "Team enablement working session",
+        "24-hour audit of a single repository",
+        "Blocker scorecard across all 4 categories",
+        "Prioritized roadmap with actionable recommendations",
+        "Post-audit walkthrough call",
       ],
-      cta: "Schedule Audit + Fixes",
+      cta: "Get Your Roadmap",
     },
     {
-      name: "Full Agent Optimization",
-      price: "Custom engagement",
-      description: "Comprehensive transformation for agent-driven development.",
+      name: "Audit + Implementation",
+      description: "Audit plus hands-on implementation of high-impact fixes.",
       features: [
-        "Deep-dive architecture review across services and repos",
-        "Design and rollout of new agent workflows and orchestration",
-        "Policy, compliance, and safety guardrails baked in",
-        "Training for leads plus office hours for engineers",
-        "Success metrics dashboard and ongoing tuning plan",
+        "Everything in Adoption Audit",
+        "Fix coding standards accessibility",
+        "Create or update context documentation",
+        "Set up feedback mechanisms",
+        "Comprehensive guides for your team",
       ],
-      cta: "Plan Full Optimization",
+      cta: "Fix What's Blocking You",
+    },
+    {
+      name: "Agentic Transformation",
+      description:
+        "Transition from manual AI assistance to autonomous AI agentic coding.",
+      features: [
+        "Everything in Audit + Implementation, across all repositories",
+        "Custom context management system for your team's workflow",
+        "Structured workflows enabling AI to work with minimal oversight",
+        "Training session for the development team",
+      ],
+      cta: "Unlock Autonomous AI Coding",
     },
   ],
 };
 
 export const credibilityContent: CredibilityContent = {
+  sectionTitle: "Built on Real Experience",
   name: "Viktor Malyi",
-  title: "AI Engineering Leader Specializing in Agent Velocity",
-  bio: "I help dev teams turn AI coding agents into reliable leverage—by fixing the plumbing, guardrails, and playbooks that keep work moving.",
+  title:
+    "AI Engineering Leader with 16 Years Building Production Systems. Now Helping Teams Adopt AI Coding Tools.",
+  bio: "I've been pioneering AI coding tools for 2 years (before wide market adoption) deploying them in real production environments. Vendors claim their tools work autonomously out of the box. I know what it actually takes to enable truly agentic coding capabilities and bridge the gap between marketing promises and production reality.",
   highlights: [
-    "Shipped agentic workflows that cut spec-to-PR time from days to hours.",
-    "Built quality gates and prompt systems that reduced review churn by 40%.",
-    "Enabled teams from 5 to 50 engineers with repeatable AI adoption playbooks.",
-    "Advised founders on shipping reliable AI features without bloating headcount.",
+    "5 Production AI Systems Delivered",
+    "16 Years Engineering Leadership",
+    "Featured at Apple WWDC",
+    "15+ Engineers Led & Mentored",
   ],
 };
 
@@ -260,42 +251,57 @@ export const faqContent: FaqContent = {
   title: "FAQ",
   items: [
     {
-      question: "What access do you need for the audit?",
+      question: "What size team or codebase is this suitable for?",
       answer:
-        "Read-only repo access, sample tasks or tickets, and any existing prompts or agent orchestration so I can see real workflows.",
+        "This approach is independent of team size. The changes live inside your codebase: documentation, context files, and feedback mechanisms that guide AI tools toward correct output regardless of how many developers use them. Large codebases benefit the most. The Agentic Transformation tier provides significant leverage when AI agents need to navigate complex architectures autonomously.",
+    },
+    {
+      question: "Does this work if we're using Copilot, Codex, Claude Code, or other vendor tools?",
+      answer:
+        "Absolutely. The audit is vendor-agnostic and focuses on prompts, context flow, guardrails, feedback loops, and workflows, regardless of which AI coding assistant you are using.",
     },
     {
       question: "What do I get after 24 hours?",
       answer:
-        "A blocker scorecard, prioritized roadmap, and concrete fixes mapped to impact—plus a live walkthrough so your team knows what to do next.",
+        "A blocker scorecard, prioritized roadmap, and concrete fixes mapped to impact, plus a live walkthrough (in a follow-up call) so your team knows what to do next.",
+    },
+    {
+      question: "How do I measure if this worked?",
+      answer:
+        "Track two metrics: PR review cycles and engineer sentiment. After implementing the fixes, PRs containing AI-generated code should require fewer revision comments. Your engineers should also report spending less time hand-holding AI tools and correcting obvious mistakes. Both signals typically appear within the first sprint after implementation.",
     },
     {
       question: "Will you implement the fixes?",
       answer:
-        "Yes—choose the Discovery + Implementation or Full Agent Optimization tier and I'll execute the high-impact changes with your team.",
-    },
-    {
-      question: "Does this work if we're using Copilot or other vendor tools?",
-      answer:
-        "Absolutely. The audit is vendor-agnostic and focuses on prompts, context flow, guardrails, and workflows, whether you use Copilot, custom agents, or both.",
+        "Yes. Choose the Audit + Implementation or Agentic Transformation tier and I'll execute the high-impact changes with your team.",
     },
     {
       question: "How much of my team's time will this take?",
       answer:
-        "About an hour total for access and a short call. The deep dive is on me; your team only joins the readout unless we're implementing together.",
+        "For the Adoption Audit: ~1 hour total (discovery call plus ~15-minute interviews with 2-3 engineers). For Audit + Implementation: add a few hours for collaborative implementation sessions. For Agentic Transformation: expect ongoing involvement during the multi-repository rollout and team training. The deep analysis is on me; your team only joins for interviews and readouts.",
+    },
+    {
+      question: "What access do you need for the audit?",
+      answer:
+        "Read-only repo access in GitHub, GitLab, or any other developer platform, sample tasks or tickets your team recently worked on, and high-level information from your key development team members about how they use AI coding assistants on a day-to-day basis (collected via Slack, MS Teams, or email interviews requiring ~15 minutes each).",
+    },
+    {
+      question: "How do you handle our code and data?",
+      answer:
+        "My analysis tools send code snippets to Anthropic's API for processing. Under their commercial API terms, this data is not used for model training and API logs are deleted after 7 days. Only files I explicitly read during the audit are transmitted. Your original codebase remains untouched on your systems. Data is never sold to third parties.",
     },
     {
       question: "What if you don't find meaningful blockers?",
       answer:
-        "If the audit doesn't surface real blockers or opportunities, I refund you—no fine print.",
+        "If the audit doesn't surface real blockers or opportunities, I refund the full price to you.",
     },
   ],
 };
 
 export const finalCtaContent: FinalCtaContent = {
-  title: "Ready to Unstick Your AI Coding Agents?",
+  title: "Stop Hand-Holding Your AI Coding Tools",
   subtitle:
-    "Book the 24-hour Velocity Audit and get a precise plan to unlock faster, safer shipping with your AI coding agents.",
-  cta: "Book the Velocity Audit",
-  guarantee: "If my audit doesn't identify real blockers, full refund.",
+    "In 24 hours, get a precise roadmap showing exactly what's blocking your team from efficient AI-assisted coding.",
+  cta: "Make Your AI Coding Tools Actually Work",
+  guarantee: "",
 };
