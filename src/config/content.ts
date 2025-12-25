@@ -81,7 +81,7 @@ export interface FinalCtaContent {
 export const heroContent: HeroContent = {
   headline: "Fix What's Breaking Your Team's AI Coding Tool Adoption",
   description:
-    "In 24 hours, I audit your codebase for the issues preventing your team from leveraging AI coding tools to their full capabilities. You get a prioritized roadmap to make them work without constant hand-holding. From there, I can implement the fixes or help your team not only systematically adopt AI coding tools in their day-to-day work but make the step towards true AI agentic coding capabilities.",
+    "In 24 hours, I audit your codebase and deliver a prioritized roadmap showing exactly what's blocking your AI coding tools. Then I either implement the fixes myself or guide your team toward true agentic coding capabilities.",
   cta: "Understand What Blocks Your Team",
 };
 
