@@ -12,7 +12,7 @@ export function Credibility() {
         <h2 className="mb-8 text-center text-3xl font-bold text-white">
           {credibilityContent.sectionTitle}
         </h2>
-        <div className="flex flex-col items-center gap-8 md:flex-row md:items-center md:gap-12">
+        <div className="mx-auto flex max-w-3xl flex-col items-center gap-8 md:flex-row md:items-center md:gap-12">
           <div className="relative h-40 w-40 flex-shrink-0 overflow-hidden rounded-full">
             <Image
               src={siteConfig.images.profile}

@@ -19,7 +19,7 @@ export function Faq() {
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold text-white">{faqContent.title}</h2>
         </div>
-        <div className="mt-10 space-y-4">
+        <div className="mx-auto mt-10 max-w-3xl space-y-4">
           {faqContent.items.map((item, index) => {
             const isOpen = openIndex === index;
             return (

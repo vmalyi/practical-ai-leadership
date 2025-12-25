@@ -51,6 +51,7 @@ export interface Tier {
   description: string;
   features: string[];
   cta: string;
+  bookingUrl: string;
 }
 
 export interface TiersContent {
@@ -218,6 +219,7 @@ export const tiersContent: TiersContent = {
         "Post-audit walkthrough call",
       ],
       cta: "Get Your Roadmap",
+      bookingUrl: "https://calendar.app.google/PZFG7xyfkemX6zhT7",
     },
     {
       name: "Audit + Implementation",
@@ -230,6 +232,7 @@ export const tiersContent: TiersContent = {
         "Comprehensive guides for your team",
       ],
       cta: "Fix What's Blocking You",
+      bookingUrl: "https://calendar.app.google/CBWXPN9sukcTCBve9",
     },
     {
       name: "Agentic Transformation",
@@ -242,6 +245,7 @@ export const tiersContent: TiersContent = {
         "Training session for the development team",
       ],
       cta: "Unlock Autonomous AI Coding",
+      bookingUrl: "https://calendar.app.google/DjDENLuRcaVN2aJRA",
     },
   ],
 };
