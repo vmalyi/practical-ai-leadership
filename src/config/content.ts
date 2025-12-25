@@ -79,9 +79,9 @@ export interface FinalCtaContent {
 }
 
 export const heroContent: HeroContent = {
-  headline: "Fix What's Breaking Your Team's AI Coding Tool Adoption",
+  headline: "Your Team Is Fighting AI Coding Tools, Not Leveraging Them",
   description:
-    "In 24 hours, I audit your codebase and deliver a prioritized roadmap showing exactly what's blocking your AI coding tools. Then I either implement the fixes myself or guide your team toward true agentic coding capabilities.",
+    "Find out exactly why your team is fighting these tools instead of leveraging them. In 24 hours, get a prioritized roadmap showing what's blocking effective adoption and how to fix it.",
   cta: "Understand What Blocks Your Team",
 };
 
@@ -89,7 +89,7 @@ export const problemContent: ProblemContent = {
   title:
     "AI coding tools should feel like leverage, not another junior dev to manage.",
   subtitle:
-    "Your team adopted Copilot, Cursor, maybe even experimented with AI coding agents. Yet engineers still don't fully trust the output and spend considerable time hand-holding the tools to produce quality results. Adoption happened. ROI-positive adoption didn't. There's still much to learn and implement before these tools deliver their full potential.",
+    "Your team adopted Copilot, Cursor, maybe even experimented with AI coding agents. Yet engineers still don't fully trust the output and spend considerable time hand-holding the tools. Adoption happened. ROI-positive adoption didn't.",
   points: [
     {
       title: "Quality Gaps",
@@ -115,7 +115,7 @@ export const problemContent: ProblemContent = {
 };
 
 export const frameworkContent: FrameworkContent = {
-  title: "The 4 Blockers I Look For",
+  title: "Why Your AI Coding Investment Isn't Paying Off",
   subtitle:
     "My audit focuses on fundamental issues preventing your team from using AI coding tools to their full potential, both at the codebase and SDLC levels.",
   blockers: [
@@ -169,7 +169,7 @@ export const frameworkContent: FrameworkContent = {
 export const howItWorksContent: HowItWorksContent = {
   title: "How the AI Coding Tools Adoption Audit Works",
   subtitle:
-    "A rapid, 24-hour engagement to identify what's blocking your team from adopting AI coding tools efficiently.",
+    "Know exactly what's wrong and what to fix first in the next 24 hours.",
   steps: [
     {
       title: "Discovery Call and Access Sharing",
@@ -190,7 +190,7 @@ export const howItWorksContent: HowItWorksContent = {
 };
 
 export const tiersContent: TiersContent = {
-  title: "Three Investment Options for Unblocking Your Team",
+  title: "Choose Your Path Forward",
   subtitle:
     "Understand what's blocking your team. Fix the blockers. Or unlock fully autonomous AI coding with unparalleled productivity gains.",
   tiers: [
@@ -295,13 +295,19 @@ export const faqContent: FaqContent = {
       answer:
         "If the audit doesn't surface real blockers or opportunities, I refund the full price to you.",
     },
+    {
+      question:
+        "My leadership is asking why AI tools haven't delivered. What do I tell them?",
+      answer:
+        "The audit gives you a clear answer instead of vague explanations. You'll have a blocker scorecard showing exactly what's wrong, a prioritized roadmap with specific fixes, and concrete next steps. This turns 'we're still figuring it out' into 'here's the problem, here's the fix, here's the timeline.'",
+    },
   ],
 };
 
 export const finalCtaContent: FinalCtaContent = {
-  title: "Stop Hand-Holding Your AI Coding Tools",
+  title: "Ready to Get Answers?",
   subtitle:
-    "In 24 hours, get a precise roadmap showing exactly what's blocking your team from efficient AI-assisted coding.",
-  cta: "Make Your AI Coding Tools Actually Work",
+    "In 24 hours, get a precise roadmap showing exactly what's blocking your team.",
+  cta: "Get Your Roadmap",
   guarantee: "",
 };

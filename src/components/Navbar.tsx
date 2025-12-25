@@ -6,7 +6,7 @@ import { Container } from "./Container";
 
 const navItems = [
   { href: "#problem", label: "AI Coding Challenges" },
-  { href: "#blockers", label: "Blockers" },
+  { href: "#blockers", label: "Why It's Not Working" },
   { href: "#process", label: "24h Audit" },
   { href: "#investment-options", label: "Get Started" },
   { href: "#about", label: "Who I Am" },
