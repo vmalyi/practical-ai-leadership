@@ -279,24 +279,9 @@ export const faqContent: FaqContent = {
         "A blocker scorecard, prioritized roadmap, and concrete fixes mapped to impact, plus a live walkthrough (in a follow-up call) so your team knows what to do next.",
     },
     {
-      question: "How do I measure if this worked?",
-      answer:
-        "Track two metrics: PR review cycles and engineer sentiment. After implementing the fixes, PRs containing AI-generated code should require fewer revision comments. Your engineers should also report spending less time hand-holding AI tools and correcting obvious mistakes. Both signals typically appear within the first sprint after implementation.",
-    },
-    {
       question: "Will you implement the fixes?",
       answer:
         "Yes. Choose the Audit + Implementation or Agentic Transformation tier and I'll execute the high-impact changes with your team.",
-    },
-    {
-      question: "How much of my team's time will this take?",
-      answer:
-        "For the Adoption Audit: ~1 hour total (discovery call plus ~15-minute interviews with 2-3 engineers). For Audit + Implementation: add a few hours for collaborative implementation sessions. For Agentic Transformation: expect ongoing involvement during the multi-repository rollout and team training. The deep analysis is on me; your team only joins for interviews and readouts.",
-    },
-    {
-      question: "What access do you need for the audit?",
-      answer:
-        "Read-only repo access in GitHub, GitLab, or any other developer platform, sample tasks or tickets your team recently worked on, and high-level information from your key development team members about how they use AI coding assistants on a day-to-day basis (collected via Slack, MS Teams, or email interviews requiring ~15 minutes each).",
     },
     {
       question: "How do you handle our code and data?",
@@ -307,12 +292,6 @@ export const faqContent: FaqContent = {
       question: "What if you don't find meaningful blockers?",
       answer:
         "If the audit doesn't surface real blockers or opportunities, I refund the full price to you.",
-    },
-    {
-      question:
-        "My leadership is asking why AI tools haven't delivered. What do I tell them?",
-      answer:
-        "The audit gives you a clear answer instead of vague explanations. You'll have a blocker scorecard showing exactly what's wrong, a prioritized roadmap with specific fixes, and concrete next steps. This turns 'we're still figuring it out' into 'here's the problem, here's the fix, here's the timeline.'",
     },
   ],
 };
