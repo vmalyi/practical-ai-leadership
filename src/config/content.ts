@@ -9,10 +9,16 @@ export interface ProblemPoint {
   description: string;
 }
 
+export interface ProblemSource {
+  id: string;
+  title: string;
+}
+
 export interface ProblemContent {
   title: string;
   subtitle: string;
   points: ProblemPoint[];
+  sources: ProblemSource[];
 }
 
 export interface FrameworkBlocker {
@@ -94,23 +100,30 @@ export const problemContent: ProblemContent = {
     {
       title: "Quality Gaps",
       description:
-        "67% of developers spend more time debugging AI-generated code because it often requires significant human intervention. 76% say it needs refactoring, contributing to technical debt. AI-assisted PRs are 2.6x larger due to verbose code generation.",
+        "67% of developers spend more time debugging AI-generated code because it often requires significant human intervention.¹ 76% say it needs refactoring, contributing to technical debt.¹ AI-assisted PRs are 2.6x larger due to verbose code generation.²",
     },
     {
       title: "Review Bottlenecks",
       description:
-        "AI-generated PRs wait 5.3x longer before review because reviewers distrust them and the code volume is larger. Only 32.7% get merged vs 84.4% for human-written code. Much of AI output is ultimately rejected or abandoned.",
+        "AI-generated PRs wait 5.3x longer before review because reviewers distrust them and the code volume is larger.² Only 32.7% get merged vs 84.4% for human-written code.² Much of AI output is ultimately rejected or abandoned.",
     },
     {
       title: "Insufficient Context",
       description:
-        "AI generates code that's syntactically correct but functionally wrong because it lacks awareness of system architecture or business logic. Most tools work best on one repository at a time and struggle with cross-repository context.",
+        "AI generates code that's syntactically correct but functionally wrong because it lacks awareness of system architecture or business logic.²˒³ Most tools work best on one repository at a time and struggle with cross-repository context.³",
     },
     {
       title: "The Productivity Illusion",
       description:
-        "Studies show developers using AI tools take 19% longer on tasks despite believing they were faster. Teams see 7.2% lower delivery stability because code volume moves faster than the system's ability to verify quality.",
+        "Studies show developers using AI tools take 19% longer on tasks despite believing they were faster.⁴ Teams see 7.2% lower delivery stability because code volume moves faster than the system's ability to verify quality.⁵",
     },
+  ],
+  sources: [
+    { id: "1", title: "Harness, State of Software Delivery 2025" },
+    { id: "2", title: "LinearB, The DevEx Guide to AI-Driven Software Development" },
+    { id: "3", title: "Jellyfish, AI Transformation: Real-World Data and Productivity Insights" },
+    { id: "4", title: "METR, Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity" },
+    { id: "5", title: "DORA, 2024 DORA Report" },
   ],
 };
 

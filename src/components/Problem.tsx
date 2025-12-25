@@ -41,6 +41,17 @@ export function Problem() {
             </div>
           ))}
         </div>
+        <div className="mt-8 text-xs text-gray-500">
+          <p className="mb-1 font-medium text-gray-400">Sources:</p>
+          <p>
+            {problemContent.sources.map((source, index) => (
+              <span key={source.id}>
+                <sup>{source.id}</sup> {source.title}
+                {index < problemContent.sources.length - 1 && " · "}
+              </span>
+            ))}
+          </p>
+        </div>
       </Container>
     </section>
   );
