@@ -303,7 +303,7 @@ export const faqContent: FaqContent = {
 export const finalCtaContent: FinalCtaContent = {
   title: "Ready to Get Answers?",
   subtitle:
-    "In 24 hours, get a precise roadmap showing exactly what's blocking your team.",
+    "In 24 hours, get a precise roadmap showing exactly what's blocking your team from leveraging AI coding tools to their full potential.",
   cta: "Get Your Roadmap",
   guarantee: "",
 };
