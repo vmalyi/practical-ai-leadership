@@ -29,7 +29,7 @@ export function Tiers() {
                     Most Popular
                   </span>
                 ) : null}
-                <div className="space-y-2">
+                <div className="space-y-2 text-center">
                   <h3 className="text-xl font-semibold text-white">
                     {tier.name}
                   </h3>

@@ -88,8 +88,8 @@ export interface FinalCtaContent {
 export const heroContent: HeroContent = {
   headline: "Your Team Is Fighting AI Coding Tools, Not Leveraging Them",
   description:
-    "Find out exactly why your team is fighting these tools instead of leveraging them. In 24 hours, get a prioritized roadmap showing what's blocking effective adoption and how to fix it.",
-  cta: "Understand What Blocks Your Team",
+    "In 24 hours, get full AGENTS.md coverage, guidance for anti-patterns eventually present in your codebase that AI could multiply, and a DevEx baseline to measure the productivity gains you've been missing. All grounded in your codebase.",
+  cta: "Make Your AI Coding Tools Work",
 };
 
 export const problemContent: ProblemContent = {
@@ -131,39 +131,39 @@ export const problemContent: ProblemContent = {
 export const frameworkContent: FrameworkContent = {
   title: "Why Your AI Coding Investment Isn't Paying Off",
   subtitle:
-    "My audit focuses on fundamental issues preventing your team from using AI coding tools to their full potential, both at the codebase and SDLC levels.",
+    "These four context gaps prevent your AI tools from delivering ROI. My audit surfaces them and delivers ready-to-use fixes for each.",
   blockers: [
     {
       number: "01",
-      title: "Inaccessible Coding Standards",
+      title: "Poor Context Engineering",
       problem:
-        "Coding standards exist in developers' heads, outdated wikis, or aren't discoverable by AI coding tools during development. AI coding tools generate code that's syntactically correct but stylistically inconsistent, requiring rework during PR reviews.",
+        "Documents forming a foundation of context engineering are missing or stale. AI coding tools lack context about module boundaries, dependency graphs, and workflows, producing solutions that work but violate your design principles.",
       indicators: [
-        "No .editorconfig, prettier.config, or equivalent in repo root.",
-        "Style guide exists but isn't linked in contributing docs.",
-        "ADRs aren't discoverable or accessible.",
+        "README doesn't explain repo structure, key abstractions, or module boundaries.",
+        "No AGENTS.md hierarchy (root + per-subproject) or tool rules referencing it.",
+        "AGENTS.md missing or incomplete: AI lacks commands, boundaries, and patterns to follow.",
       ],
     },
     {
       number: "02",
-      title: "Poor Context Engineering",
+      title: "Inaccessible Coding Standards",
       problem:
-        "Core docs (README, ARCHITECTURE.md, AGENTS.md) are missing, stale, or don't communicate the mental model needed to contribute. AI coding tools lack context about module boundaries, dependency graphs, and workflows, producing solutions that work but violate design principles.",
+        "Coding standards exist in developers' heads, outdated wikis, or aren't discoverable by AI coding tools during development. AI coding tools generate code that's syntactically correct but stylistically inconsistent, requiring frequent rework during PR reviews.",
       indicators: [
-        "README doesn't explain repo structure or key abstractions.",
-        "No agent instruction files (AGENTS.md, .cursorrules, etc.).",
-        "Missing or outdated onboarding process for an AI coding tool at the start of each working session.",
+        "Inconsistent error-handling patterns across the codebase.",
+        "Approach to null/optional issues is inconsistent.",
+        "Security and performance issues exist in code.",
       ],
     },
     {
       number: "03",
       title: "Broken Feedback Mechanisms",
       problem:
-        "Quality gates (linters, formatters, test suites) don't exist, aren't integrated into the AI coding tool workflow, or fail without actionable errors. AI coding tools introduce regressions that only surface in CI/CD or human review, creating redundant iteration cycles.",
+        "Quality gates don't exist, aren't integrated into the AI coding tool workflow, or fail without actionable errors. AI coding tools introduce regressions that only surface in CI/CD or human review, creating redundant iteration cycles.",
       indicators: [
-        "Test coverage below 60% or missing completely.",
-        "No pre-commit hooks enforcement of linting/formatting.",
-        "AI coding tools can't execute test commands to validate changes.",
+        "Lint/test commands exist but aren't documented for AI or runnable in one step.",
+        "No pre-commit/CI enforcement for bug-prone or security patterns.",
+        "AI can't self-verify because verification steps aren't documented.",
       ],
     },
     {
@@ -174,7 +174,7 @@ export const frameworkContent: FrameworkContent = {
       indicators: [
         "Task descriptions lack acceptance criteria or success metrics.",
         "No project or feature docs explaining the WHY.",
-        "PRDs or specs not accessible or linked to tasks executed by AI coding assistants",
+        "PRDs or specs not accessible or linked to tasks executed by AI coding assistants.",
       ],
     },
   ],
@@ -183,22 +183,22 @@ export const frameworkContent: FrameworkContent = {
 export const howItWorksContent: HowItWorksContent = {
   title: "How the AI Coding Tools Adoption Audit Works",
   subtitle:
-    "Know exactly what's wrong and what to fix first in the next 24 hours.",
+    "In the next 24 hours, understand what's blocking your AI tools, get deliverables that fix it, and a DevEx baseline to measure from.",
   steps: [
     {
       title: "Discovery Call and Access Sharing",
       description:
-        "We start with a short discovery call so I understand your team's workflow and constraints. You provide read-only repo access and sample tasks for me to begin the audit.",
+        "We start with a short discovery call so I understand your team's workflow and constraints. You provide read-only repo access so I can begin the audit.",
     },
     {
-      title: "24-Hour Deep Dive & Interviews",
+      title: "24-Hour Deep Dive & Deterministic Scan",
       description:
-        "I analyze your codebase for best practices already in place and gaps that remain. If needed, I send engineers a quick survey to understand how they currently use AI coding tools.",
+        "I analyze your codebase deterministically: documentation, architecture signals, and automated pattern detection across your stack.",
     },
     {
-      title: "Get Your Roadmap",
+      title: "Unlock Full Potential of AI Coding Tools",
       description:
-        "You receive a report with identified gaps and a prioritized roadmap: quick wins, medium-term fixes, and long-term improvements ready for immediate action.",
+        "You receive an audit report plus ready-to-use deliverables instantly boosting AI coding tools efficiency and accuracy – followed by a walkthrough call.",
     },
   ],
 };
@@ -206,43 +206,47 @@ export const howItWorksContent: HowItWorksContent = {
 export const tiersContent: TiersContent = {
   title: "Choose Your Path Forward",
   subtitle:
-    "Understand what's blocking your team. Fix the blockers. Or unlock fully autonomous AI coding with unparalleled productivity gains.",
+    "Get the repo-specific files that make AI tools follow your conventions. I can implement the changes for you. Or scale it across all your repos to unlock autonomous AI coding.",
   tiers: [
     {
-      name: "Adoption Audit",
+      name: "AI Coding Tools Adoption Audit",
       description:
-        "Identify what's blocking efficient AI coding tool adoption in a single repository.",
+        "Establish a minimal context so AI tools generate convention-matching code in a single repository.",
       features: [
         "24-hour audit of a single repository",
-        "Blocker scorecard across all 4 categories",
-        "Prioritized roadmap with actionable recommendations",
+        "Audit Report: DevEx baseline with 10 metrics, top negative coding patterns, deliverables guide",
+        "Full AGENTS.md hierarchy: root + per-subproject files",
+        "Pre-modified READMEs + vendor-specific rules referencing AGENTS.md fitted to your codebase",
+        "Ready-to-use fix prompts for all negative coding patterns identified in your codebase",
         "Post-audit walkthrough call",
       ],
-      cta: "Get Your Roadmap",
+      cta: "Make AI Coding Tools Deliver",
       bookingUrl: "https://calendar.app.google/PZFG7xyfkemX6zhT7",
     },
     {
-      name: "Audit + Implementation",
-      description: "Audit plus hands-on implementation of high-impact fixes.",
+      name: "Audit + Implementation + ROI Measurement",
+      description:
+        "Hands-on implementation, re-measurement to prove impact, strategy adjustment, and deliverables update in a single repository",
       features: [
         "Everything in Adoption Audit",
-        "Fix coding standards accessibility",
-        "Create or update context documentation",
-        "Set up feedback mechanisms",
-        "Comprehensive guides for your team",
+        "I implement AGENTS.md, README updates, and vendor-specific rules",
+        "I apply fix prompts for negative coding patterns across your codebase",
+        "One DevEx re-measurement after rollout and strategy call to adjust your AI coding tools adoption approach",
+        "One update for your entire hierarchy of AGENTS.md after rollout to keep them current",
       ],
-      cta: "Fix What's Blocking You",
+      cta: "Implement & Re-measure",
       bookingUrl: "https://calendar.app.google/CBWXPN9sukcTCBve9",
     },
     {
-      name: "Agentic Transformation",
+      name: "Full Agentic Coding Transformation",
       description:
-        "Transition from manual AI assistance to autonomous AI agentic coding.",
+        "Transition from manual AI coding assistance to autonomous AI agentic coding for getting the biggest gains plus one-year support",
       features: [
-        "Everything in Audit + Implementation, across all repositories",
-        "Custom context management system for your team's workflow",
-        "Structured workflows enabling AI to work with minimal oversight",
-        "Training session for the development team",
+        "Everything in Audit + Implementation + ROI Measurement, across all your repositories",
+        "Custom context management system for your team's workflow enabling AI to work with minimal oversight for hours",
+        "Live training session for the development team",
+        "Quarterly DevEx re-measurements and strategy calls",
+        "Quarterly updates for your entire hierarchy of AGENTS.md",
       ],
       cta: "Unlock Autonomous AI Coding",
       bookingUrl: "https://calendar.app.google/DjDENLuRcaVN2aJRA",
@@ -255,10 +259,10 @@ export const credibilityContent: CredibilityContent = {
   name: "Viktor Malyi",
   title:
     "AI Engineering Leader with 16 Years Building Production Systems. Now Helping Teams Adopt AI Coding Tools.",
-  bio: "I've been pioneering AI coding tools for 2 years (before wide market adoption) deploying them in real production environments. Vendors claim their tools work autonomously out of the box. I know what it actually takes to enable truly agentic coding capabilities and bridge the gap between marketing promises and production reality.",
+  bio: "I've been pioneering AI coding tools for 3 years (before wide market adoption), deploying them in real production environments. Vendors claim their tools work autonomously out of the box. I know what it actually takes to enable truly agentic coding capabilities and bridge the gap between marketing promises and production reality.",
   highlights: [
     "5 Production AI Systems Delivered",
-    "16 Years Engineering Leadership",
+    "17 Years Engineering Leadership",
     "Featured at Apple WWDC",
     "15+ Engineers Led & Mentored",
   ],
@@ -270,7 +274,7 @@ export const faqContent: FaqContent = {
     {
       question: "What size team or codebase is this suitable for?",
       answer:
-        "This approach is independent of team size. The changes live inside your codebase: documentation, context files, and feedback mechanisms that guide AI tools toward correct output regardless of how many developers use them. Large codebases benefit the most. The Agentic Transformation tier provides significant leverage when AI agents need to navigate complex architectures autonomously.",
+        "This approach is independent of team size. The changes live inside your codebase: documentation, context files, and feedback mechanisms that guide AI tools toward correct output regardless of how many developers use them. Large codebases benefit the most. The Full Agentic Coding Transformation provides significant leverage when AI agents need to navigate complex architectures autonomously.",
     },
     {
       question: "Does this work if we're using Copilot, Codex, Claude Code, or other vendor tools?",
@@ -280,12 +284,12 @@ export const faqContent: FaqContent = {
     {
       question: "What do I get after 24 hours?",
       answer:
-        "A blocker scorecard, prioritized roadmap, and concrete fixes mapped to impact, plus a live walkthrough (in a follow-up call) so your team knows what to do next.",
+        "An Audit Report (DevEx baseline with 10 metrics, top negative coding patterns, deliverables guide) plus ready-to-use files: full AGENTS.md hierarchy, pre-modified READMEs, vendor-specific rules, and fix prompts for all identified patterns. Followed by a walkthrough call.",
     },
     {
       question: "Will you implement the fixes?",
       answer:
-        "Yes. Choose the Audit + Implementation or Agentic Transformation tier and I'll execute the high-impact changes with your team.",
+        "Yes. Choose Audit + Implementation + ROI Measurement (single repo) or Full Agentic Coding Transformation (all repos) and I'll implement AGENTS.md, README updates, vendor rules, and apply fix prompts.",
     },
     {
       question: "How do you handle our code and data?",
@@ -293,17 +297,17 @@ export const faqContent: FaqContent = {
         "My analysis tools send code snippets to Anthropic's API for processing. Under their commercial API terms, this data is not used for model training and API logs are deleted after 7 days. Only files I explicitly read during the audit are transmitted. Your original codebase remains untouched on your systems. Data is never sold to third parties.",
     },
     {
-      question: "What if you don't find meaningful blockers?",
+      question: "What if there's nothing to improve?",
       answer:
-        "If the audit doesn't surface real blockers or opportunities, I refund the full price to you.",
+        "If the audit doesn't identify meaningful improvements for your AI coding tools adoption, full refund.",
     },
   ],
 };
 
 export const finalCtaContent: FinalCtaContent = {
-  title: "Ready to Get Answers?",
+  title: "Ready to Make Your AI Coding Tools Work?",
   subtitle:
-    "In 24 hours, get a precise roadmap showing exactly what's blocking your team from leveraging AI coding tools to their full potential.",
-  cta: "Get Your Roadmap",
+    "In 24 hours, get full AGENTS.md coverage, guidance for anti-patterns, and a DevEx baseline to measure impact. All grounded in your codebase.",
+  cta: "Make Your AI Coding Tools Work",
   guarantee: "",
 };
