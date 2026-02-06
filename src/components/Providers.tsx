@@ -2,6 +2,7 @@
 
 import { ThemeProvider } from "next-themes";
 import type { ReactNode } from "react";
+import { PostHogTracker } from "./PostHogTracker";
 
 export function Providers({ children }: { children: ReactNode }) {
   return (
@@ -11,6 +12,7 @@ export function Providers({ children }: { children: ReactNode }) {
       forcedTheme="dark"
       enableSystem={false}
     >
+      <PostHogTracker />
       {children}
     </ThemeProvider>
   );

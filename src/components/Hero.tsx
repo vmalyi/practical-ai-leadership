@@ -6,7 +6,7 @@ import { Container } from "./Container";
 
 export function Hero() {
   return (
-    <section className="bg-gray-900">
+    <section id="hero" className="scroll-mt-16 bg-gray-900">
       <Container className="flex flex-wrap py-10 lg:py-16">
         {/* Left side - Text content */}
         <div className="flex w-full items-center lg:w-1/2">
@@ -20,6 +20,8 @@ export function Hero() {
             <div className="mt-8 flex flex-col items-start space-y-3 sm:flex-row sm:items-center sm:space-x-4 sm:space-y-0">
               <a
                 href="#investment-options"
+                data-ph-cta="primary"
+                data-ph-label={heroContent.cta}
                 className="rounded-md bg-indigo-600 px-8 py-4 text-lg font-medium text-white shadow-lg shadow-indigo-600/30 transition hover:bg-indigo-700"
               >
                 {heroContent.cta}

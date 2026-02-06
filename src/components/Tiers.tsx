@@ -62,6 +62,9 @@ export function Tiers() {
                 <div className="mt-8">
                   <a
                     href={tier.bookingUrl}
+                    data-ph-booking-tier={tier.name}
+                    data-ph-booking-cta={tier.cta}
+                    data-ph-label={tier.cta}
                     className={`inline-flex w-full items-center justify-center rounded-lg px-5 py-3 text-sm font-semibold transition ${
                       isFeatured
                         ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 hover:bg-indigo-700"
