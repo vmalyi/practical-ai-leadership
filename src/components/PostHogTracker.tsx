@@ -4,9 +4,10 @@ import { usePathname } from "next/navigation";
 import posthog from "posthog-js";
 import { useEffect, useRef } from "react";
 
-const POSTHOG_KEY = process.env.NEXT_PUBLIC_POSTHOG_KEY;
+const DEFAULT_POSTHOG_KEY = "phc_8vaqqy1HdH46zgpioDjVq1rQb0yHaBGXMXOYKA16XsM";
+const POSTHOG_KEY = process.env.NEXT_PUBLIC_POSTHOG_KEY || DEFAULT_POSTHOG_KEY;
 const POSTHOG_HOST =
-  process.env.NEXT_PUBLIC_POSTHOG_HOST ?? "https://eu.i.posthog.com";
+  process.env.NEXT_PUBLIC_POSTHOG_HOST ?? "https://us.i.posthog.com";
 const POSTHOG_PROJECT_ID = process.env.NEXT_PUBLIC_POSTHOG_PROJECT_ID;
 
 const TRACKED_SECTION_IDS = [
@@ -51,7 +52,7 @@ function getLinkText(anchor: HTMLAnchorElement): string {
 }
 
 function ensureInitialized(): boolean {
-  if (isInitialized || !POSTHOG_KEY || typeof window === "undefined") {
+  if (isInitialized || typeof window === "undefined") {
     return isInitialized;
   }
 

@@ -15,8 +15,8 @@ This site is wired to PostHog via `posthog-js` and a client tracker component.
 - `.env.example`
 
 ### Required Public Env Vars
-- `NEXT_PUBLIC_POSTHOG_KEY`
-- `NEXT_PUBLIC_POSTHOG_HOST` (default set to `https://eu.i.posthog.com`)
+- `NEXT_PUBLIC_POSTHOG_KEY` (optional override, fallback is hardcoded to the project key in `PostHogTracker.tsx`)
+- `NEXT_PUBLIC_POSTHOG_HOST` (default set to `https://us.i.posthog.com`)
 - `NEXT_PUBLIC_POSTHOG_PROJECT_ID` (optional metadata property)
 
 ### Events Captured
@@ -30,6 +30,7 @@ This site is wired to PostHog via `posthog-js` and a client tracker component.
 ## Deploy Wiring (GitHub Pages)
 
 The GitHub Action injects PostHog env vars during `npm run build` so static exports include analytics config.
+The build now injects the project API key directly. This key is public by design for client-side ingestion and prevents silent "no-key" builds that strip tracking logic from the bundle.
 
 ## Validation Checklist
 
@@ -52,7 +53,7 @@ Codex MCP server entry:
 
 ```toml
 [mcp_servers.posthog]
-url = "https://mcp-eu.posthog.com/mcp"
+url = "https://mcp.posthog.com/mcp"
 ```
 
 ### Important
