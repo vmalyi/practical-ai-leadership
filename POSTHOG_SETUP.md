@@ -16,7 +16,7 @@ This site is wired to PostHog via `posthog-js` and a client tracker component.
 
 ### Required Public Env Vars
 - `NEXT_PUBLIC_POSTHOG_KEY` (optional override, fallback is hardcoded to the project key in `PostHogTracker.tsx`)
-- `NEXT_PUBLIC_POSTHOG_HOST` (default set to `https://us.i.posthog.com`)
+- `NEXT_PUBLIC_POSTHOG_HOST` (default set to `https://eu.i.posthog.com`)
 - `NEXT_PUBLIC_POSTHOG_PROJECT_ID` (optional metadata property)
 
 ### Events Captured
