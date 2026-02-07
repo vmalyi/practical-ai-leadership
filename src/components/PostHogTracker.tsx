@@ -26,6 +26,12 @@ const BOOKING_HOSTS = new Set(["calendar.app.google", "calendar.google.com"]);
 let isInitialized = false;
 let hasCapturedInitEvent = false;
 
+function capture(event: string, properties?: Record<string, unknown>): void {
+  posthog.capture(event, properties, {
+    send_instantly: true,
+  });
+}
+
 function normalizeHost(hostname: string): string {
   return hostname.replace(/^www\./i, "").toLowerCase();
 }
@@ -89,7 +95,7 @@ export function PostHogTracker() {
     }
 
     if (!hasCapturedInitEvent) {
-      posthog.capture("posthog_tracker_initialized", {
+      capture("posthog_tracker_initialized", {
         $current_url: window.location.href,
         host: window.location.host,
       });
@@ -105,7 +111,7 @@ export function PostHogTracker() {
 
     lastTrackedPath.current = path;
 
-    posthog.capture("$pageview", {
+    capture("$pageview", {
       $current_url: window.location.href,
       path,
     });
@@ -140,7 +146,7 @@ export function PostHogTracker() {
           rawHref === "#investment-options" ||
           anchor.dataset.phCta === "primary"
         ) {
-          posthog.capture("cta_clicked", {
+          capture("cta_clicked", {
             button_text: buttonText,
             target: rawHref,
             page_section: section,
@@ -158,7 +164,7 @@ export function PostHogTracker() {
       }
 
       if (destination.protocol === "mailto:") {
-        posthog.capture("contact_email_clicked", {
+        capture("contact_email_clicked", {
           destination: destination.href,
           page_section: section,
         });
@@ -166,7 +172,7 @@ export function PostHogTracker() {
       }
 
       if (isBookingUrl(destination)) {
-        posthog.capture("booking_cta_clicked", {
+        capture("booking_cta_clicked", {
           button_text: buttonText,
           href: destination.href,
           page_section: section,
@@ -179,7 +185,7 @@ export function PostHogTracker() {
       const currentHost = normalizeHost(window.location.hostname);
       const destinationHost = normalizeHost(destination.hostname);
       if (destinationHost !== currentHost) {
-        posthog.capture("external_link_clicked", {
+        capture("external_link_clicked", {
           destination: destination.href,
           link_text: buttonText,
           domain: destination.hostname,
@@ -215,7 +221,7 @@ export function PostHogTracker() {
           }
 
           seen.add(sectionId);
-          posthog.capture("section_viewed", {
+          capture("section_viewed", {
             section: sectionId,
             path: pathname,
           });

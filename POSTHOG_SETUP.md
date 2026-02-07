@@ -5,6 +5,7 @@
 This site is wired to PostHog via `posthog-js` and a client tracker component.
 Tracking is cookie-free via `persistence: "memory"` (no cookies/localStorage persistence).
 Event batching is disabled (`request_batching: false`) so events are sent immediately.
+All custom captures use `send_instantly: true` to bypass queue delays.
 
 ### Files
 - `src/components/PostHogTracker.tsx`
