@@ -24,7 +24,6 @@ const TRACKED_SECTION_IDS = [
 const BOOKING_HOSTS = new Set(["calendar.app.google", "calendar.google.com"]);
 
 let isInitialized = false;
-let hasCapturedInitEvent = false;
 
 function capture(event: string, properties?: Record<string, unknown>): void {
   posthog.capture(event, properties, {
@@ -74,12 +73,19 @@ function ensureInitialized(): boolean {
     capture_pageview: false,
     capture_pageleave: true,
   });
+  // Expose for live debugging in browser console.
+  (window as Window & { posthog?: typeof posthog }).posthog = posthog;
 
   if (POSTHOG_PROJECT_ID) {
     posthog.register({
       posthog_project_id: POSTHOG_PROJECT_ID,
     });
   }
+
+  capture("posthog_tracker_initialized", {
+    $current_url: window.location.href,
+    host: window.location.host,
+  });
 
   isInitialized = true;
   return true;
@@ -92,14 +98,6 @@ export function PostHogTracker() {
   useEffect(() => {
     if (!ensureInitialized()) {
       return;
-    }
-
-    if (!hasCapturedInitEvent) {
-      capture("posthog_tracker_initialized", {
-        $current_url: window.location.href,
-        host: window.location.host,
-      });
-      hasCapturedInitEvent = true;
     }
 
     const query = window.location.search.replace(/^\\?/, "");
