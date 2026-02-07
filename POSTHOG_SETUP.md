@@ -3,6 +3,7 @@
 ## Site Tracking (practical-ai-leadership.com)
 
 This site is wired to PostHog via `posthog-js` and a client tracker component.
+Tracking is cookie-free via `persistence: "memory"` (no cookies/localStorage persistence).
 
 ### Files
 - `src/components/PostHogTracker.tsx`
@@ -20,6 +21,7 @@ This site is wired to PostHog via `posthog-js` and a client tracker component.
 - `NEXT_PUBLIC_POSTHOG_PROJECT_ID` (optional metadata property)
 
 ### Events Captured
+- `posthog_tracker_initialized` once per page load for pipeline health checks
 - `$pageview` on route changes
 - `booking_cta_clicked` for Google Calendar booking links
 - `cta_clicked` for in-page primary CTA links to `#investment-options`

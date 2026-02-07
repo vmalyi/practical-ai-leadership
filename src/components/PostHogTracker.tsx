@@ -24,6 +24,7 @@ const TRACKED_SECTION_IDS = [
 const BOOKING_HOSTS = new Set(["calendar.app.google", "calendar.google.com"]);
 
 let isInitialized = false;
+let hasCapturedInitEvent = false;
 
 function normalizeHost(hostname: string): string {
   return hostname.replace(/^www\./i, "").toLowerCase();
@@ -58,7 +59,9 @@ function ensureInitialized(): boolean {
 
   posthog.init(POSTHOG_KEY, {
     api_host: POSTHOG_HOST,
-    cookieless_mode: "always",
+    // Keep tracking cookie-free without "cookieless_mode: always",
+    // which can suppress capture in browser SDK.
+    persistence: "memory",
     person_profiles: "identified_only",
     autocapture: false,
     capture_pageview: false,
@@ -82,6 +85,14 @@ export function PostHogTracker() {
   useEffect(() => {
     if (!ensureInitialized()) {
       return;
+    }
+
+    if (!hasCapturedInitEvent) {
+      posthog.capture("posthog_tracker_initialized", {
+        $current_url: window.location.href,
+        host: window.location.host,
+      });
+      hasCapturedInitEvent = true;
     }
 
     const query = window.location.search.replace(/^\\?/, "");
