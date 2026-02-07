@@ -62,6 +62,7 @@ function ensureInitialized(): boolean {
     // Keep tracking cookie-free without "cookieless_mode: always",
     // which can suppress capture in browser SDK.
     persistence: "memory",
+    request_batching: false,
     person_profiles: "identified_only",
     autocapture: false,
     capture_pageview: false,
