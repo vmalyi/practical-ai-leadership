@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://practical-ai-leadership.com/sitemap.xml
