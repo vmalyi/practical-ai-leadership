@@ -273,7 +273,7 @@ export const testimonialsContent: TestimonialsContent = {
       name: "Mateusz Prusaczyk",
       title: "Lead Engineer @ simpleclub & author of softwarephilosopher blog",
       quote:
-        "Viktor has been helping us to adopt AI in simpleclub. He ran workshops in the team how to use Claude Code which turned out to be super useful and helped my team deliver good results faster. He also ran a system-wide initiative to cover code of our services with AGENTS.md files in simpleclub. After the initiative we experienced a huge improvement in quality of the AI-generated code.",
+        "Viktor has been helping us to adopt AI in simpleclub. He ran workshops for the team on how to use Claude Code, which turned out to be super useful and helped my team deliver good results faster. He also ran a system-wide initiative to cover code of our services with AGENTS.md files in simpleclub. After the initiative, we experienced a huge improvement in quality of the AI-generated code.",
       image: "/images/mateusz-prusaczyk.jpg",
     },
   ],

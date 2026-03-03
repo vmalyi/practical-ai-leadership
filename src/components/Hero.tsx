@@ -10,14 +10,14 @@ export function Hero() {
       <Container className="flex flex-wrap py-10 lg:py-16">
         {/* Left side - Text content */}
         <div className="flex w-full items-center lg:w-1/2">
-          <div className="mb-8 max-w-2xl">
+          <div className="mb-8 max-w-2xl text-center lg:text-left">
             <h1 className="text-4xl font-bold leading-snug tracking-tight text-white lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight">
               {heroContent.headline}
             </h1>
             <p className="py-5 text-xl leading-normal text-gray-300 lg:text-xl xl:text-2xl">
               {heroContent.description}
             </p>
-            <div className="mt-8 flex flex-col items-start space-y-3 sm:flex-row sm:items-center sm:space-x-4 sm:space-y-0">
+            <div className="mt-8 flex flex-col items-center space-y-3 sm:flex-row sm:items-center sm:space-x-4 sm:space-y-0 lg:items-start lg:justify-start">
               <a
                 href="#investment-options"
                 data-ph-cta="primary"
