@@ -1,18 +1,22 @@
+"use client";
+
 import Image from "next/image";
 
-import { testimonialsContent } from "@/config/content";
+import { useContent } from "@/hooks/useContent";
 
 import { Container } from "./Container";
 
 export function Testimonials() {
+  const { testimonials } = useContent();
+
   return (
     <section id="testimonials" className="scroll-mt-16">
       <Container className="py-8 lg:py-12">
         <h2 className="mb-8 text-center text-3xl font-bold text-white">
-          {testimonialsContent.sectionTitle}
+          {testimonials.sectionTitle}
         </h2>
         <div className="mx-auto max-w-3xl space-y-8">
-          {testimonialsContent.testimonials.map((testimonial) => (
+          {testimonials.testimonials.map((testimonial) => (
             <div
               key={testimonial.name}
               className="rounded-xl border border-gray-800 bg-gray-800/50 p-6 sm:p-8"

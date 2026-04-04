@@ -1,21 +1,21 @@
-import { problemContent } from "@/config/content";
+"use client";
+
+import { useContent } from "@/hooks/useContent";
 
 import { Container } from "./Container";
 
 export function Problem() {
+  const { problem } = useContent();
+
   return (
     <section id="problem" className="scroll-mt-16 bg-gray-900/50">
       <Container className="py-8 lg:py-12">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold text-white">
-            {problemContent.title}
-          </h2>
-          <p className="mt-4 text-lg text-gray-400">
-            {problemContent.subtitle}
-          </p>
+          <h2 className="text-3xl font-bold text-white">{problem.title}</h2>
+          <p className="mt-4 text-lg text-gray-400">{problem.subtitle}</p>
         </div>
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {problemContent.points.map((point) => (
+          {problem.points.map((point) => (
             <div
               key={point.title}
               className="flex gap-4 rounded-xl border border-gray-800 bg-gray-800/50 p-6"
@@ -41,17 +41,19 @@ export function Problem() {
             </div>
           ))}
         </div>
-        <div className="mt-8 text-xs text-gray-500">
-          <p className="mb-1 font-medium text-gray-400">Sources:</p>
-          <p>
-            {problemContent.sources.map((source, index) => (
-              <span key={source.id}>
-                <sup>{source.id}</sup> {source.title}
-                {index < problemContent.sources.length - 1 && " · "}
-              </span>
-            ))}
-          </p>
-        </div>
+        {problem.sources && problem.sources.length > 0 && (
+          <div className="mt-8 text-xs text-gray-500">
+            <p className="mb-1 font-medium text-gray-400">Sources:</p>
+            <p>
+              {problem.sources.map((source, index) => (
+                <span key={source.id}>
+                  <sup>{source.id}</sup> {source.title}
+                  {index < problem.sources!.length - 1 && " · "}
+                </span>
+              ))}
+            </p>
+          </div>
+        )}
       </Container>
     </section>
   );

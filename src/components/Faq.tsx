@@ -1,13 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-import { faqContent } from "@/config/content";
+import { useContent } from "@/hooks/useContent";
+import { useLocale } from "@/context/LocaleContext";
 
 import { Container } from "./Container";
 
 export function Faq() {
+  const { faq } = useContent();
+  const locale = useLocale();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    setOpenIndex(null);
+  }, [locale]);
 
   const handleToggle = (index: number) => {
     setOpenIndex((current) => (current === index ? null : index));
@@ -17,10 +24,10 @@ export function Faq() {
     <section id="faq" className="scroll-mt-16 bg-gray-900">
       <Container className="py-8 lg:py-12">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold text-white">{faqContent.title}</h2>
+          <h2 className="text-3xl font-bold text-white">{faq.title}</h2>
         </div>
         <div className="mx-auto mt-10 max-w-3xl space-y-4">
-          {faqContent.items.map((item, index) => {
+          {faq.items.map((item, index) => {
             const isOpen = openIndex === index;
             return (
               <div

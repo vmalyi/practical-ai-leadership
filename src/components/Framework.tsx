@@ -1,21 +1,21 @@
-import { frameworkContent } from "@/config/content";
+"use client";
+
+import { useContent } from "@/hooks/useContent";
 
 import { Container } from "./Container";
 
 export function Framework() {
+  const { framework } = useContent();
+
   return (
     <section id="blockers" className="scroll-mt-16 bg-gray-900">
       <Container className="py-8 lg:py-12">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold text-white">
-            {frameworkContent.title}
-          </h2>
-          <p className="mt-4 text-lg text-gray-400">
-            {frameworkContent.subtitle}
-          </p>
+          <h2 className="text-3xl font-bold text-white">{framework.title}</h2>
+          <p className="mt-4 text-lg text-gray-400">{framework.subtitle}</p>
         </div>
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
-          {frameworkContent.blockers.map((blocker) => (
+          {framework.blockers.map((blocker) => (
             <div
               key={blocker.number}
               className="relative rounded-xl border border-gray-700 bg-gray-800/50 p-8 transition hover:border-indigo-500"

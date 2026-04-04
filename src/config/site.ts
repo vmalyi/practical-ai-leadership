@@ -23,5 +23,6 @@ export const siteConfig: SiteConfig = {
     profile: "/images/viktor-malyi.jpg",
     ogImage: "/images/og-image.jpg",
   },
-  guarantee: "If the audit doesn't identify meaningful improvements, full refund.",
+  guarantee:
+    "If the audit doesn't identify meaningful improvements, full refund.",
 };

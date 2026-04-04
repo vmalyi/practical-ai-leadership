@@ -1,19 +1,21 @@
-import { tiersContent } from "@/config/content";
+"use client";
+
+import { useContent } from "@/hooks/useContent";
 
 import { Container } from "./Container";
 
 export function Tiers() {
+  const { tiers } = useContent();
+
   return (
     <section id="investment-options" className="scroll-mt-16 bg-gray-900">
       <Container className="py-8 lg:py-12">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold text-white">
-            {tiersContent.title}
-          </h2>
-          <p className="mt-4 text-lg text-gray-400">{tiersContent.subtitle}</p>
+          <h2 className="text-3xl font-bold text-white">{tiers.title}</h2>
+          <p className="mt-4 text-lg text-gray-400">{tiers.subtitle}</p>
         </div>
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-          {tiersContent.tiers.map((tier, index) => {
+          {tiers.tiers.map((tier, index) => {
             const isFeatured = index === 1;
             return (
               <div
@@ -26,6 +28,7 @@ export function Tiers() {
               >
                 {isFeatured ? (
                   <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-indigo-600 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+                    {/* TODO(P7): localize "Most Popular" badge */}
                     Most Popular
                   </span>
                 ) : null}

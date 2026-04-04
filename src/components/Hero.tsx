@@ -1,10 +1,14 @@
+"use client";
+
 import Image from "next/image";
 
-import { heroContent } from "@/config/content";
+import { useContent } from "@/hooks/useContent";
 
 import { Container } from "./Container";
 
 export function Hero() {
+  const { hero } = useContent();
+
   return (
     <section id="hero" className="scroll-mt-16 bg-gray-900">
       <Container className="flex flex-wrap py-10 lg:py-16">
@@ -12,19 +16,19 @@ export function Hero() {
         <div className="flex w-full items-center lg:w-1/2">
           <div className="mb-8 max-w-2xl text-center lg:text-left">
             <h1 className="text-4xl font-bold leading-snug tracking-tight text-white lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight">
-              {heroContent.headline}
+              {hero.headline}
             </h1>
             <p className="py-5 text-xl leading-normal text-gray-300 lg:text-xl xl:text-2xl">
-              {heroContent.description}
+              {hero.description}
             </p>
             <div className="mt-8 flex flex-col items-center space-y-3 sm:flex-row sm:items-center sm:space-x-4 sm:space-y-0 lg:items-start lg:justify-start">
               <a
                 href="#investment-options"
                 data-ph-cta="primary"
-                data-ph-label={heroContent.cta}
+                data-ph-label={hero.cta}
                 className="rounded-md bg-indigo-600 px-8 py-4 text-lg font-medium text-white shadow-lg shadow-indigo-600/30 transition hover:bg-indigo-700"
               >
-                {heroContent.cta}
+                {hero.cta}
               </a>
             </div>
           </div>

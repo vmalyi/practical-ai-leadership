@@ -1,23 +1,23 @@
-import { howItWorksContent } from "@/config/content";
+"use client";
+
+import { useContent } from "@/hooks/useContent";
 
 import { Container } from "./Container";
 
 export function HowItWorks() {
+  const { howItWorks } = useContent();
+
   return (
     <section id="process" className="scroll-mt-16 bg-gray-900/50">
       <Container className="py-8 lg:py-12">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold text-white">
-            {howItWorksContent.title}
-          </h2>
-          <p className="mt-4 text-lg text-gray-400">
-            {howItWorksContent.subtitle}
-          </p>
+          <h2 className="text-3xl font-bold text-white">{howItWorks.title}</h2>
+          <p className="mt-4 text-lg text-gray-400">{howItWorks.subtitle}</p>
         </div>
         <div className="relative mt-12">
           <div className="pointer-events-none absolute left-[12%] right-[12%] top-14 hidden h-px bg-indigo-500/30 md:block" />
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {howItWorksContent.steps.map((step, index) => (
+            {howItWorks.steps.map((step, index) => (
               <div
                 key={step.title}
                 className="relative flex h-full flex-col gap-4 rounded-xl border border-gray-800 bg-gray-800/50 p-6"
