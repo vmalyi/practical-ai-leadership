@@ -113,104 +113,88 @@ export interface SiteContent {
 
 const en: SiteContent = {
   hero: {
-    headline: "Your Team Is Fighting AI Coding Tools, Not Leveraging Them",
+    headline: "You Invested in AI. Nothing Stuck.",
     description:
-      "In 24 hours, get full AGENTS.md coverage, guidance for anti-patterns eventually present in your codebase that AI could multiply, and a DevEx baseline to measure the productivity gains you've been missing. All grounded in your codebase.",
-    cta: "Make Your AI Coding Tools Work",
+      "Pilots ran, tools were bought, leadership made it a priority. Yet nobody owns the AI strategy, nobody iterates the pilots, and adoption is inconsistent across teams. I step in as Fractional Head of AI \u2014 owning strategy, architecture, team enablement, and governance until your team can sustain it without me.",
+    cta: "Get AI Leadership Now",
   },
   problem: {
     title:
-      "AI coding tools should feel like leverage, not another junior dev to manage.",
+      "Nobody owns AI in your company. No wonder it feels like AI doesn\u2019t deliver.",
     subtitle:
-      "Your team adopted Copilot, Cursor, maybe even experimented with AI coding agents. Yet engineers still don't fully trust the output and spend considerable time hand-holding the tools. Adoption happened. ROI-positive adoption didn't.",
+      "Your company invested in AI \u2014 tools, licenses, a pilot or two. Yet nobody owns the outcome. Pilots ship and nobody touches them again. AI runs as everyone\u2019s side project. Nobody knows if any of it is actually working. The investment happened. The leadership didn\u2019t.",
     points: [
       {
-        title: "Quality Gaps",
+        title: "No Owner, No Progress",
         description:
-          "67% of developers spend more time debugging AI-generated code because it often requires significant human intervention.¹ 76% say it needs refactoring, contributing to technical debt.¹ AI-assisted PRs are 2.6x larger due to verbose code generation.²",
+          "AI is on every team\u2019s OKRs and nobody\u2019s actual job. Strategy is distributed, pilots ship but nobody iterates. Initiative after initiative starts strong and quietly dies.",
       },
       {
-        title: "Review Bottlenecks",
+        title: "Pilot-to-Production Gap",
         description:
-          "AI-generated PRs wait 5.3x longer before review because reviewers distrust them and the code volume is larger.² Only 32.7% get merged vs 84.4% for human-written code.² Much of AI output is ultimately rejected or abandoned.",
+          'The proof of concept works. The scale-up never happens. "Viele sind in der Lage im Labor ganz tolle Use Cases am Laufen zu kriegen \u2014 daran scheitern die meisten." It\u2019s not a technical problem \u2014 it\u2019s organizational. Nobody has the mandate to push AI from demo to delivery.',
       },
       {
-        title: "Insufficient Context",
+        title: "Leadership Is Asking. You Don\u2019t Have an Answer Yet.",
         description:
-          "AI generates code that's syntactically correct but functionally wrong because it lacks awareness of system architecture or business logic.²˒³ Most tools work best on one repository at a time and struggle with cross-repository context.³",
+          "Investors want AI maturity. The CEO wants a strategy by end of quarter. You\u2019re already stretched across hiring, architecture, and delivery \u2014 and now AI is yours too. The mandate is real. The capacity to execute it isn\u2019t.",
       },
       {
-        title: "The Productivity Illusion",
+        title: "AI Stuck in the IT Corner",
         description:
-          "Studies show developers using AI tools take 19% longer on tasks despite believing they were faster.⁴ Teams see 7.2% lower delivery stability because code volume moves faster than the system's ability to verify quality.⁵",
+          "AI gets delegated to IT or engineering. They treat it as a tooling decision \u2014 licenses managed, access configured. But the business impact layer \u2014 strategy, product integration, cross-functional enablement \u2014 never gets designed. The org has AI tools. It doesn\u2019t have AI capability.",
       },
     ],
-    sources: [
-      { id: "1", title: "Harness, State of Software Delivery 2025" },
-      {
-        id: "2",
-        title: "LinearB, The DevEx Guide to AI-Driven Software Development",
-      },
-      {
-        id: "3",
-        title:
-          "Jellyfish, AI Transformation: Real-World Data and Productivity Insights",
-      },
-      {
-        id: "4",
-        title:
-          "METR, Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity",
-      },
-      { id: "5", title: "DORA, 2024 DORA Report" },
-    ],
+    sources: [],
   },
   framework: {
-    title: "Why Your AI Coding Investment Isn't Paying Off",
+    title: "Why this keeps happening",
     subtitle:
-      "These four context gaps prevent your AI tools from delivering ROI. My audit surfaces them and delivers ready-to-use fixes for each.",
+      "Four structural gaps that no amount of tooling budget will fix. Each one needs someone who owns the outcome \u2014 not another vendor, not another pilot.",
     blockers: [
       {
         number: "01",
-        title: "Poor Context Engineering",
+        title: "No dedicated AI leadership",
         problem:
-          "Documents forming a foundation of context engineering are missing or stale. AI coding tools lack context about module boundaries, dependency graphs, and workflows, producing solutions that work but violate your design principles.",
+          'AI responsibility is distributed across teams that already have full-time jobs. Nobody owns the strategy, nobody prioritizes across initiatives, nobody closes the loop between "shipped" and "delivering value." "Es kein Plus-ein-Thema f\u00fcr irgendjemanden ist" \u2014 it can\u2019t be an add-on to someone\u2019s existing role.',
         indicators: [
-          "README doesn't explain repo structure, key abstractions, or module boundaries.",
-          "No AGENTS.md hierarchy (root + per-subproject) or tool rules referencing it.",
-          "AGENTS.md missing or incomplete: AI lacks commands, boundaries, and patterns to follow.",
+          "AI is on OKRs but nobody is accountable for outcomes",
+          'No single person can answer "what\u2019s our AI strategy?" in one sentence',
+          "Initiatives start in different teams with no coordination",
         ],
       },
       {
         number: "02",
-        title: "Inaccessible Coding Standards",
+        title: "Pilots succeed, then die",
         problem:
-          "Coding standards exist in developers' heads, outdated wikis, or aren't discoverable by AI coding tools during development. AI coding tools generate code that's syntactically correct but stylistically inconsistent, requiring frequent rework during PR reviews.",
+          'The proof of concept worked. Technically. Then nobody scaled it because nobody had the mandate. "Das eine ist einfach etwas in Pilot zu bringen, das andere ist dann etwas von Pilot in Skalierung zu bringen \u2014 Jahr sp\u00e4ter wird das Tool \u00fcberhaupt nicht genutzt, obwohl das eine gute Idee war."',
         indicators: [
-          "Inconsistent error-handling patterns across the codebase.",
-          "Approach to null/optional issues is inconsistent.",
-          "Security and performance issues exist in code.",
+          "You have a pilot from 6+ months ago that nobody touches",
+          "The team that built it moved on to other priorities",
+          "Nobody measures whether the pilot delivered value",
         ],
       },
       {
         number: "03",
-        title: "Broken Feedback Mechanisms",
+        title: "No enablement, no adoption",
         problem:
-          "Quality gates don't exist, aren't integrated into the AI coding tool workflow, or fail without actionable errors. AI coding tools introduce regressions that only surface in CI/CD or human review, creating redundant iteration cycles.",
+          'Leadership said "use AI." Nobody said how. No training program, no shared standards, no proven workflows \u2014 just "go figure it out." Engineers who tried six months ago had a bad experience and stopped. Others never started. "The gap between what these tools can do and what most teams are getting from them is huge \u2014 and growing."',
         indicators: [
-          "Lint/test commands exist but aren't documented for AI or runnable in one step.",
-          "No pre-commit/CI enforcement for bug-prone or security patterns.",
-          "AI can't self-verify because verification steps aren't documented.",
+          "No formal AI onboarding or training program",
+          "Engineers use AI inconsistently \u2014 some all-in, most not at all",
+          'No shared standards for what "good AI usage" looks like',
+          'Early bad experiences killed motivation \u2014 "Copilot-Frust"',
         ],
       },
       {
         number: "04",
-        title: "Insufficient Product Context",
+        title: "No iteration loop, no measurement",
         problem:
-          "AI coding tools get vague directives without business logic, user needs, or acceptance criteria. They deliver code that passes tests but misses intent, resulting in low-value output which requires significant rework.",
+          'Features ship and nobody asks whether they worked. No evaluation, no monitoring, no feedback loop between what shipped and what users actually need. "Du fragst nach sechs Monaten, woher wissen wir jetzt, ob wirklich besser geworden sind? Au\u00dfer vielleicht so eine gef\u00fchlte Wahrheit."',
         indicators: [
-          "Task descriptions lack acceptance criteria or success metrics.",
-          "No project or feature docs explaining the WHY.",
-          "PRDs or specs not accessible or linked to tasks executed by AI coding assistants.",
+          "No metrics for AI feature performance",
+          "AI features launched reactively for sales, not measured after",
+          '"Felt truth" instead of data \u2014 the team believes AI is helping but can\u2019t prove it',
         ],
       },
     ],
@@ -358,7 +342,101 @@ const en: SiteContent = {
   },
 };
 
-// DE placeholder — same content as EN, replaced by WP-02/03/04
-const de: SiteContent = { ...en };
+const de: SiteContent = {
+  hero: {
+    headline: "Sie haben in KI investiert. Gebracht hat es nichts.",
+    description:
+      "Piloten liefen, Tools wurden gekauft, die Gesch\u00e4ftsf\u00fchrung hat es zur Priorit\u00e4t erkl\u00e4rt. Doch niemand verantwortet die KI-Strategie, niemand iteriert die Piloten, und die Nutzung ist inkonsistent \u00fcber Teams hinweg. Ich \u00fcbernehme das KI-Leadership-Mandat \u2014 Strategie, Architektur, Team-Enablement und Governance \u2014 bis Ihr Team es eigenst\u00e4ndig tr\u00e4gt.",
+    cta: "KI-Leadership jetzt sichern",
+  },
+  problem: {
+    title:
+      "Niemand verantwortet KI in Ihrem Unternehmen. Kein Wunder, dass sich KI nicht auszahlt.",
+    subtitle:
+      "Ihr Unternehmen hat in KI investiert \u2014 Tools, Lizenzen, ein Pilotprojekt oder zwei. Doch niemand verantwortet das Ergebnis. Piloten werden geliefert und nie wieder angefasst. KI l\u00e4uft als Nebenprojekt aller. Niemand wei\u00df, ob irgendetwas davon tats\u00e4chlich funktioniert. Die Investition ist passiert. Die F\u00fchrung nicht.",
+    points: [
+      {
+        title: "Kein Verantwortlicher, kein Fortschritt",
+        description:
+          "KI steht in den OKRs jedes Teams und ist der eigentliche Job von niemandem. Die Strategie ist verteilt, Piloten werden geliefert, aber niemand iteriert. Initiative nach Initiative startet stark und stirbt leise.",
+      },
+      {
+        title: "Pilot-to-Production-L\u00fccke",
+        description:
+          "Der Proof of Concept funktioniert. Die Skalierung passiert nie. \u201eViele sind in der Lage im Labor ganz tolle Use Cases am Laufen zu kriegen \u2014 daran scheitern die meisten.\u201c Es ist kein technisches Problem \u2014 es ist organisatorisch. Niemand hat das Mandat, KI vom Demo zum Ergebnis zu bringen.",
+      },
+      {
+        title:
+          "Die Gesch\u00e4ftsf\u00fchrung fragt. Sie haben noch keine Antwort.",
+        description:
+          "Investoren wollen KI-Reife. Der CEO will eine Strategie bis Quartalsende. Sie sind bereits ausgelastet mit Hiring, Architektur und Delivery \u2014 und jetzt kommt KI dazu. Das Mandat ist real. Die Kapazit\u00e4t, es umzusetzen, nicht.",
+      },
+      {
+        title: "KI bleibt in der IT-Ecke",
+        description:
+          "KI wird an IT oder Engineering delegiert. Die behandeln es als Tooling-Entscheidung \u2014 Lizenzen verwaltet, Zugang konfiguriert. Aber die Business-Impact-Ebene \u2014 Strategie, Produktintegration, cross-funktionales Enablement \u2014 wird nie designt. Die Organisation hat KI-Tools. Sie hat keine KI-F\u00e4higkeit.",
+      },
+    ],
+    sources: [],
+  },
+  framework: {
+    title: "Warum das immer wieder passiert",
+    subtitle:
+      "Vier strukturelle L\u00fccken, die kein Tooling-Budget der Welt schlie\u00dft. Jede einzelne braucht jemanden, der das Ergebnis verantwortet \u2014 keinen weiteren Anbieter, keinen weiteren Piloten.",
+    blockers: [
+      {
+        number: "01",
+        title: "Keine dedizierte KI-F\u00fchrung",
+        problem:
+          "KI-Verantwortung ist auf Teams verteilt, die bereits Vollzeitjobs haben. Niemand verantwortet die Strategie, niemand priorisiert \u00fcber Initiativen hinweg, niemand schlie\u00dft die Schleife zwischen \u201egeliefert\u201c und \u201eliefert Wert.\u201c \u201eEs kein Plus-ein-Thema f\u00fcr irgendjemanden ist\u201c \u2014 es kann kein Zusatzthema f\u00fcr eine bestehende Rolle sein.",
+        indicators: [
+          "KI ist in den OKRs, aber niemand ist f\u00fcr Ergebnisse verantwortlich",
+          "Keine einzige Person kann \u201eWas ist unsere KI-Strategie?\u201c in einem Satz beantworten",
+          "Initiativen starten in verschiedenen Teams ohne Koordination",
+        ],
+      },
+      {
+        number: "02",
+        title: "Piloten gelingen, dann sterben sie",
+        problem:
+          "Der Proof of Concept hat funktioniert. Technisch. Dann hat niemand skaliert, weil niemand das Mandat hatte. \u201eDas eine ist einfach etwas in Pilot zu bringen, das andere ist dann etwas von Pilot in Skalierung zu bringen \u2014 Jahr sp\u00e4ter wird das Tool \u00fcberhaupt nicht genutzt, obwohl das eine gute Idee war.\u201c",
+        indicators: [
+          "Sie haben einen Piloten von vor 6+ Monaten, den niemand anr\u00fchrt",
+          "Das Team, das ihn gebaut hat, arbeitet l\u00e4ngst an anderen Priorit\u00e4ten",
+          "Niemand misst, ob der Pilot Wert geliefert hat",
+        ],
+      },
+      {
+        number: "03",
+        title: "Kein Enablement, keine Adoption",
+        problem:
+          "Die F\u00fchrung sagte \u201eNutzt KI.\u201c Niemand sagte wie. Kein Schulungsprogramm, keine gemeinsamen Standards, keine bew\u00e4hrten Workflows \u2014 nur \u201eFigured es selber aus.\u201c Entwickler, die es vor sechs Monaten probiert haben, hatten eine schlechte Erfahrung und h\u00f6rten auf. Andere haben nie angefangen.",
+        indicators: [
+          "Kein formales KI-Onboarding oder Schulungsprogramm",
+          "Entwickler nutzen KI inkonsistent \u2014 manche voll, die meisten gar nicht",
+          "Keine gemeinsamen Standards f\u00fcr \u201egute KI-Nutzung\u201c",
+          "Fr\u00fche schlechte Erfahrungen haben die Motivation zerst\u00f6rt \u2014 \u201eCopilot-Frust\u201c",
+        ],
+      },
+      {
+        number: "04",
+        title: "Kein Iterationsloop, keine Messung",
+        problem:
+          "Features werden geliefert und niemand fragt, ob sie funktioniert haben. Keine Evaluation, kein Monitoring, keine Feedback-Schleife zwischen dem, was geliefert wurde, und dem, was Nutzer tats\u00e4chlich brauchen. \u201eDu fragst nach sechs Monaten, woher wissen wir jetzt, ob wirklich besser geworden sind? Au\u00dfer vielleicht so eine gef\u00fchlte Wahrheit.\u201c",
+        indicators: [
+          "Keine Metriken f\u00fcr KI-Feature-Performance",
+          "KI-Features werden reaktiv f\u00fcr Sales gelauncht, danach nicht gemessen",
+          "\u201eGef\u00fchlte Wahrheit\u201c statt Daten \u2014 das Team glaubt, KI hilft, kann es aber nicht beweisen",
+        ],
+      },
+    ],
+  },
+  howItWorks: en.howItWorks,
+  tiers: en.tiers,
+  testimonials: en.testimonials,
+  credibility: en.credibility,
+  faq: en.faq,
+  finalCta: en.finalCta,
+};
 
 export const content: Record<Locale, SiteContent> = { en, de };
