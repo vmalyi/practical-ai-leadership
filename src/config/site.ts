@@ -13,9 +13,9 @@ export type SiteConfig = {
 
 export const siteConfig: SiteConfig = {
   name: "Viktor Malyi",
-  title: "Make AI Coding Tools Actually Work | Viktor Malyi",
+  title: "Fractional Head of AI for DACH Companies | Viktor Malyi",
   description:
-    "24-hour audit: full AGENTS.md coverage, guidance for anti-patterns AI could multiply, and a DevEx baseline. All grounded in your codebase.",
+    "I work as Fractional Head of AI: strategy, architecture, team enablement, governance. For companies that invested in AI but have no one in the seat to make it deliver.",
   url: "https://practical-ai-leadership.com",
   calendarUrl:
     "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0lqb2kvUx3MPxlvUIOd28Lzflc4LgzwWB9p3PHaPc3F1umAaTKDIkplzlPJcFZ9LoX2XyYjg3a?gv=true",
@@ -23,6 +23,5 @@ export const siteConfig: SiteConfig = {
     profile: "/images/viktor-malyi.jpg",
     ogImage: "/images/og-image.jpg",
   },
-  guarantee:
-    "If the audit doesn't identify meaningful improvements, full refund.",
+  guarantee: "",
 };

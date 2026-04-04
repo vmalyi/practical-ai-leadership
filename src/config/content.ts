@@ -276,6 +276,8 @@ const en: SiteContent = {
         name: "Mateusz Prusaczyk",
         title:
           "Lead Engineer @ simpleclub & author of softwarephilosopher blog",
+        // TODO(Viktor): consider replacing with reframed quote — verify with Mateusz before publishing:
+        // "Viktor led the AI transformation at our company. He defined the strategy, rolled out tooling standards per engineer, and built the adoption measurement we were missing. The team went from inconsistent AI usage to a structured, measurable approach. He made AI everyone's capability, not just a few enthusiasts' side project."
         quote:
           "Viktor has been helping us to adopt AI in simpleclub. He ran workshops for the team on how to use Claude Code, which turned out to be super useful and helped my team deliver good results faster. He also ran a system-wide initiative to cover code of our services with AGENTS.md files in simpleclub. After the initiative, we experienced a huge improvement in quality of the AI-generated code.",
         image: "/images/mateusz-prusaczyk.jpg",
@@ -283,59 +285,59 @@ const en: SiteContent = {
     ],
   },
   credibility: {
-    sectionTitle: "Built on Real Experience",
+    sectionTitle: "Built on Real AI Leadership",
     name: "Viktor Malyi",
     title:
-      "AI Engineering Leader with 16 Years Building Production Systems. Now Helping Teams Adopt AI Coding Tools.",
-    bio: "I've been pioneering AI coding tools for 3 years (before wide market adoption), deploying them in real production environments. Vendors claim their tools work autonomously out of the box. I know what it actually takes to enable truly agentic coding capabilities and bridge the gap between marketing promises and production reality.",
+      "8 years in machine learning. I built the AI platform team at Europe\u2019s biggest EdTech scaleup from scratch. I know what the first 90 days look like.",
+    bio: "5 production AI systems, evaluation and monitoring pipelines, autonomous AI agents \u2014 that\u2019s the engineering side. AI transformation OKRs, tooling standards rolled out per engineer, adoption measurement and reporting \u2014 that\u2019s the leadership side. I owned both for 3 years. I know what breaks when AI is everyone\u2019s side project and what changes when someone owns it. Now I do that for companies that can\u2019t wait 12 months to hire.",
     highlights: [
-      "5 Production AI Systems Delivered",
-      "17 Years Engineering Leadership",
-      "Featured at Apple WWDC",
-      "15+ Engineers Led & Mentored",
+      "8 Years in Machine Learning",
+      "5 Production AI Systems",
+      "AI Platform Team Lead \u2014 3 Years",
+      "Org-Wide AI Enablement, Built From Scratch",
     ],
   },
   faq: {
     title: "FAQ",
     items: [
       {
-        question: "What size team or codebase is this suitable for?",
+        question: "How is this different from hiring a full-time Head of AI?",
         answer:
-          "This approach is independent of team size. The changes live inside your codebase: documentation, context files, and feedback mechanisms that guide AI tools toward correct output regardless of how many developers use them. Large codebases benefit the most. The Full Agentic Coding Transformation provides significant leverage when AI agents need to navigate complex architectures autonomously.",
+          "A full-time hire takes 6\u201312 months to find, onboard, and reach effectiveness. I start delivering in the first weeks. And if you want to hire permanently later, I\u2019ll help you define the role so you hire right. Think of it as a bridge \u2014 you get AI leadership now, not in a year.",
+      },
+      {
+        question: "How long does a typical engagement last?",
+        answer:
+          "3\u20139 months. I stay until the org has internal capability that doesn\u2019t depend on me. The goal is to make myself unnecessary \u2014 not to create a permanent dependency.",
+      },
+      {
+        question: "What happens when the engagement ends?",
+        answer:
+          "That\u2019s the whole point of the mandate: building internal capability. Handover is planned from day one. When I leave, your team continues \u2014 with the strategy, the processes, and the knowledge to sustain it.",
+      },
+      {
+        question: "We think we can figure this out internally.",
+        answer:
+          "Maybe. Ask yourself: what does your AI iteration loop look like right now? If there isn\u2019t one \u2014 that\u2019s the gap. The companies that figure it out internally all have someone who owns AI end-to-end. If you have that person, you don\u2019t need me.",
       },
       {
         question:
-          "Does this work if we're using Copilot, Codex, Claude Code, or other vendor tools?",
+          "What if we\u2019re not sure we need AI leadership \u2014 we just need better tooling?",
         answer:
-          "Absolutely. The audit is vendor-agnostic and focuses on prompts, context flow, guardrails, feedback loops, and workflows, regardless of which AI coding assistant you are using.",
+          'Tooling without ownership stalls. That\u2019s why 95% of AI pilots don\u2019t deliver ROI. The tools aren\u2019t the problem \u2014 the missing owner is. A 2-week assessment sprint will show you what "owned" looks like vs. what you have now.',
       },
       {
-        question: "What do I get after 24 hours?",
+        question: "How do you measure whether this is working?",
         answer:
-          "An Audit Report (DevEx baseline with 10 metrics, top negative coding patterns, deliverables guide) plus ready-to-use files: full AGENTS.md hierarchy, pre-modified READMEs, vendor-specific rules, and fix prompts for all identified patterns. Followed by a walkthrough call.",
-      },
-      {
-        question: "Will you implement the fixes?",
-        answer:
-          "Yes. Choose Audit + Implementation + ROI Measurement (single repo) or Full Agentic Coding Transformation (all repos) and I'll implement AGENTS.md, README updates, vendor rules, and apply fix prompts.",
-      },
-      {
-        question: "How do you handle our code and data?",
-        answer:
-          "My analysis tools send code snippets to Anthropic's API for processing. Under their commercial API terms, this data is not used for model training and API logs are deleted after 7 days. Only files I explicitly read during the audit are transmitted. Your original codebase remains untouched on your systems. Data is never sold to third parties.",
-      },
-      {
-        question: "What if there's nothing to improve?",
-        answer:
-          "If the audit doesn't identify meaningful improvements for your AI coding tools adoption, full refund.",
+          "That\u2019s usually the first thing I fix. Most companies run AI on \u201cfelt truth\u201d \u2014 the team believes it\u2019s helping but can\u2019t prove it. I establish concrete metrics from the start: adoption rates, iteration cycles, feature performance, time-to-value. If we can\u2019t measure it, we can\u2019t improve it.",
       },
     ],
   },
   finalCta: {
-    title: "Ready to Make Your AI Coding Tools Work?",
+    title: "AI delivers when someone owns it. Let\u2019s talk.",
     subtitle:
-      "In 24 hours, get full AGENTS.md coverage, guidance for anti-patterns, and a DevEx baseline to measure impact. All grounded in your codebase.",
-    cta: "Make Your AI Coding Tools Work",
+      "30-minute intro call. No commitment. You\u2019ll know by the end whether this is the right fit.",
+    cta: "Get AI Leadership Now",
     guarantee: "",
   },
 };
@@ -500,10 +502,76 @@ const de: SiteContent = {
       },
     ],
   },
-  testimonials: en.testimonials,
-  credibility: en.credibility,
-  faq: en.faq,
-  finalCta: en.finalCta,
+  testimonials: {
+    sectionTitle: "Was Kunden sagen",
+    testimonials: [
+      {
+        name: "Mateusz Prusaczyk",
+        title:
+          "Lead Engineer @ simpleclub & author of softwarephilosopher blog",
+        quote:
+          "Viktor has been helping us to adopt AI in simpleclub. He ran workshops for the team on how to use Claude Code, which turned out to be super useful and helped my team deliver good results faster. He also ran a system-wide initiative to cover code of our services with AGENTS.md files in simpleclub. After the initiative, we experienced a huge improvement in quality of the AI-generated code.",
+        image: "/images/mateusz-prusaczyk.jpg",
+      },
+    ],
+  },
+  credibility: {
+    sectionTitle: "Fundiert in echter KI-F\u00fchrung",
+    name: "Viktor Malyi",
+    title:
+      "8 Jahre Machine Learning. Ich habe das KI-Platform-Team beim gr\u00f6\u00dften EdTech-Scaleup Europas von Grund auf aufgebaut. Ich wei\u00df, wie die ersten 90 Tage aussehen.",
+    bio: "5 Produktions-KI-Systeme, Evaluierungs- und Monitoring-Pipelines, autonome KI-Agenten \u2014 das ist die Engineering-Seite. KI-Transformations-OKRs, Tooling-Standards pro Entwickler ausgerollt, Adoption-Messung und Reporting \u2014 das ist die F\u00fchrungsseite. Ich habe beides 3 Jahre lang verantwortet. Ich wei\u00df, was passiert, wenn KI das Nebenprojekt aller ist, und was sich \u00e4ndert, wenn jemand es verantwortet. Jetzt mache ich das f\u00fcr Unternehmen, die nicht 12 Monate auf eine Einstellung warten k\u00f6nnen.",
+    highlights: [
+      "8 Jahre Machine Learning",
+      "5 Produktions-KI-Systeme",
+      "KI-Platform-Team-Lead \u2014 3 Jahre",
+      "Organisationsweites KI-Enablement, von Grund auf aufgebaut",
+    ],
+  },
+  faq: {
+    title: "FAQ",
+    items: [
+      {
+        question:
+          "Wie unterscheidet sich das von einer Vollzeit-Einstellung als Head of AI?",
+        answer:
+          "Eine Vollzeit-Einstellung dauert 6\u201312 Monate f\u00fcr Suche, Onboarding und Wirksamkeit. Ich liefere ab den ersten Wochen. Und wenn Sie sp\u00e4ter permanent einstellen wollen, helfe ich Ihnen, die Rolle so zu definieren, dass Sie richtig einstellen. Denken Sie daran als Br\u00fccke \u2014 Sie bekommen KI-F\u00fchrung jetzt, nicht in einem Jahr.",
+      },
+      {
+        question: "Wie lange dauert ein typisches Engagement?",
+        answer:
+          "3\u20139 Monate. Ich bleibe, bis die Organisation interne F\u00e4higkeiten hat, die nicht von mir abh\u00e4ngen. Das Ziel ist, mich \u00fcberfl\u00fcssig zu machen \u2014 nicht eine permanente Abh\u00e4ngigkeit zu schaffen.",
+      },
+      {
+        question: "Was passiert, wenn das Engagement endet?",
+        answer:
+          "Genau darum geht es beim Mandat: interne F\u00e4higkeiten aufbauen. Die \u00dcbergabe wird ab Tag eins geplant. Wenn ich gehe, macht Ihr Team weiter \u2014 mit der Strategie, den Prozessen und dem Wissen, um es eigenst\u00e4ndig zu tragen.",
+      },
+      {
+        question: "Wir glauben, wir k\u00f6nnen das intern l\u00f6sen.",
+        answer:
+          "Vielleicht. Fragen Sie sich: Wie sieht Ihr KI-Iterationsloop gerade aus? Wenn es keinen gibt \u2014 das ist die L\u00fccke. Die Unternehmen, die es intern schaffen, haben alle jemanden, der KI end-to-end verantwortet. Wenn Sie diese Person haben, brauchen Sie mich nicht.",
+      },
+      {
+        question:
+          "Was, wenn wir nicht sicher sind, ob wir KI-F\u00fchrung brauchen \u2014 wir brauchen nur besseres Tooling?",
+        answer:
+          "Tooling ohne Ownership stagniert. Deshalb liefern 95% der KI-Piloten keinen ROI. Die Tools sind nicht das Problem \u2014 der fehlende Verantwortliche ist es. Ein 2-w\u00f6chiger Assessment-Sprint zeigt Ihnen, wie \u201everantwortet\u201c aussieht im Vergleich zu dem, was Sie jetzt haben.",
+      },
+      {
+        question: "Wie messen Sie, ob es funktioniert?",
+        answer:
+          "Das ist normalerweise das Erste, was ich fixe. Die meisten Unternehmen fahren KI auf \u201egef\u00fchlter Wahrheit\u201c \u2014 das Team glaubt, es hilft, kann es aber nicht beweisen. Ich etabliere konkrete Metriken von Anfang an: Adoptionsraten, Iterationszyklen, Feature-Performance, Time-to-Value. Was wir nicht messen k\u00f6nnen, k\u00f6nnen wir nicht verbessern.",
+      },
+    ],
+  },
+  finalCta: {
+    title: "KI liefert, wenn jemand sie verantwortet. Lassen Sie uns reden.",
+    subtitle:
+      "30 Minuten Erstgespr\u00e4ch. Keine Verpflichtung. Am Ende wissen Sie, ob es passt.",
+    cta: "KI-Leadership jetzt sichern",
+    guarantee: "",
+  },
 };
 
 export const content: Record<Locale, SiteContent> = { en, de };
