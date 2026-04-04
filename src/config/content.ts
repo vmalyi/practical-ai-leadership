@@ -200,73 +200,71 @@ const en: SiteContent = {
     ],
   },
   howItWorks: {
-    title: "How the AI Coding Tools Adoption Audit Works",
-    subtitle:
-      "In the next 24 hours, understand what's blocking your AI tools, get deliverables that fix it, and a DevEx baseline to measure from.",
+    title: "How it works",
+    subtitle: "From first call to your org owning AI independently.",
     steps: [
       {
-        title: "Discovery Call and Access Sharing",
+        title: "Intro call",
         description:
-          "We start with a short discovery call so I understand your team's workflow and constraints. You provide read-only repo access so I can begin the audit.",
+          "We talk for 30 minutes. I understand where your org stands with AI \u2014 what\u2019s running, what stalled, what\u2019s missing. You\u2019ll know by the end whether this is the right fit.",
       },
       {
-        title: "24-Hour Deep Dive & Deterministic Scan",
+        title: "Assessment and strategy",
         description:
-          "I analyze your codebase deterministically: documentation, architecture signals, and automated pattern detection across your stack.",
+          "I assess your AI maturity \u2014 team capabilities, data foundation, tooling, knowledge gaps. You get a written strategy brief with prioritized 90-day action plan and AI transformation OKRs. This is where most companies discover the real problem isn\u2019t the tech.",
       },
       {
-        title: "Unlock Full Potential of AI Coding Tools",
+        title: "Embedded AI leadership",
         description:
-          "You receive an audit report plus ready-to-use deliverables instantly boosting AI coding tools efficiency and accuracy – followed by a walkthrough call.",
+          "I join your org as Head of AI \u2014 owning the mandate end-to-end. That means defining the strategy, rolling out tooling standards and enablement per team, building evaluation and monitoring pipelines, and measuring what actually works. I stay until your team can sustain it without me. Typical engagement: 3\u20139 months.",
       },
     ],
   },
   tiers: {
     title: "Choose Your Path Forward",
     subtitle:
-      "Get the repo-specific files that make AI tools follow your conventions. I can implement the changes for you. Or scale it across all your repos to unlock autonomous AI coding.",
+      "From a focused assessment to embedded AI leadership \u2014 pick the engagement that matches where you are.",
     tiers: [
       {
-        name: "AI Coding Tools Adoption Audit",
+        name: "Get Clarity",
         description:
-          "Establish a minimal context so AI tools generate convention-matching code in a single repository.",
+          "A focused sprint to understand where you stand and where to focus first.",
         features: [
-          "24-hour audit of a single repository",
-          "Audit Report: DevEx baseline with 10 metrics, top negative coding patterns, deliverables guide",
-          "Full AGENTS.md hierarchy: root + per-subproject files",
-          "Pre-modified READMEs + vendor-specific rules referencing AGENTS.md fitted to your codebase",
-          "Ready-to-use fix prompts for all negative coding patterns identified in your codebase",
-          "Post-audit walkthrough call",
+          "Current-state AI assessment: tooling, pilots, workflows, gaps",
+          "Team AI literacy and knowledge gap analysis",
+          "Data foundation assessment \u2014 readiness, quality, accessibility for AI use cases",
+          "Prioritized 90-day action plan with written strategy brief",
         ],
-        cta: "Make AI Coding Tools Deliver",
+        cta: "Get Clarity",
         bookingUrl: "https://calendar.app.google/PZFG7xyfkemX6zhT7",
       },
       {
-        name: "Audit + Implementation + ROI Measurement",
+        name: "Build Capability",
         description:
-          "Hands-on implementation, re-measurement to prove impact, strategy adjustment, and deliverables update in a single repository",
+          "I join your org as Head of AI \u2014 owning the mandate end-to-end.",
         features: [
-          "Everything in Adoption Audit",
-          "I implement AGENTS.md, README updates, and vendor-specific rules",
-          "I apply fix prompts for negative coding patterns across your codebase",
-          "One DevEx re-measurement after rollout and strategy call to adjust your AI coding tools adoption approach",
-          "One update for your entire hierarchy of AGENTS.md after rollout to keep them current",
+          "AI strategy and transformation OKR definition",
+          "AI-ready infrastructure \u2014 documentation standards, context engineering, feedback loops across engineering and business teams",
+          "Structured AI enablement \u2014 tooling standards, workflow templates, adoption rollout per team",
+          "AI monitoring and measurement \u2014 evaluation pipelines, adoption tracking, ROI reporting",
+          "Autonomous AI agent design and deployment",
+          "Vendor evaluation and governance framework",
         ],
-        cta: "Implement & Re-measure",
+        cta: "Build Capability",
         bookingUrl: "https://calendar.app.google/CBWXPN9sukcTCBve9",
       },
       {
-        name: "Full Agentic Coding Transformation",
+        name: "Stay Sharp",
         description:
-          "Transition from manual AI coding assistance to autonomous AI agentic coding for getting the biggest gains plus one-year support",
+          "Bridging the gap between now and when your org has permanent AI leadership.",
         features: [
-          "Everything in Audit + Implementation + ROI Measurement, across all your repositories",
-          "Custom context management system for your team's workflow enabling AI to work with minimal oversight for hours",
-          "Live training session for the development team",
-          "Quarterly DevEx re-measurements and strategy calls",
-          "Quarterly updates for your entire hierarchy of AGENTS.md",
+          "Monthly advisory calls to keep AI initiatives on track",
+          "Help defining the full-time AI leadership role and evaluating candidates",
+          "Knowledge transfer documentation and team handover",
+          "AI initiative health checks \u2014 ensuring nothing regresses after the mandate ends",
+          "Async support during the transition period",
         ],
-        cta: "Unlock Autonomous AI Coding",
+        cta: "Stay Sharp",
         bookingUrl: "https://calendar.app.google/DjDENLuRcaVN2aJRA",
       },
     ],
@@ -431,8 +429,77 @@ const de: SiteContent = {
       },
     ],
   },
-  howItWorks: en.howItWorks,
-  tiers: en.tiers,
+  howItWorks: {
+    title: "So funktioniert es",
+    subtitle:
+      "Vom ersten Gespr\u00e4ch bis Ihre Organisation KI eigenst\u00e4ndig vorantreibt.",
+    steps: [
+      {
+        title: "Erstgespr\u00e4ch",
+        description:
+          "Wir sprechen 30 Minuten. Ich verstehe, wo Ihre Organisation mit KI steht \u2014 was l\u00e4uft, was stockt, was fehlt. Am Ende wissen Sie, ob es passt.",
+      },
+      {
+        title: "Assessment und Strategie",
+        description:
+          "Ich bewerte Ihre KI-Reife \u2014 Team-F\u00e4higkeiten, Datengrundlage, Tooling, Wissensl\u00fccken. Sie erhalten ein Strategie-Briefing mit priorisiertem 90-Tage-Aktionsplan und KI-Transformations-OKRs. Hier entdecken die meisten Unternehmen, dass das eigentliche Problem nicht die Technik ist.",
+      },
+      {
+        title: "Embedded KI-Leadership",
+        description:
+          "Ich trete Ihrer Organisation als Interim Head of AI bei \u2014 mit End-to-End-Verantwortung. Das bedeutet: Strategie definieren, Tooling-Standards und Enablement pro Team ausrollen, Evaluierungs- und Monitoring-Pipelines aufbauen und messen, was tats\u00e4chlich funktioniert. Ich bleibe, bis Ihr Team es ohne mich tr\u00e4gt. Typische Laufzeit: 3\u20139 Monate.",
+      },
+    ],
+  },
+  tiers: {
+    title: "W\u00e4hlen Sie Ihren Weg",
+    subtitle:
+      "Vom fokussierten Assessment bis zum eingebetteten KI-Leadership \u2014 w\u00e4hlen Sie das Engagement, das zu Ihrer Situation passt.",
+    tiers: [
+      {
+        name: "Klarheit schaffen",
+        description:
+          "Ein fokussierter Sprint, um zu verstehen, wo Sie stehen und wo Sie anfangen sollten.",
+        features: [
+          "Ist-Zustand KI-Assessment: Tooling, Piloten, Workflows, L\u00fccken",
+          "Team-KI-Kompetenz und Wissensl\u00fccken-Analyse",
+          "Datengrundlagen-Assessment \u2014 Bereitschaft, Qualit\u00e4t, Zug\u00e4nglichkeit f\u00fcr KI-Use-Cases",
+          "Priorisierter 90-Tage-Aktionsplan mit schriftlichem Strategie-Briefing",
+        ],
+        cta: "Klarheit schaffen",
+        bookingUrl: "https://calendar.app.google/PZFG7xyfkemX6zhT7",
+      },
+      {
+        name: "Interim Head of AI",
+        description:
+          "Ich trete Ihrer Organisation als Head of AI bei \u2014 mit End-to-End-Verantwortung.",
+        features: [
+          "KI-Strategie und Transformations-OKR-Definition",
+          "KI-f\u00e4hige Infrastruktur \u2014 Dokumentationsstandards, Context Engineering, Feedback-Loops \u00fcber Engineering- und Business-Teams",
+          "Strukturiertes KI-Enablement \u2014 Tooling-Standards, Workflow-Templates, Adoption-Rollout pro Team",
+          "KI-Monitoring und Messung \u2014 Evaluierungs-Pipelines, Adoption-Tracking, ROI-Reporting",
+          "Design und Deployment autonomer KI-Agenten",
+          "Anbieter-Evaluation und Governance-Framework",
+        ],
+        cta: "Interim Head of AI",
+        bookingUrl: "https://calendar.app.google/CBWXPN9sukcTCBve9",
+      },
+      {
+        name: "\u00dcbergangsbegleitung",
+        description:
+          "Die Br\u00fccke zwischen jetzt und dem Moment, in dem Ihre Organisation permanente KI-F\u00fchrung hat.",
+        features: [
+          "Monatliche Advisory-Calls, um KI-Initiativen auf Kurs zu halten",
+          "Unterst\u00fctzung bei der Definition der Vollzeit-KI-F\u00fchrungsrolle und Kandidaten-Evaluation",
+          "Wissenstransfer-Dokumentation und Team-\u00dcbergabe",
+          "KI-Initiativen-Health-Checks \u2014 sicherstellen, dass nichts zur\u00fcckf\u00e4llt nach dem Mandat",
+          "Asynchroner Support w\u00e4hrend der \u00dcbergangsphase",
+        ],
+        cta: "\u00dcbergangsbegleitung",
+        bookingUrl: "https://calendar.app.google/DjDENLuRcaVN2aJRA",
+      },
+    ],
+  },
   testimonials: en.testimonials,
   credibility: en.credibility,
   faq: en.faq,
