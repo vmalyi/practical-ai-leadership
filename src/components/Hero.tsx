@@ -40,7 +40,7 @@ export function Hero() {
         <div className="flex w-full items-center justify-center lg:w-1/2 lg:-mr-8">
           <div className="relative h-[400px] w-full max-w-lg lg:h-[500px] lg:max-w-none lg:w-[120%]">
             <Image
-              src="/images/Gemini_Generated_Image_xvad13xvad13xvad.png"
+              src="/images/hero-org-chart.webp"
               alt="AI leadership and strategy visualization"
               fill
               className="object-contain scale-150"
