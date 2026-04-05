@@ -1,25 +1,15 @@
-import { Framework } from "@/components/Framework";
-import { Hero } from "@/components/Hero";
-import { HowItWorks } from "@/components/HowItWorks";
-import { Problem } from "@/components/Problem";
-import { Credibility } from "@/components/Credibility";
-import { Testimonials } from "@/components/Testimonials";
-import { Faq } from "@/components/Faq";
-import { FinalCta } from "@/components/FinalCta";
-import { Tiers } from "@/components/Tiers";
+"use client";
 
-export default function HomePage() {
-  return (
-    <main>
-      <Hero />
-      <Problem />
-      <Framework />
-      <HowItWorks />
-      <Tiers />
-      <Testimonials />
-      <Credibility />
-      <Faq />
-      <FinalCta />
-    </main>
-  );
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+
+export default function RootPage() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const locale = navigator.language.startsWith("de") ? "de" : "en";
+    router.replace(`/${locale}/`);
+  }, [router]);
+
+  return null;
 }

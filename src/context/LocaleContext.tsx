@@ -1,25 +1,18 @@
 "use client";
 
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-  type ReactNode,
-} from "react";
+import { createContext, useContext, useEffect, type ReactNode } from "react";
 
 export type Locale = "en" | "de";
 
 const LocaleContext = createContext<Locale>("en");
 
-export function LocaleProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocale] = useState<Locale>("en");
-
-  useEffect(() => {
-    const browserLang = navigator.language;
-    setLocale(browserLang.startsWith("de") ? "de" : "en");
-  }, []);
-
+export function LocaleProvider({
+  locale,
+  children,
+}: {
+  locale: Locale;
+  children: ReactNode;
+}) {
   useEffect(() => {
     document.documentElement.lang = locale;
   }, [locale]);

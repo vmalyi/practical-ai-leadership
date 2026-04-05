@@ -3,11 +3,17 @@
 import { ThemeProvider } from "next-themes";
 import type { ReactNode } from "react";
 
-import { LocaleProvider } from "@/context/LocaleContext";
+import { LocaleProvider, type Locale } from "@/context/LocaleContext";
 
 import { PostHogTracker } from "./PostHogTracker";
 
-export function Providers({ children }: { children: ReactNode }) {
+export function Providers({
+  locale,
+  children,
+}: {
+  locale: Locale;
+  children: ReactNode;
+}) {
   return (
     <ThemeProvider
       attribute="class"
@@ -15,7 +21,7 @@ export function Providers({ children }: { children: ReactNode }) {
       forcedTheme="dark"
       enableSystem={false}
     >
-      <LocaleProvider>
+      <LocaleProvider locale={locale}>
         <PostHogTracker />
         {children}
       </LocaleProvider>

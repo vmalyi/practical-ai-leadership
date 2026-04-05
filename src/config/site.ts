@@ -1,3 +1,5 @@
+import type { Locale } from "@/context/LocaleContext";
+
 export type SiteConfig = {
   name: string;
   title: string;
@@ -25,3 +27,14 @@ export const siteConfig: SiteConfig = {
   },
   guarantee: "",
 };
+
+export const siteConfigDe: SiteConfig = {
+  ...siteConfig,
+  title: "Interim Head of AI f\u00fcr DACH-Unternehmen | Viktor Malyi",
+  description:
+    "Ich \u00fcbernehme die KI-Verantwortung: Strategie, Architektur, Team-Enablement, Governance. F\u00fcr Unternehmen, die in KI investiert haben, aber niemanden haben, der sie zum Ergebnis f\u00fchrt.",
+};
+
+export function getSiteConfig(locale: Locale): SiteConfig {
+  return locale === "de" ? siteConfigDe : siteConfig;
+}
