@@ -2,20 +2,38 @@
 
 import { useEffect, useState } from "react";
 
+import { useLocale } from "@/context/LocaleContext";
+
 import { Container } from "./Container";
 
-const navItems = [
-  { href: "#problem", label: "AI Coding Challenges" },
-  { href: "#blockers", label: "Why It's Not Working" },
-  { href: "#process", label: "24h Audit" },
+const navItemsEn = [
+  { href: "#problem", label: "The Problem" },
+  { href: "#blockers", label: "Why It Happens" },
+  { href: "#process", label: "How It Works" },
   { href: "#investment-options", label: "Get Started" },
   { href: "#about", label: "Who I Am" },
   { href: "#faq", label: "FAQ" },
 ];
 
+const navItemsDe = [
+  { href: "#problem", label: "Das Problem" },
+  { href: "#blockers", label: "Warum es passiert" },
+  { href: "#process", label: "So funktioniert es" },
+  { href: "#investment-options", label: "Loslegen" },
+  { href: "#about", label: "Über mich" },
+  { href: "#faq", label: "FAQ" },
+];
+
+const ctaEn = "Get AI Leadership Now";
+const ctaDe = "KI-Leadership jetzt sichern";
+
 export function Navbar() {
+  const locale = useLocale();
   const [isVisible, setIsVisible] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const navItems = locale === "de" ? navItemsDe : navItemsEn;
+  const cta = locale === "de" ? ctaDe : ctaEn;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -86,7 +104,7 @@ export function Navbar() {
             data-ph-label="Navbar primary CTA"
             className="hidden items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-700 lg:inline-flex"
           >
-            Make Your AI Coding Tools Actually Work
+            {cta}
           </a>
         </div>
 
@@ -110,7 +128,7 @@ export function Navbar() {
               data-ph-label="Navbar mobile CTA"
               className="mt-2 inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-700"
             >
-              Make Your AI Coding Tools Actually Work
+              {cta}
             </a>
           </nav>
         )}

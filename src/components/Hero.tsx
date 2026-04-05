@@ -39,7 +39,7 @@ export function Hero() {
           <div className="relative h-[400px] w-full max-w-lg lg:h-[500px] lg:max-w-none lg:w-[120%]">
             <Image
               src="/images/Gemini_Generated_Image_xvad13xvad13xvad.png"
-              alt="AI coding assistant chat windows showing frustrated developer prompts"
+              alt="AI leadership and strategy visualization"
               fill
               className="object-contain"
               style={{
