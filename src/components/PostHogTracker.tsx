@@ -25,10 +25,23 @@ const BOOKING_HOSTS = new Set(["calendar.app.google", "calendar.google.com"]);
 
 let isInitialized = false;
 
+function getLocaleFromPath(): string {
+  if (typeof window === "undefined") return "en";
+  const match = window.location.pathname.match(/^\/(en|de)\//);
+  return match ? match[1] : "en";
+}
+
 function capture(event: string, properties?: Record<string, unknown>): void {
-  posthog.capture(event, properties, {
-    send_instantly: true,
-  });
+  posthog.capture(
+    event,
+    {
+      locale: getLocaleFromPath(),
+      ...properties,
+    },
+    {
+      send_instantly: true,
+    },
+  );
 }
 
 function normalizeHost(hostname: string): string {
