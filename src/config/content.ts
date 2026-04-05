@@ -113,9 +113,9 @@ export interface SiteContent {
 
 const en: SiteContent = {
   hero: {
-    headline: "You Invested in AI. Nothing Stuck.",
+    headline: "You Invested in AI. But See No Results.",
     description:
-      "Pilots ran, tools were bought, leadership made it a priority. Yet nobody owns the AI strategy, nobody iterates the pilots, and adoption is inconsistent across teams. I step in as Fractional Head of AI, owning strategy, architecture, team enablement, and governance until your team can sustain it without me.",
+      "Leadership made it a priority. Tools were bought, pilots ran. Yet nobody owns the AI strategy, nobody iterates the pilots, and adoption is inconsistent across teams. \n\nI step in as Fractional Head of AI, owning strategy, architecture, team enablement, and governance until your team can be proficient with AI on their own.",
     cta: "Get AI Leadership Now",
   },
   problem: {
@@ -167,7 +167,7 @@ const en: SiteContent = {
         number: "02",
         title: "Pilots succeed, then die",
         problem:
-          'The proof of concept worked. Technically. Then nobody scaled it because nobody had the ownership. "Das eine ist einfach etwas in Pilot zu bringen, das andere ist dann etwas von Pilot in Skalierung zu bringen, Jahr sp\u00e4ter wird das Tool \u00fcberhaupt nicht genutzt, obwohl das eine gute Idee war."',
+          'The proof of concept worked. Technically. Then nobody scaled it because nobody had the ownership. "Das eine ist einfach etwas in Pilot zu bringen, das andere ist dann etwas von Pilot in Skalierung zu bringen, ein Jahr sp\u00e4ter wird das Tool \u00fcberhaupt nicht genutzt, obwohl das eine gute Idee war."',
         indicators: [
           "You have a pilot from 6+ months ago that nobody touches",
           "The team that built it moved on to other priorities",
@@ -183,7 +183,7 @@ const en: SiteContent = {
           "No formal AI onboarding or training program",
           "Engineers use AI inconsistently, some all-in, most not at all",
           'No shared standards for what "good AI usage" looks like',
-          'Early bad experiences killed motivation \u2014 "Copilot-Frust"',
+          "Early bad experiences killed motivation and nobody tried again",
         ],
       },
       {
@@ -287,7 +287,7 @@ const en: SiteContent = {
     sectionTitle: "Built on Real AI Leadership",
     name: "Viktor Malyi",
     title:
-      "8 years in machine learning. I built the AI platform team at Europe\u2019s biggest EdTech scaleup from scratch. I know what the first 90 days look like.",
+      "8 years in machine learning. I built the AI platform team at Europe\u2019s biggest EdTech scaleup from scratch.",
     bio: "5 production AI systems, evaluation and monitoring pipelines, autonomous AI agents. That\u2019s the engineering side. AI transformation OKRs, tooling standards rolled out per engineer, adoption measurement and reporting. That\u2019s the leadership side. I owned both for 3 years. I know what breaks when AI is everyone\u2019s side project and what changes when someone owns it. Now I do that for companies that can\u2019t wait 12 months to hire.",
     highlights: [
       "8 Years in Machine Learning",
@@ -343,14 +343,14 @@ const en: SiteContent = {
 
 const de: SiteContent = {
   hero: {
-    headline: "Sie haben in KI investiert. Gebracht hat es nichts.",
+    headline: "Sie haben in KI investiert. Gebracht hat es wenig.",
     description:
-      "Piloten liefen, Tools wurden gekauft, die Gesch\u00e4ftsf\u00fchrung hat es zur Priorit\u00e4t erkl\u00e4rt. Doch niemand verantwortet die KI-Strategie, niemand iteriert die Piloten, und die Nutzung ist inkonsistent \u00fcber Teams hinweg. Ich \u00fcbernehme die KI-Verantwortung: Strategie, Architektur, Team-Enablement und Governance, bis Ihr Team es eigenst\u00e4ndig tr\u00e4gt.",
+      "Die Gesch\u00e4ftsf\u00fchrung hat es zur Priorit\u00e4t erkl\u00e4rt. Tools wurden gekauft, Piloten liefen. Doch niemand verantwortet die KI-Strategie, niemand iteriert die Piloten, und die Nutzung ist inkonsistent \u00fcber Teams hinweg. \n\nIch \u00fcbernehme die KI-Verantwortung: Strategie, Architektur, Team-Enablement und Governance, bis Ihr Team KI eigenst\u00e4ndig beherrscht.",
     cta: "KI-Leadership jetzt sichern",
   },
   problem: {
     title:
-      "Niemand verantwortet KI in Ihrem Unternehmen. Kein Wunder, dass sich KI nicht auszahlt.",
+      "Niemand ist f\u00fcr KI verantwortlich in Ihrem Unternehmen. Kein Wunder, dass sich KI nicht auszahlt.",
     subtitle:
       "Ihr Unternehmen hat in KI investiert: Tools, Lizenzen, ein Pilotprojekt oder zwei. Doch niemand verantwortet das Ergebnis. Piloten werden geliefert und nie wieder angefasst. KI l\u00e4uft als Nebenprojekt aller. Niemand wei\u00df, ob irgendetwas davon tats\u00e4chlich funktioniert. Die Investition ist passiert. Die F\u00fchrung nicht.",
     points: [
@@ -373,7 +373,7 @@ const de: SiteContent = {
       {
         title: "KI bleibt in der IT-Ecke",
         description:
-          "KI wird an IT oder Engineering delegiert. Die behandeln es als Tooling-Entscheidung: Lizenzen verwaltet, Zugang konfiguriert. Aber die Business-Impact-Ebene, Strategie, Produktintegration, cross-funktionales Enablement, wird nie designt. \u201eDann wird das ganz schnell als ein weiteres IT-Thema abgehakt und ist im Grunde gestorben.\u201c",
+          "KI wird an IT oder Engineering delegiert. Die behandeln es als Tooling-Entscheidung: Lizenzen verwaltet, Zugang konfiguriert. Aber die Business-Impact-Ebene, Strategie, Produktintegration, cross-funktionales Enablement, wird nie gestaltet. \u201eDann wird das ganz schnell als ein weiteres IT-Thema abgehakt und ist im Grunde gestorben.\u201c",
       },
     ],
     sources: [],
@@ -387,7 +387,7 @@ const de: SiteContent = {
         number: "01",
         title: "Keine dedizierte KI-F\u00fchrung",
         problem:
-          "KI-Verantwortung ist auf Teams verteilt, die bereits Vollzeitjobs haben. Niemand verantwortet die Strategie, niemand priorisiert \u00fcber Initiativen hinweg, niemand schlie\u00dft die Schleife zwischen \u201egeliefert\u201c und \u201eliefert Wert.\u201c \u201eEs kein Plus-ein-Thema f\u00fcr irgendjemanden ist\u201c \u2014 es kann kein Zusatzthema f\u00fcr eine bestehende Rolle sein.",
+          "KI-Verantwortung ist auf Teams verteilt, die bereits Vollzeitjobs haben. Niemand verantwortet die Strategie, niemand priorisiert \u00fcber Initiativen hinweg, niemand schlie\u00dft die Schleife zwischen \u201egeliefert\u201c und \u201eliefert Wert.\u201c \u201eEs ist kein Plus-eins-Thema f\u00fcr irgendjemanden\u201c \u2014 es kann kein Zusatzthema f\u00fcr eine bestehende Rolle sein.",
         indicators: [
           "KI ist in den OKRs, aber niemand ist f\u00fcr Ergebnisse verantwortlich",
           "Keine einzige Person kann \u201eWas ist unsere KI-Strategie?\u201c in einem Satz beantworten",
@@ -398,7 +398,7 @@ const de: SiteContent = {
         number: "02",
         title: "Piloten gelingen, dann sterben sie",
         problem:
-          "Der Proof of Concept hat funktioniert. Technisch. Dann hat niemand skaliert, weil niemand die Verantwortung hatte. \u201eDas eine ist einfach etwas in Pilot zu bringen, das andere ist dann etwas von Pilot in Skalierung zu bringen, Jahr sp\u00e4ter wird das Tool \u00fcberhaupt nicht genutzt, obwohl das eine gute Idee war.\u201c",
+          "Der Proof of Concept hat funktioniert. Technisch. Dann hat niemand skaliert, weil niemand die Verantwortung hatte. \u201eDas eine ist einfach etwas in Pilot zu bringen, das andere ist dann etwas von Pilot in Skalierung zu bringen, ein Jahr sp\u00e4ter wird das Tool \u00fcberhaupt nicht genutzt, obwohl das eine gute Idee war.\u201c",
         indicators: [
           "Sie haben einen Piloten von vor 6+ Monaten, den niemand anr\u00fchrt",
           "Das Team, das ihn gebaut hat, arbeitet l\u00e4ngst an anderen Priorit\u00e4ten",
@@ -409,23 +409,23 @@ const de: SiteContent = {
         number: "03",
         title: "Kein Enablement, keine Adoption",
         problem:
-          "Die F\u00fchrung sagte \u201eNutzt KI.\u201c Niemand sagte wie. Kein Schulungsprogramm, keine gemeinsamen Standards, keine bew\u00e4hrten Workflows. \u201eCo-Pilot-Frust\u201c: Leute haben mit \u00fcberh\u00f6hten Erwartungen mal KI getestet und sagen jetzt \u201edas kann nichts.\u201c Andere haben nie angefangen.",
+          "Die F\u00fchrung sagte \u201eNutzt KI.\u201c Niemand sagte wie. Kein Schulungsprogramm, keine gemeinsamen Standards, keine bew\u00e4hrten Workflows. Leute haben mit \u00fcberh\u00f6hten Erwartungen mal KI-Tools getestet, waren entt\u00e4uscht und sagen jetzt \u201edas kann nichts.\u201c Andere haben nie angefangen.",
         indicators: [
           "Kein formales KI-Onboarding oder Schulungsprogramm",
           "Entwickler nutzen KI inkonsistent, manche voll, die meisten gar nicht",
           "Keine gemeinsamen Standards f\u00fcr \u201egute KI-Nutzung\u201c",
-          "Fr\u00fche schlechte Erfahrungen haben die Motivation zerst\u00f6rt \u2014 \u201eCopilot-Frust\u201c",
+          "Fr\u00fche schlechte Erfahrungen haben die Motivation zerst\u00f6rt, niemand hat es nochmal versucht",
         ],
       },
       {
         number: "04",
         title: "Kein Iterationsloop, keine Messung",
         problem:
-          "Features werden geliefert und niemand fragt, ob sie funktioniert haben. Keine Evaluation, kein Monitoring, keine Feedback-Schleife zwischen dem, was geliefert wurde, und dem, was Nutzer tats\u00e4chlich brauchen. \u201eDu fragst nach sechs Monaten, woher wissen wir jetzt, ob wirklich besser geworden sind? Au\u00dfer vielleicht so eine gef\u00fchlte Wahrheit.\u201c",
+          "Features werden geliefert und niemand fragt, ob sie funktioniert haben. Keine Evaluation, kein Monitoring, keine Feedback-Schleife zwischen dem, was geliefert wurde, und dem, was Nutzer tats\u00e4chlich brauchen. \u201eMan fragt nach sechs Monaten: Woher wissen wir jetzt, ob wir wirklich besser geworden sind? Au\u00dfer vielleicht so eine gef\u00fchlte Wahrheit.\u201c",
         indicators: [
           "Keine Metriken f\u00fcr KI-Feature-Performance",
           "KI-Features werden reaktiv f\u00fcr Sales gelauncht, danach nicht gemessen",
-          "\u201eGef\u00fchlte Wahrheit\u201c statt Daten, das Team glaubt, KI hilft, kann es aber nicht beweisen",
+          "\u201eGef\u00fchlte Wahrheit\u201c statt Daten \u2014 das Team glaubt, KI hilft, kann es aber nicht beweisen",
         ],
       },
     ],
@@ -476,7 +476,7 @@ const de: SiteContent = {
           "Alles aus Klarheit schaffen, plus: Ich trete Ihrem Team als Head of AI bei, mit voller Verantwortung f\u00fcr ein Team.",
         features: [
           "KI-Strategie und Transformations-OKR-Definition f\u00fcr Ihr Team",
-          "KI-f\u00e4hige Infrastruktur: Dokumentationsstandards, Context Engineering, Feedback-Loops",
+          "KI-f\u00e4hige Infrastruktur: Dokumentationsstandards, Context Engineering, Feedback-Schleifen",
           "Strukturiertes KI-Enablement: Tooling-Standards, Workflow-Templates, Adoption-Rollout",
           "KI-Monitoring und Messung: Evaluierungs-Pipelines, Adoption-Tracking, ROI-Reporting",
           "Anbieter-Evaluation und Governance-Framework",
@@ -517,8 +517,8 @@ const de: SiteContent = {
     sectionTitle: "Fundiert in echter KI-F\u00fchrung",
     name: "Viktor Malyi",
     title:
-      "8 Jahre Machine Learning. Ich habe das KI-Platform-Team beim gr\u00f6\u00dften EdTech-Scaleup Europas von Grund auf aufgebaut. Ich wei\u00df, wie die ersten 90 Tage aussehen.",
-    bio: "5 Produktions-KI-Systeme, Evaluierungs- und Monitoring-Pipelines, autonome KI-Agenten. Das ist die Engineering-Seite. KI-Transformations-OKRs, Tooling-Standards pro Entwickler ausgerollt, Adoption-Messung und Reporting. Das ist die F\u00fchrungsseite. Ich habe beides 3 Jahre lang verantwortet. Ich wei\u00df, was passiert, wenn KI das Nebenprojekt aller ist, und was sich \u00e4ndert, wenn jemand es verantwortet. Jetzt mache ich das f\u00fcr Unternehmen, die nicht 12 Monate auf eine Einstellung warten k\u00f6nnen.",
+      "8 Jahre Machine Learning. Ich habe das KI-Platform-Team beim gr\u00f6\u00dften EdTech-Scaleup Europas von Grund auf aufgebaut.",
+    bio: "5 Produktions-KI-Systeme, Evaluierungs- und Monitoring-Pipelines, autonome KI-Agenten. Das ist die Engineering-Seite. KI-Transformations-OKRs, Tooling-Standards f\u00fcr alle Entwickler ausgerollt, Adoption-Messung und Reporting. Das ist die F\u00fchrungsseite. Ich habe beides 3 Jahre lang verantwortet. Ich wei\u00df, was passiert, wenn KI das Nebenprojekt aller ist, und was sich \u00e4ndert, wenn jemand es verantwortet. Jetzt mache ich das f\u00fcr Unternehmen, die nicht 12 Monate auf eine Einstellung warten k\u00f6nnen.",
     highlights: [
       "8 Jahre Machine Learning",
       "5 Produktions-KI-Systeme",
@@ -554,12 +554,12 @@ const de: SiteContent = {
         question:
           "Was, wenn wir nicht sicher sind, ob wir KI-F\u00fchrung brauchen \u2014 wir brauchen nur besseres Tooling?",
         answer:
-          "Tooling ohne Ownership stagniert. Deshalb liefern 95% der KI-Piloten keinen ROI. Die Tools sind nicht das Problem, der fehlende Verantwortliche ist es. Ein 2-w\u00f6chiger Assessment-Sprint zeigt Ihnen, wie \u201everantwortet\u201c aussieht im Vergleich zu dem, was Sie jetzt haben.",
+          "Tooling ohne Ownership stagniert. Deshalb liefern 95% der KI-Piloten keinen ROI. Die Tools sind nicht das Problem, der fehlende Verantwortliche ist es. Ein 2-w\u00f6chiger Assessment-Sprint zeigt Ihnen, wie \u201everantwortet\u201c im Vergleich zu dem, was Sie jetzt haben, aussieht.",
       },
       {
         question: "Wie messen Sie, ob es funktioniert?",
         answer:
-          "Das ist normalerweise das Erste, was ich fixe. Die meisten Unternehmen fahren KI auf \u201egef\u00fchlter Wahrheit\u201c \u2014 das Team glaubt, es hilft, kann es aber nicht beweisen. Ich etabliere konkrete Metriken von Anfang an: Adoptionsraten, Iterationszyklen, Feature-Performance, Time-to-Value. Was wir nicht messen k\u00f6nnen, k\u00f6nnen wir nicht verbessern.",
+          "Das ist normalerweise das Erste, was ich \u00e4ndere. Die meisten Unternehmen fahren KI auf \u201egef\u00fchlter Wahrheit\u201c \u2014 das Team glaubt, es hilft, kann es aber nicht beweisen. Ich etabliere konkrete Metriken von Anfang an: Adoptionsraten, Iterationszyklen, Feature-Performance, Time-to-Value. Was wir nicht messen k\u00f6nnen, k\u00f6nnen wir nicht verbessern.",
       },
     ],
   },

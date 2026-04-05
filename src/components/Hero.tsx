@@ -18,9 +18,11 @@ export function Hero() {
             <h1 className="text-4xl font-bold leading-snug tracking-tight text-white lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight">
               {hero.headline}
             </h1>
-            <p className="py-5 text-xl leading-normal text-gray-300 lg:text-xl xl:text-2xl">
-              {hero.description}
-            </p>
+            <div className="space-y-4 py-5 text-xl leading-normal text-gray-300 lg:text-xl xl:text-2xl">
+              {hero.description.split("\n\n").map((paragraph) => (
+                <p key={paragraph.slice(0, 20)}>{paragraph}</p>
+              ))}
+            </div>
             <div className="mt-8 flex flex-col items-center space-y-3 sm:flex-row sm:items-center sm:space-x-4 sm:space-y-0 lg:items-start lg:justify-start">
               <a
                 href="#investment-options"
@@ -41,13 +43,13 @@ export function Hero() {
               src="/images/Gemini_Generated_Image_xvad13xvad13xvad.png"
               alt="AI leadership and strategy visualization"
               fill
-              className="object-contain"
+              className="object-contain scale-150"
               style={{
                 maskImage:
-                  "linear-gradient(to right, transparent 0%, transparent 10%, black 35%, black 65%, transparent 90%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 25%, black 65%, transparent 90%, transparent 100%)",
+                  "linear-gradient(to right, transparent 0%, transparent 20%, black 45%, black 55%, transparent 80%, transparent 100%), linear-gradient(to bottom, transparent 0%, transparent 25%, black 50%, black 55%, transparent 80%, transparent 100%)",
                 maskComposite: "intersect",
                 WebkitMaskImage:
-                  "linear-gradient(to right, transparent 0%, transparent 10%, black 35%, black 65%, transparent 90%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 25%, black 65%, transparent 90%, transparent 100%)",
+                  "linear-gradient(to right, transparent 0%, transparent 20%, black 45%, black 55%, transparent 80%, transparent 100%), linear-gradient(to bottom, transparent 0%, transparent 25%, black 50%, black 55%, transparent 80%, transparent 100%)",
                 WebkitMaskComposite: "source-in",
               }}
               priority
