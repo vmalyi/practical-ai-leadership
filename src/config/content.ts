@@ -272,6 +272,13 @@ const en: SiteContent = {
     sectionTitle: "What Clients Say",
     testimonials: [
       {
+        name: "Christian Liu",
+        title: "Co-Founder & CEO @ AskPally",
+        quote:
+          "Viktor is an exceptional advisor who is not only extremely reliable and responsive but also deeply committed to his work. His assessments and strategic advice were incredibly valuable and were instrumental in our planning process. Viktor helped us set the right priorities for our AI-heavy startup by shifting our attention from purely technical questions to critical business factors in our target market. He has a unique combination of deep tech knowledge and real-world startup experience that provides founders with essential strategic clarity.",
+        image: "/images/christian-liu.jpg",
+      },
+      {
         name: "Mateusz Prusaczyk",
         title:
           "Lead Engineer @ simpleclub & author of softwarephilosopher blog",
@@ -503,6 +510,13 @@ const de: SiteContent = {
   testimonials: {
     sectionTitle: "Was Kunden sagen",
     testimonials: [
+      {
+        name: "Christian Liu",
+        title: "Co-Founder & CEO @ AskPally",
+        quote:
+          "Viktor is an exceptional advisor who is not only extremely reliable and responsive but also deeply committed to his work. His assessments and strategic advice were incredibly valuable and were instrumental in our planning process. Viktor helped us set the right priorities for our AI-heavy startup by shifting our attention from purely technical questions to critical business factors in our target market. He has a unique combination of deep tech knowledge and real-world startup experience that provides founders with essential strategic clarity.",
+        image: "/images/christian-liu.jpg",
+      },
       {
         name: "Mateusz Prusaczyk",
         title:
