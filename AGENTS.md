@@ -190,3 +190,14 @@ git diff             # Review changes
 | `public/` | Static assets (images, CNAME) |
 | `next.config.js` | Next.js configuration |
 | `tailwind.config.ts` | Tailwind configuration |
+
+
+## Writing rules — inherits from root
+
+Public-facing docs in this project follow the **Writing rules** section in
+the singularity root [`AGENTS.md`](../../../../AGENTS.md): no cryptic shorthand
+codes (`F1`, `B1`, `A1`, `F2`, `READY_F1`, etc.) in prose — use
+self-documenting names. Default to `/meta-clear-copy-writing` for any new
+public-facing doc. Self-check before commit: grep for `\bF1\b|\bB1\b|\bA1\b|\bF2\b`
+outside framework-scoring contexts; rewrite hits in prose with the
+descriptive name.
