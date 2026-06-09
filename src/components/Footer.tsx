@@ -22,7 +22,7 @@ export function Footer() {
             &copy; {year} {siteConfig.name}. {rights}
           </span>
           <Link
-            href="/imprint"
+            href={`/${locale}/imprint/`}
             className="text-gray-400 transition hover:text-white"
           >
             {imprint}
