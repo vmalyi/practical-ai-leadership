@@ -22,7 +22,7 @@ export function Faq() {
 
   return (
     <section id="faq" className="scroll-mt-16 bg-gray-900">
-      <Container className="py-8 lg:py-12">
+      <Container className="py-6 lg:py-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold text-white">{faq.title}</h2>
         </div>
@@ -62,7 +62,7 @@ export function Faq() {
                 </button>
                 <div
                   className={`px-6 transition-[max-height] duration-300 ease-in-out ${
-                    isOpen ? "max-h-96 pb-6" : "max-h-0 pb-0"
+                    isOpen ? "max-h-[40rem] pb-6" : "max-h-0 pb-0"
                   }`}
                   style={{ overflow: "hidden" }}
                 >

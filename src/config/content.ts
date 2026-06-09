@@ -1,6 +1,7 @@
 import type { Locale } from "@/context/LocaleContext";
 
 export interface HeroContent {
+  eyebrow: string;
   headline: string;
   description: string;
   cta: string;
@@ -20,6 +21,7 @@ export interface ProblemContent {
   title: string;
   subtitle: string;
   points: ProblemPoint[];
+  contrast: string;
   sources?: ProblemSource[];
 }
 
@@ -33,6 +35,7 @@ export interface FrameworkBlocker {
 export interface FrameworkContent {
   title: string;
   subtitle: string;
+  indicatorsLabel: string;
   blockers: FrameworkBlocker[];
 }
 
@@ -47,18 +50,30 @@ export interface HowItWorksContent {
   steps: HowItWorksStep[];
 }
 
+export interface AreasItem {
+  title: string;
+  description: string;
+}
+
+export interface AreasContent {
+  title: string;
+  subtitle: string;
+  items: AreasItem[];
+}
+
 export interface Tier {
   name: string;
-  price?: string;
   description: string;
+  body: string;
   features: string[];
-  cta: string;
-  bookingUrl: string;
 }
 
 export interface TiersContent {
   title: string;
   subtitle: string;
+  badge: string;
+  includesLabel: string;
+  cta: string;
   tiers: Tier[];
 }
 
@@ -104,6 +119,7 @@ export interface SiteContent {
   problem: ProblemContent;
   framework: FrameworkContent;
   howItWorks: HowItWorksContent;
+  areas: AreasContent;
   tiers: TiersContent;
   testimonials: TestimonialsContent;
   credibility: CredibilityContent;
@@ -113,158 +129,186 @@ export interface SiteContent {
 
 const en: SiteContent = {
   hero: {
-    headline: "You Invested in AI. But See No Results.",
+    eyebrow: "Built-In AI for SME owners and teams",
+    headline: "AI built-in.\nSame team, more output.",
     description:
-      "Leadership made it a priority. Tools were bought, pilots ran. Yet nobody owns the AI strategy, nobody iterates the pilots, and adoption is inconsistent across teams. \n\nI step in as Fractional Head of AI, owning strategy, architecture, team enablement, and governance until your team can be proficient with AI on their own.",
-    cta: "Get AI Leadership Now",
+      "Your team can do more with the people you already have. We build AI into the work you and your team do every day, so output goes up while headcount stays flat.",
+    cta: "See where AI makes your team more efficient",
   },
   problem: {
-    title:
-      "Nobody owns AI in your company. No wonder it feels like AI doesn\u2019t deliver.",
+    title: "Recognize any of these?",
     subtitle:
-      "Your company invested in AI: tools, licenses, a pilot or two. Yet nobody owns the outcome. Pilots ship and nobody touches them again. AI runs as everyone\u2019s side project. Nobody knows if any of it is actually working. The investment happened. The leadership didn\u2019t.",
+      "Every time you want to grow, the answer comes back the same: hire. But you and your team can do more with the headcount you already have, once AI is built into how the work gets done.",
     points: [
       {
-        title: "No Owner, No Progress",
+        title: "Growth always means another hire.",
         description:
-          "AI is on every team\u2019s OKRs and nobody\u2019s actual job. Strategy is distributed, pilots ship but nobody iterates. Initiative after initiative starts strong and quietly dies.",
+          "A new initiative, a bigger target, more demand, and the first move is always to hire. The hire is slow, expensive, and a bet, while you and your team could do more.",
       },
       {
-        title: "Pilot-to-Production Gap",
+        title: "Your best people are the bottleneck.",
         description:
-          'The proof of concept works. The scale-up never happens. "Viele sind in der Lage im Labor ganz tolle Use Cases am Laufen zu kriegen, daran scheitern die meisten." It\u2019s not a technical problem, it\u2019s organizational. Nobody has the authority to push AI from demo to delivery.',
+          "The key judgment for running the business lies with a few people on your team. They are spread across various heads and scattered notes. It stays stuck there, and when they are away, it leaves with them.",
       },
       {
-        title: "Leadership Is Asking. You Don\u2019t Have an Answer Yet.",
+        title: "You cannot trust the output for real work.",
         description:
-          "Investors want AI maturity. The CEO wants a strategy by end of quarter. You\u2019re already stretched across hiring, architecture, and delivery, and now AI is yours too. The pressure is real. The capacity to execute it isn\u2019t.",
+          "Same input, different answer. Someone has to check every result, so the AI never actually saves anyone time.",
       },
       {
-        title: "AI Stuck in the IT Corner",
+        title: "You cannot tell if it is paying off.",
         description:
-          "AI gets delegated to IT or engineering. They treat it as a tooling decision: licenses managed, access configured. But the business impact layer, strategy, product integration, cross-functional enablement, never gets designed. The org has AI tools. It doesn\u2019t have AI capability.",
+          "You rolled out AI, but nobody is measuring it. You cannot say who really uses it, or whether it made anything faster, better, or cheaper. So you are guessing.",
       },
     ],
-    sources: [],
+    contrast:
+      "Where you want to be: the same team shipping more, your experts' judgment working even when they're out, and data that proves it. That is what we build.",
   },
   framework: {
-    title: "Why this keeps happening",
+    title: "Why off-the-shelf AI automations stall",
     subtitle:
-      "Four structural gaps that no amount of tooling budget will fix. Each one needs someone who owns the outcome, not another vendor, not another pilot.",
+      "Most AI automation connects your apps but stops when real human judgment is needed. Here are the four places it stalls.",
+    indicatorsLabel: "Indicators",
     blockers: [
       {
         number: "01",
-        title: "No dedicated AI leadership",
+        title: "No process to build on",
         problem:
-          'AI responsibility is distributed across teams that already have full-time jobs. Nobody owns the strategy, nobody prioritizes across initiatives, nobody closes the loop between "shipped" and "delivering value." "Es kein Plus-ein-Thema f\u00fcr irgendjemanden ist," it can\u2019t be an add-on to someone\u2019s existing role.',
+          "AI bolted onto a process nobody has written down has nothing to stand on. The tool is generic; your work is specific. We map the business workflow first, so the AI builds on how you actually work instead of guessing.",
         indicators: [
-          "AI is on OKRs but nobody is accountable for outcomes",
-          'No single person can answer "what\u2019s our AI strategy?" in one sentence',
-          "Initiatives start in different teams with no coordination",
+          "The real method lives in someone's head, not on paper",
+          "Every AI output needs heavy rework to match how you work",
+          '"It does not really get our process"',
         ],
       },
       {
         number: "02",
-        title: "Pilots succeed, then die",
+        title: "It gives a different answer every time",
         problem:
-          'The proof of concept worked. Technically. Then nobody scaled it because nobody had the ownership. "Das eine ist einfach etwas in Pilot zu bringen, das andere ist dann etwas von Pilot in Skalierung zu bringen, ein Jahr sp\u00e4ter wird das Tool \u00fcberhaupt nicht genutzt, obwohl das eine gute Idee war."',
+          "Ask a model to run a real business task and the result changes from one run to the next. Reliability comes from engineering, not a better prompt. We put real code where the work must be exact, and let the model decide only where judgment belongs.",
         indicators: [
-          "You have a pilot from 6+ months ago that nobody touches",
-          "The team that built it moved on to other priorities",
-          "Nobody measures whether the pilot delivered value",
+          "Same input, different result, run to run",
+          "A person has to check every output before it is used",
+          "Hallucinations on anything that touches numbers",
         ],
       },
       {
         number: "03",
-        title: "No enablement, no adoption",
+        title: "Licenses handed out, no literacy",
         problem:
-          'Leadership said "use AI." Nobody said how. No training program, no shared standards, no proven workflows, just "go figure it out." Engineers who tried six months ago had a bad experience and stopped. Others never started. "The gap between what these tools can do and what most teams are getting from them is huge, and growing."',
+          "Access is not adoption. If licenses are handed out without teaching literacy, a few skilled users will get ahead. Most others will just go back to their old ways. We build the literacy first, so the whole team adopts it, not just the few.",
         indicators: [
-          "No formal AI onboarding or training program",
-          "Engineers use AI inconsistently, some all-in, most not at all",
-          'No shared standards for what "good AI usage" looks like',
-          "Early bad experiences killed motivation and nobody tried again",
+          "High adoption among the power users, near zero for everyone else",
+          "No shared standard for what good AI use looks like",
+          "Early bad experiences killed the motivation to retry",
         ],
       },
       {
         number: "04",
-        title: "No iteration loop, no measurement",
+        title: "Nobody instrumented it",
         problem:
-          'Features ship and nobody asks whether they worked. No evaluation, no monitoring, no feedback loop between what shipped and what users actually need. "Du fragst nach sechs Monaten, woher wissen wir jetzt, ob wirklich besser geworden sind? Au\u00dfer vielleicht so eine gef\u00fchlte Wahrheit."',
+          'The spend happened, the measurement did not. With no adoption baseline and no tie to a business metric, "is this working?" has no answer beyond a feeling. We instrument it from the start, so the answer is a number.',
         indicators: [
-          "No metrics for AI feature performance",
-          "AI features launched reactively for sales, not measured after",
-          '"Felt truth" instead of data, the team believes AI is helping but can\u2019t prove it',
+          "No data on who uses AI, or for what",
+          "No number that ties AI to a business outcome",
+          "The board asks for ROI and the room goes quiet",
         ],
       },
     ],
   },
   howItWorks: {
     title: "How it works",
-    subtitle: "From first call to your org owning AI independently.",
+    subtitle:
+      "We stop asking which role to hire and start asking which business workflow is the bottleneck. Then we encode the judgment the work needs as Skills, not just wire your apps together. Four stages.",
     steps: [
       {
-        title: "Intro call",
+        title: "Audit",
         description:
-          "We talk for 30 minutes. I understand where your org stands with AI: what\u2019s running, what stalled, what\u2019s missing. You\u2019ll know by the end whether this is the right fit.",
+          "We outline your business workflows and key decisions. Then, we document the process. You cannot build AI on a process no one has written down.",
       },
       {
-        title: "Assessment and strategy",
+        title: "Augment",
         description:
-          "I assess your AI maturity: team capabilities, data foundation, tooling, knowledge gaps. You get a written strategy brief with prioritized 90-day action plan and AI transformation OKRs. This is where most companies discover the real problem isn\u2019t the tech.",
+          "We turn your business workflows into Skills, and your team runs them by hand. They use them on real work, refine them, and get a feel for what works and what does not, with us alongside.",
       },
       {
-        title: "Embedded AI leadership",
+        title: "Hand over",
         description:
-          "I join your org as Head of AI, owning the responsibility end-to-end. That means defining the strategy, rolling out tooling standards and enablement per team, building evaluation and monitoring pipelines, and measuring what actually works. I stay until your team can sustain it without me. Typical engagement: 3\u20139 months.",
+          "Once your team has a good feel for running the Skills by hand, it is time to hand them to autonomous AI agents. The agents run the business workflow start to finish, and you win back even more time.",
+      },
+      {
+        title: "Maintain",
+        description:
+          "Two ways to keep it running. We enable your team to maintain it themselves, with no outside dependency. Or, if you prefer, we maintain it for you.",
+      },
+    ],
+  },
+  areas: {
+    title: "Built into the work your business already runs on",
+    subtitle:
+      "Most SMEs run on the same four functions. We have hands-on experience automating business processes across all four. Here is the kind of work AI can take off your team's plate.",
+    items: [
+      {
+        title: "Content production",
+        description:
+          "Turn one recording into a week of posts: trend research, outline, edit, and captions, ready to publish.",
+      },
+      {
+        title: "Marketing & GTM",
+        description:
+          "Pull your ideal accounts, research each one, and draft personalized outreach, so a small team reaches like a big one.",
+      },
+      {
+        title: "Engineering",
+        description:
+          "Train an agent on your codebase and standards. This lets engineers shift from writing boilerplate code to reviewing completed pull requests.",
+      },
+      {
+        title: "Sales",
+        description:
+          "It listens to the call, updates the CRM, and drafts the follow-up, so reps just review and send.",
       },
     ],
   },
   tiers: {
-    title: "Choose Your Path Forward",
+    title: "Where to start",
     subtitle:
-      "From a focused assessment to embedded AI leadership, pick the engagement that matches where you are.",
+      "Three ways to start, from a focused map to a system your team fully owns.",
+    badge: "Most common",
+    includesLabel: "Includes",
+    cta: "Book a discovery call",
     tiers: [
       {
-        name: "Get Clarity",
-        description:
-          "A focused sprint to understand where you stand and where to focus first.",
+        name: "Audit",
+        description: "Find where AI should be built in.",
+        body: "We map your workflows and find key bottlenecks. Then, we give you a clear plan. It shows what to build first, what it needs, and what it will free up. Yours to act on, with us or on your own.",
         features: [
-          "Current-state AI assessment: tooling, pilots, workflows, gaps",
-          "Team AI literacy and knowledge gap analysis",
-          "Data foundation assessment, readiness, quality, accessibility for AI use cases",
-          "Prioritized 90-day action plan with written strategy brief",
+          "A map of your business workflows and bottlenecks",
+          "A prioritized plan: first, next, later",
+          "The time and effort it would free",
         ],
-        cta: "Get Clarity",
-        bookingUrl: "https://calendar.app.google/PZFG7xyfkemX6zhT7",
       },
       {
-        name: "Build Capability",
-        description:
-          "Everything in Get Clarity, plus: I join your team as Head of AI, owning the full picture for one team.",
+        name: "Build",
+        description: "The full arc, from audit to handover.",
+        body: "We create top-priority business workflows as Skills for your team. We set the standards to ensure scalability. Finally, we provide a system that your team can fully own.",
         features: [
-          "AI strategy and transformation OKR definition for your team",
-          "AI-ready infrastructure: documentation standards, context engineering, feedback loops",
-          "Structured AI enablement: tooling standards, workflow templates, adoption rollout",
-          "AI monitoring and measurement: evaluation pipelines, adoption tracking, ROI reporting",
-          "Vendor evaluation and governance framework",
+          "Everything in Audit",
+          "Skills built and validated on your real business workflows",
+          "We enable your team to run it",
+          "Impact measured against numbers that matter to you",
         ],
-        cta: "Build Capability",
-        bookingUrl: "https://calendar.app.google/CBWXPN9sukcTCBve9",
       },
       {
-        name: "Stay Sharp",
-        description:
-          "Everything in Build Capability, scaled across your entire org. Plus ongoing support after I leave.",
+        name: "Maintain",
+        description: "The build, kept current.",
+        body: "The full build, then kept current as your business changes, with new Skills added as your needs grow.",
         features: [
-          "Org-wide AI enablement rollout across all teams",
-          "Cross-functional AI coordination and prioritization",
-          "Help defining the full-time AI leadership role and evaluating candidates",
-          "Knowledge transfer documentation and team handover",
-          "Monthly advisory calls and async support during the transition",
+          "Everything in Build",
+          "New Skills as needs grow",
+          "Ongoing improvement",
+          "Maintained by us",
         ],
-        cta: "Stay Sharp",
-        bookingUrl: "https://calendar.app.google/DjDENLuRcaVN2aJRA",
       },
     ],
   },
@@ -282,7 +326,8 @@ const en: SiteContent = {
         name: "Mateusz Prusaczyk",
         title:
           "Lead Engineer @ simpleclub & author of softwarephilosopher blog",
-        // TODO(Viktor): consider replacing with reframed quote — verify with Mateusz before publishing:
+        // TODO(Viktor): simpleclub disclosure, resolve before publish (keep local-only until then).
+        // Deferred to the testimonials/simpleclub revisit. Optional reframed quote (verify with Mateusz):
         // "Viktor led the AI transformation at our company. He defined the strategy, rolled out tooling standards per engineer, and built the adoption measurement we were missing. The team went from inconsistent AI usage to a structured, measurable approach. He made AI everyone's capability, not just a few enthusiasts' side project."
         quote:
           "Viktor has been helping us to adopt AI in simpleclub. He ran workshops for the team on how to use Claude Code, which turned out to be super useful and helped my team deliver good results faster. He also ran a system-wide initiative to cover code of our services with AGENTS.md files in simpleclub. After the initiative, we experienced a huge improvement in quality of the AI-generated code.",
@@ -291,219 +336,243 @@ const en: SiteContent = {
     ],
   },
   credibility: {
-    sectionTitle: "Built on Real AI Leadership",
+    sectionTitle: "Built on real delivery",
     name: "Viktor Malyi",
     title:
-      "8 years in machine learning. I built the AI platform team at Europe\u2019s biggest EdTech scaleup from scratch.",
-    bio: "5 production AI systems, evaluation and monitoring pipelines, autonomous AI agents. That\u2019s the engineering side. AI transformation OKRs, tooling standards rolled out per engineer, adoption measurement and reporting. That\u2019s the leadership side. I owned both for 3 years. I know what breaks when AI is everyone\u2019s side project and what changes when someone owns it. Now I do that for companies that can\u2019t wait 12 months to hire.",
+      "8 years in machine learning. We build AI into businesses, and run our own on it.",
+    bio: "We do not just advise on AI, we build it in. We run our practice with about 80 skills and agents. These help with lead discovery, outreach, research, and client delivery. We built and use them daily. We turn an expert's judgment into a Skill that operates consistently. It runs on its own, needing no one to oversee it. Eight years in machine learning taught us exactly where AI is reliable and where it breaks. That is what it takes to build AI into work a business depends on.",
     highlights: [
-      "8 Years in Machine Learning",
-      "5 Production AI Systems",
-      "AI Platform Team Lead \u2014 3 Years",
-      "Org-Wide AI Enablement, Built From Scratch",
+      "8 years in machine learning",
+      "~80 Skills run our own practice",
+      "Expert judgment encoded into Skills",
     ],
   },
   faq: {
     title: "FAQ",
     items: [
       {
-        question: "How is this different from hiring a full-time Head of AI?",
+        question:
+          "Couldn't our own people just build this in-house? Why pay you?",
         answer:
-          "A full-time hire takes 6\u201312 months to find, onboard, and reach effectiveness. I start delivering in the first weeks. And if you want to hire permanently later, I\u2019ll help you define the role so you hire right. Think of it as a bridge: you get AI leadership now, not in a year.",
-      },
-      {
-        question: "How long does a typical engagement last?",
-        answer:
-          "3\u20139 months. I stay until the org has internal capability that doesn\u2019t depend on me. The goal is to make myself unnecessary, not to create a permanent dependency.",
-      },
-      {
-        question: "What happens when the engagement ends?",
-        answer:
-          "That\u2019s the whole point of the engagement: building internal capability. Handover is planned from day one. When I leave, your team continues with the strategy, the processes, and the knowledge to sustain it.",
-      },
-      {
-        question: "We think we can figure this out internally.",
-        answer:
-          "Maybe. Ask yourself: what does your AI iteration loop look like right now? If there isn\u2019t one, that\u2019s the gap. The companies that figure it out internally all have someone who owns AI end-to-end. If you have that person, you don\u2019t need me.",
+          "Often you can, and where you can, you should. But doing it well is its own discipline. We build Skills a standardized way, the same one we run our own practice on, so they hold up instead of working once then drifting. When we need the highest degree of reproducibility, we enforce Skills using real scripts. This approach is more like software engineering than prompt-writing. We make it reliable, get it adopted, hand it over, and leave. If your team already has that and the time to harden it, you do not need us, and we will say so.",
       },
       {
         question:
-          "What if we\u2019re not sure we need AI leadership \u2014 we just need better tooling?",
+          "After the entry Audit, what does the full build cost? We do not want a black box.",
         answer:
-          'Tooling without ownership stalls. That\u2019s why 95% of AI pilots don\u2019t deliver ROI. The tools aren\u2019t the problem, the missing owner is. A 2-week assessment sprint will show you what "owned" looks like vs. what you have now.',
+          "The Audit is a fixed price, and its job is to remove that guesswork. You finish it with the process written down, a scoped plan, and a price for the build before you commit. You decide what to build and what to leave. No automatic escalation, no surprise total. If the build is not worth it, the Audit showed you that, and you stop there.",
       },
       {
-        question: "How do you measure whether this is working?",
+        question:
+          "Can we maintain and extend this ourselves later, or are we tied to you for every change?",
         answer:
-          "That\u2019s usually the first thing I fix. Most companies run AI on \u201cfelt truth\u201d \u2014 the team believes it\u2019s helping but can\u2019t prove it. I establish concrete metrics from the start: adoption rates, iteration cycles, feature performance, time-to-value. If we can\u2019t measure it, we can\u2019t improve it.",
+          "Handover is built in from day one. The Skills are stored in your own repositories as simple Markdown. This way, your team can read, edit, and expand them without our help. If you would rather we keep maintaining it, we can, but that is your choice, not a dependency we design in.",
+      },
+      {
+        question:
+          "How do we trust the AI's output for high-stakes work, when the numbers or the verdict have to be right?",
+        answer:
+          "This is the right thing to worry about, and it is an engineering problem, not a hope. When accuracy matters, like with numbers, rules, and thresholds, we run real code. This way, the same input always produces the same output. The model only handles what needs real judgment, and you set the bar for that. When an expert disagrees with a verdict, we calibrate against your real cases. Nothing here is a black box.",
+      },
+      {
+        question:
+          "How is this more than a thin wrapper around a manual process? We do not want to pay for hype.",
+        answer:
+          "Agreed, and we score it the same way you do. A wrapper that re-labels manual steps is worth nothing. We write down the process. Then we change how the work flows. We identify what runs end to end. We pinpoint where real code replaces manual effort. We also see how the model saves time for human judgment. If we cannot show what works differently on your real data, we have not earned the spend.",
       },
     ],
   },
   finalCta: {
-    title: "AI delivers when someone owns it. Let\u2019s talk.",
+    title: "Do more with the team you already have.",
     subtitle:
-      "30-minute intro call. No commitment. You\u2019ll know by the end whether this is the right fit.",
-    cta: "Get AI Leadership Now",
+      "A 30-minute discovery call to see whether this is a fit for you.",
+    cta: "See where AI makes your team more efficient",
     guarantee: "",
   },
 };
 
 const de: SiteContent = {
   hero: {
-    headline: "Sie haben in KI investiert. Gebracht hat es wenig.",
+    eyebrow: "Built-In KI für Inhaber und Teams im Mittelstand",
+    headline: "KI built-in.\nGleiches Team, mehr Wirkung.",
     description:
-      "Die Gesch\u00e4ftsf\u00fchrung hat es zur Priorit\u00e4t erkl\u00e4rt. Tools wurden gekauft, Piloten liefen. Doch niemand verantwortet die KI-Strategie, niemand iteriert die Piloten, und die Nutzung ist inkonsistent \u00fcber Teams hinweg. \n\nIch \u00fcbernehme die KI-Verantwortung: Strategie, Architektur, Team-Enablement und Governance, bis Ihr Team KI eigenst\u00e4ndig beherrscht.",
-    cta: "KI-Leadership jetzt sichern",
+      "Euer Team kann mehr leisten, mit den Leuten, die ihr schon habt. Wir bauen KI in die Abläufe ein, mit denen euer Team schon arbeitet. So steigt die Wirkung, ohne dass die Teamgröße wächst.",
+    cta: "Seht, wo KI euch voranbringt",
   },
   problem: {
-    title:
-      "Niemand ist f\u00fcr KI verantwortlich in Ihrem Unternehmen. Kein Wunder, dass sich KI nicht auszahlt.",
+    title: "Kennt ihr das?",
     subtitle:
-      "Ihr Unternehmen hat in KI investiert: Tools, Lizenzen, ein Pilotprojekt oder zwei. Doch niemand verantwortet das Ergebnis. Piloten werden geliefert und nie wieder angefasst. KI l\u00e4uft als Nebenprojekt aller. Niemand wei\u00df, ob irgendetwas davon tats\u00e4chlich funktioniert. Die Investition ist passiert. Die F\u00fchrung nicht.",
+      "Jedes Mal, wenn ihr wachsen wollt, heißt die Antwort gleich: einstellen. Dabei kann euer Team mehr leisten mit den Leuten, die ihr schon habt, sobald KI in eure Abläufe eingebaut ist.",
     points: [
       {
-        title: "Kein Verantwortlicher, kein Fortschritt",
+        title: "Wachstum heißt immer: neue Stelle.",
         description:
-          "KI steht in den OKRs jedes Teams und ist der eigentliche Job von niemandem. Die Strategie ist verteilt, Piloten werden geliefert, aber niemand iteriert. Initiative nach Initiative startet stark und stirbt leise.",
+          "Ein neues Vorhaben, ein größeres Ziel, mehr Nachfrage, und der erste Schritt ist immer eine Einstellung. Die ist langsam, teuer und ein Risiko, dabei könnte euer Team mehr leisten.",
       },
       {
-        title: "Pilot-to-Production-L\u00fccke",
+        title: "Eure besten Leute sind der Engpass.",
         description:
-          "Der Proof of Concept funktioniert. Die Skalierung passiert nie. \u201eViele sind in der Lage im Labor ganz tolle Use Cases am Laufen zu kriegen, daran scheitern die meisten.\u201c Es ist kein technisches Problem, es ist organisatorisch. Niemand hat die Verantwortung, KI vom Demo zum Ergebnis zu bringen.",
+          "Die Erfahrung, die euer Geschäft trägt, liegt bei wenigen Leuten. Es steckt in einzelnen Köpfen und verstreuten Notizen. Dort bleibt es hängen, und wenn diese Leute fehlen, geht es mit ihnen.",
       },
       {
-        title:
-          "Die Gesch\u00e4ftsf\u00fchrung fragt. Sie haben noch keine Antwort.",
+        title: "Den Ergebnissen könnt ihr bei echter Arbeit nicht trauen.",
         description:
-          "Investoren wollen KI-Reife. Der CEO will eine Strategie bis Quartalsende. Sie sind bereits ausgelastet mit Hiring, Architektur und Delivery, und jetzt kommt KI dazu. Der Druck ist real. Die Kapazit\u00e4t, es umzusetzen, nicht.",
+          "Gleiche Eingabe, andere Antwort. Jemand muss jedes Ergebnis prüfen, also spart die KI am Ende niemandem Zeit.",
       },
       {
-        title: "KI bleibt in der IT-Ecke",
+        title: "Ihr könnt nicht sagen, ob es sich rechnet.",
         description:
-          "KI wird an IT oder Engineering delegiert. Die behandeln es als Tooling-Entscheidung: Lizenzen verwaltet, Zugang konfiguriert. Aber die Business-Impact-Ebene, Strategie, Produktintegration, cross-funktionales Enablement, wird nie gestaltet. \u201eDann wird das ganz schnell als ein weiteres IT-Thema abgehakt und ist im Grunde gestorben.\u201c",
+          "Ihr habt KI eingeführt, aber niemand misst sie. Ihr könnt nicht sagen, wer sie wirklich nutzt oder ob etwas schneller, besser oder günstiger wurde. Also ratet ihr.",
       },
     ],
-    sources: [],
+    contrast:
+      "Wo ihr hinwollt: dasselbe Team liefert mehr, die Erfahrung eurer Experten wirkt auch dann, wenn sie nicht da sind, und Zahlen belegen es. Genau das bauen wir.",
   },
   framework: {
-    title: "Warum das immer wieder passiert",
+    title: "Warum KI von der Stange auf halbem Weg liegen bleibt",
     subtitle:
-      "Vier strukturelle L\u00fccken, die kein Tooling-Budget der Welt schlie\u00dft. Jede einzelne braucht jemanden, der das Ergebnis verantwortet, keinen weiteren Anbieter, keinen weiteren Piloten.",
+      "Standard-Tools verdrahten eure Apps und sind raus, sobald echte Erfahrung gefragt ist. Hier sind die vier typischen Stellen.",
+    indicatorsLabel: "Anzeichen",
     blockers: [
       {
         number: "01",
-        title: "Keine dedizierte KI-F\u00fchrung",
+        title: "Kein Prozess als Fundament",
         problem:
-          "KI-Verantwortung ist auf Teams verteilt, die bereits Vollzeitjobs haben. Niemand verantwortet die Strategie, niemand priorisiert \u00fcber Initiativen hinweg, niemand schlie\u00dft die Schleife zwischen \u201egeliefert\u201c und \u201eliefert Wert.\u201c \u201eEs ist kein Plus-eins-Thema f\u00fcr irgendjemanden\u201c \u2014 es kann kein Zusatzthema f\u00fcr eine bestehende Rolle sein.",
+          "KI, die auf einen Prozess geschraubt wird, den niemand aufgeschrieben hat, steht auf nichts. Das Tool ist generisch, eure Arbeit ist spezifisch. Wir erfassen zuerst den Geschäftsablauf, damit die KI auf eurer echten Arbeitsweise aufbaut, statt zu raten.",
         indicators: [
-          "KI ist in den OKRs, aber niemand ist f\u00fcr Ergebnisse verantwortlich",
-          "Keine einzige Person kann \u201eWas ist unsere KI-Strategie?\u201c in einem Satz beantworten",
-          "Initiativen starten in verschiedenen Teams ohne Koordination",
+          "Die eigentliche Methode steckt in einem Kopf, nicht auf Papier",
+          "Jedes KI-Ergebnis braucht starke Nacharbeit, damit es zu eurer Arbeit passt",
+          "„Es versteht unseren Prozess nicht wirklich.“",
         ],
       },
       {
         number: "02",
-        title: "Piloten gelingen, dann sterben sie",
+        title: "Jedes Mal eine andere Antwort",
         problem:
-          "Der Proof of Concept hat funktioniert. Technisch. Dann hat niemand skaliert, weil niemand die Verantwortung hatte. \u201eDas eine ist einfach etwas in Pilot zu bringen, das andere ist dann etwas von Pilot in Skalierung zu bringen, ein Jahr sp\u00e4ter wird das Tool \u00fcberhaupt nicht genutzt, obwohl das eine gute Idee war.\u201c",
+          "Lasst ein Modell eine echte Geschäftsaufgabe erledigen, und das Ergebnis ändert sich von Lauf zu Lauf. Verlässlichkeit kommt aus dem Engineering, nicht aus einem besseren Prompt. Wir setzen echten Code dort ein, wo die Arbeit exakt sein muss, und lassen das Modell nur dort entscheiden, wo Erfahrung zählt.",
         indicators: [
-          "Sie haben einen Piloten von vor 6+ Monaten, den niemand anr\u00fchrt",
-          "Das Team, das ihn gebaut hat, arbeitet l\u00e4ngst an anderen Priorit\u00e4ten",
-          "Niemand misst, ob der Pilot Wert geliefert hat",
+          "Gleiche Eingabe, anderes Ergebnis, von Lauf zu Lauf",
+          "Ein Mensch muss jedes Ergebnis prüfen, bevor es verwendet wird",
+          "Halluzinationen bei allem, was mit Zahlen zu tun hat",
         ],
       },
       {
         number: "03",
-        title: "Kein Enablement, keine Adoption",
+        title: "Lizenzen verteilt, keine Kompetenz",
         problem:
-          "Die F\u00fchrung sagte \u201eNutzt KI.\u201c Niemand sagte wie. Kein Schulungsprogramm, keine gemeinsamen Standards, keine bew\u00e4hrten Workflows. Leute haben mit \u00fcberh\u00f6hten Erwartungen mal KI-Tools getestet, waren entt\u00e4uscht und sagen jetzt \u201edas kann nichts.\u201c Andere haben nie angefangen.",
+          "Zugang ist noch keine Nutzung. Werden Lizenzen verteilt, ohne Kompetenz aufzubauen, ziehen ein paar geübte Nutzer davon. Die meisten anderen fallen in alte Muster zurück. Wir bauen zuerst die Kompetenz auf, damit das ganze Team mitzieht, nicht nur die wenigen.",
         indicators: [
-          "Kein formales KI-Onboarding oder Schulungsprogramm",
-          "Entwickler nutzen KI inkonsistent, manche voll, die meisten gar nicht",
-          "Keine gemeinsamen Standards f\u00fcr \u201egute KI-Nutzung\u201c",
-          "Fr\u00fche schlechte Erfahrungen haben die Motivation zerst\u00f6rt, niemand hat es nochmal versucht",
+          "Hohe Nutzung bei den Power-Usern, fast null bei allen anderen",
+          "Kein gemeinsamer Standard dafür, wie guter KI-Einsatz aussieht",
+          "Schlechte erste Erfahrungen haben die Lust auf einen zweiten Versuch zerstört",
         ],
       },
       {
         number: "04",
-        title: "Kein Iterationsloop, keine Messung",
+        title: "Niemand hat es messbar gemacht",
         problem:
-          "Features werden geliefert und niemand fragt, ob sie funktioniert haben. Keine Evaluation, kein Monitoring, keine Feedback-Schleife zwischen dem, was geliefert wurde, und dem, was Nutzer tats\u00e4chlich brauchen. \u201eMan fragt nach sechs Monaten: Woher wissen wir jetzt, ob wir wirklich besser geworden sind? Au\u00dfer vielleicht so eine gef\u00fchlte Wahrheit.\u201c",
+          "Das Geld floss, die Messung nicht. Ohne Ausgangswert für die Nutzung und ohne Bezug zu einer Geschäftskennzahl hat „Funktioniert das?“ keine Antwort außer einem Bauchgefühl. Wir machen es von Anfang an messbar, damit die Antwort eine Zahl ist.",
         indicators: [
-          "Keine Metriken f\u00fcr KI-Feature-Performance",
-          "KI-Features werden reaktiv f\u00fcr Sales gelauncht, danach nicht gemessen",
-          "\u201eGef\u00fchlte Wahrheit\u201c statt Daten \u2014 das Team glaubt, KI hilft, kann es aber nicht beweisen",
+          "Keine Daten dazu, wer KI nutzt, und wofür",
+          "Keine Zahl, die KI mit einem Geschäftsergebnis verbindet",
+          "Der Beirat fragt nach dem ROI, und es wird still im Raum",
         ],
       },
     ],
   },
   howItWorks: {
-    title: "So funktioniert es",
+    title: "So funktioniert's",
     subtitle:
-      "Vom ersten Gespr\u00e4ch bis Ihre Organisation KI eigenst\u00e4ndig vorantreibt.",
+      "Wir fragen nicht mehr, welche Stelle wir besetzen, sondern welcher Geschäftsablauf der Engpass ist. Dann fassen wir die Erfahrung, die die Arbeit braucht, in Skills, statt nur eure Apps zu verdrahten. Vier Phasen.",
     steps: [
       {
-        title: "Erstgespr\u00e4ch",
+        title: "Audit",
         description:
-          "Wir sprechen 30 Minuten. Ich verstehe, wo Ihre Organisation mit KI steht: was l\u00e4uft, was stockt, was fehlt. Am Ende wissen Sie, ob es passt.",
+          "Wir bilden eure Geschäftsabläufe und die wichtigsten Entscheidungen ab. Dann dokumentieren wir den Prozess. Auf einem Prozess, den niemand aufgeschrieben hat, lässt sich keine KI bauen.",
       },
       {
-        title: "Assessment und Strategie",
+        title: "Augment",
         description:
-          "Ich bewerte Ihre KI-Reife: Team-F\u00e4higkeiten, Datengrundlage, Tooling, Wissensl\u00fccken. Sie erhalten ein Strategie-Briefing mit priorisiertem 90-Tage-Aktionsplan und KI-Transformations-OKRs. Hier entdecken die meisten Unternehmen, dass das eigentliche Problem nicht die Technik ist.",
+          "Wir bauen eure Geschäftsabläufe als Skills, und euer Team führt sie von Hand aus. Sie nutzen sie an echter Arbeit, verfeinern sie und bekommen ein Gefühl dafür, was funktioniert und was nicht, mit uns an der Seite.",
       },
       {
-        title: "Embedded KI-Leadership",
+        title: "Übergabe",
         description:
-          "Ich trete Ihrer Organisation als Interim Head of AI bei, mit voller Verantwortung. Das bedeutet: Strategie definieren, Tooling-Standards und Enablement pro Team ausrollen, Evaluierungs- und Monitoring-Pipelines aufbauen und messen, was tats\u00e4chlich funktioniert. Ich bleibe, bis Ihr Team es ohne mich tr\u00e4gt. Typische Laufzeit: 3\u20139 Monate.",
+          "Sobald euer Team ein gutes Gefühl dafür hat, die Skills von Hand auszuführen, ist es Zeit, sie an autonome KI-Agenten zu übergeben. Die Agenten führen den Geschäftsablauf von Anfang bis Ende aus, und ihr gewinnt noch mehr Zeit zurück.",
+      },
+      {
+        title: "Betrieb",
+        description:
+          "Zwei Wege, es am Laufen zu halten. Wir befähigen euer Team, es selbst zu pflegen, ohne Abhängigkeit von außen. Oder, wenn ihr wollt, übernehmen wir die Pflege für euch.",
+      },
+    ],
+  },
+  areas: {
+    title: "Eingebaut in die Arbeit, mit der euer Geschäft schon läuft",
+    subtitle:
+      "Die meisten Mittelständler laufen auf denselben vier Funktionen. Wir haben praktische Erfahrung darin, Geschäftsprozesse in allen vieren zu automatisieren. Hier ist die Art von Arbeit, die KI eurem Team abnehmen kann.",
+    items: [
+      {
+        title: "Content-Produktion",
+        description:
+          "Aus einer Aufnahme wird eine Woche voller Posts: Trendrecherche, Gliederung, Schnitt und Untertitel, fertig zum Veröffentlichen.",
+      },
+      {
+        title: "Marketing & GTM",
+        description:
+          "Eure Wunschkunden herausfiltern, jeden einzelnen recherchieren und personalisierte Ansprache entwerfen, damit ein kleines Team so viel erreicht wie ein großes.",
+      },
+      {
+        title: "Engineering",
+        description:
+          "Einen Agenten auf eure Codebasis und eure Standards trainieren. So schreiben Entwickler keinen Boilerplate-Code mehr, sondern prüfen fertige Pull Requests.",
+      },
+      {
+        title: "Vertrieb",
+        description:
+          "Die KI hört im Gespräch mit, pflegt das CRM und entwirft die Nachfass-Mail, sodass eure Leute nur noch prüfen und senden.",
       },
     ],
   },
   tiers: {
-    title: "W\u00e4hlen Sie Ihren Weg",
+    title: "Wo ihr anfangt",
     subtitle:
-      "Vom fokussierten Assessment bis zum eingebetteten KI-Leadership, w\u00e4hlen Sie das Engagement, das zu Ihrer Situation passt.",
+      "Drei Wege zum Start, von einer gezielten Übersicht bis zu einem System, das eurem Team ganz gehört.",
+    badge: "Am häufigsten",
+    includesLabel: "Enthält",
+    cta: "Erstgespräch vereinbaren",
     tiers: [
       {
-        name: "Klarheit schaffen",
-        description:
-          "Ein fokussierter Sprint, um zu verstehen, wo Sie stehen und wo Sie anfangen sollten.",
+        name: "Audit",
+        description: "Findet, wo KI eingebaut gehört.",
+        body: "Wir erfassen eure Abläufe und finden die zentralen Engpässe. Dann geben wir euch einen klaren Plan. Er zeigt, was zuerst zu bauen ist, was es braucht und was es freisetzt. Ihr entscheidet, was ihr damit macht, mit uns oder allein.",
         features: [
-          "Ist-Zustand KI-Assessment: Tooling, Piloten, Workflows, L\u00fccken",
-          "Team-KI-Kompetenz und Wissensl\u00fccken-Analyse",
-          "Datengrundlagen-Assessment: Bereitschaft, Qualit\u00e4t, Zug\u00e4nglichkeit f\u00fcr KI-Use-Cases",
-          "Priorisierter 90-Tage-Aktionsplan mit schriftlichem Strategie-Briefing",
+          "Eine Übersicht eurer Geschäftsabläufe und Engpässe",
+          "Ein priorisierter Plan: zuerst, danach, später",
+          "Die Zeit und der Aufwand, die das freisetzt",
         ],
-        cta: "Klarheit schaffen",
-        bookingUrl: "https://calendar.app.google/PZFG7xyfkemX6zhT7",
       },
       {
-        name: "Interim Head of AI",
-        description:
-          "Alles aus Klarheit schaffen, plus: Ich trete Ihrem Team als Head of AI bei, mit voller Verantwortung f\u00fcr ein Team.",
+        name: "Build",
+        description: "Der ganze Bogen, vom Audit bis zur Übergabe.",
+        body: "Wir bauen eure wichtigsten Geschäftsabläufe als Skills für euer Team. Wir setzen die Standards, damit es skaliert. Am Ende steht ein System, das euer Team ganz übernehmen kann.",
         features: [
-          "KI-Strategie und Transformations-OKR-Definition f\u00fcr Ihr Team",
-          "KI-f\u00e4hige Infrastruktur: Dokumentationsstandards, Context Engineering, Feedback-Schleifen",
-          "Strukturiertes KI-Enablement: Tooling-Standards, Workflow-Templates, Adoption-Rollout",
-          "KI-Monitoring und Messung: Evaluierungs-Pipelines, Adoption-Tracking, ROI-Reporting",
-          "Anbieter-Evaluation und Governance-Framework",
+          "Alles aus dem Audit",
+          "Skills, gebaut und an euren echten Geschäftsabläufen erprobt",
+          "Wir befähigen euer Team, es zu betreiben",
+          "Wirkung gemessen an Zahlen, die für euch zählen",
         ],
-        cta: "Interim Head of AI",
-        bookingUrl: "https://calendar.app.google/CBWXPN9sukcTCBve9",
       },
       {
-        name: "\u00dcbergangsbegleitung",
-        description:
-          "Alles aus Interim Head of AI, skaliert auf die gesamte Organisation. Plus laufende Unterst\u00fctzung nach meinem Abgang.",
+        name: "Maintain",
+        description: "Der Build, dauerhaft aktuell gehalten.",
+        body: "Der komplette Build, dann aktuell gehalten, während sich euer Geschäft verändert, mit neuen Skills, sobald euer Bedarf wächst.",
         features: [
-          "Organisationsweiter KI-Enablement-Rollout \u00fcber alle Teams",
-          "Cross-funktionale KI-Koordination und Priorisierung",
-          "Unterst\u00fctzung bei der Definition der Vollzeit-KI-Rolle und Kandidaten-Evaluation",
-          "Wissenstransfer-Dokumentation und Team-\u00dcbergabe",
-          "Monatliche Advisory-Calls und asynchroner Support w\u00e4hrend der \u00dcbergangsphase",
+          "Alles aus dem Build",
+          "Neue Skills, wenn der Bedarf wächst",
+          "Laufende Verbesserung",
+          "Gepflegt von uns",
         ],
-        cta: "\u00dcbergangsbegleitung",
-        bookingUrl: "https://calendar.app.google/DjDENLuRcaVN2aJRA",
       },
     ],
   },
@@ -521,6 +590,7 @@ const de: SiteContent = {
         name: "Mateusz Prusaczyk",
         title:
           "Lead Engineer @ simpleclub & author of softwarephilosopher blog",
+        // TODO(Viktor): simpleclub disclosure, resolve before publish (keep local-only until then).
         quote:
           "Viktor has been helping us to adopt AI in simpleclub. He ran workshops for the team on how to use Claude Code, which turned out to be super useful and helped my team deliver good results faster. He also ran a system-wide initiative to cover code of our services with AGENTS.md files in simpleclub. After the initiative, we experienced a huge improvement in quality of the AI-generated code.",
         image: "/images/mateusz-prusaczyk.jpg",
@@ -528,16 +598,15 @@ const de: SiteContent = {
     ],
   },
   credibility: {
-    sectionTitle: "Fundiert in echter KI-F\u00fchrung",
+    sectionTitle: "Auf echter Umsetzung gebaut",
     name: "Viktor Malyi",
     title:
-      "8 Jahre Machine Learning. Ich habe das KI-Platform-Team beim gr\u00f6\u00dften EdTech-Scaleup Europas von Grund auf aufgebaut.",
-    bio: "5 Produktions-KI-Systeme, Evaluierungs- und Monitoring-Pipelines, autonome KI-Agenten. Das ist die Engineering-Seite. KI-Transformations-OKRs, Tooling-Standards f\u00fcr alle Entwickler ausgerollt, Adoption-Messung und Reporting. Das ist die F\u00fchrungsseite. Ich habe beides 3 Jahre lang verantwortet. Ich wei\u00df, was passiert, wenn KI das Nebenprojekt aller ist, und was sich \u00e4ndert, wenn jemand es verantwortet. Jetzt mache ich das f\u00fcr Unternehmen, die nicht 12 Monate auf eine Einstellung warten k\u00f6nnen.",
+      "8 Jahre Machine Learning. Wir bauen KI in Unternehmen ein und betreiben unser eigenes damit.",
+    bio: "Wir beraten nicht nur zu KI, wir bauen sie ein. Unsere eigene Praxis läuft mit rund 80 Skills und Agenten. Sie helfen bei Lead-Findung, Ansprache, Recherche und Kundenarbeit. Wir haben sie gebaut und nutzen sie täglich. Wir verwandeln die Erfahrung einzelner Experten in einen Skill, der verlässlich arbeitet. Er läuft von allein, niemand muss ihn überwachen. Acht Jahre Machine Learning haben uns gelehrt, wo KI verlässlich ist und wo sie versagt. Genau das braucht es, um KI in Arbeit einzubauen, auf die sich ein Geschäft verlässt.",
     highlights: [
       "8 Jahre Machine Learning",
-      "5 Produktions-KI-Systeme",
-      "KI-Platform-Team-Lead \u2014 3 Jahre",
-      "Organisationsweites KI-Enablement, von Grund auf aufgebaut",
+      "~80 Skills betreiben unsere eigene Praxis",
+      "Erfahrung eurer Experten, in Skills gegossen",
     ],
   },
   faq: {
@@ -545,43 +614,41 @@ const de: SiteContent = {
     items: [
       {
         question:
-          "Wie unterscheidet sich das von einer Vollzeit-Einstellung als Head of AI?",
+          "Könnten unsere eigenen Leute das nicht einfach selbst bauen? Warum euch bezahlen?",
         answer:
-          "Eine Vollzeit-Einstellung dauert 6\u201312 Monate f\u00fcr Suche, Onboarding und Wirksamkeit. Ich liefere ab den ersten Wochen. Und wenn Sie sp\u00e4ter permanent einstellen wollen, helfe ich Ihnen, die Rolle richtig zu definieren. Sehen Sie es als Br\u00fccke: Sie bekommen KI-F\u00fchrung jetzt, nicht in einem Jahr.",
-      },
-      {
-        question: "Wie lange dauert ein typisches Engagement?",
-        answer:
-          "3\u20139 Monate. Ich bleibe, bis die Organisation interne F\u00e4higkeiten hat, die nicht von mir abh\u00e4ngen. Das Ziel ist, mich \u00fcberfl\u00fcssig zu machen, nicht eine permanente Abh\u00e4ngigkeit zu schaffen.",
-      },
-      {
-        question: "Was passiert, wenn das Engagement endet?",
-        answer:
-          "Genau darum geht es beim Engagement: interne F\u00e4higkeiten aufbauen. Die \u00dcbergabe wird ab Tag eins geplant. Wenn ich gehe, macht Ihr Team weiter, mit der Strategie, den Prozessen und dem Wissen, um es eigenst\u00e4ndig zu tragen.",
-      },
-      {
-        question: "Wir glauben, wir k\u00f6nnen das intern l\u00f6sen.",
-        answer:
-          "Vielleicht. Fragen Sie sich: Wie sieht Ihr KI-Iterationsloop gerade aus? Wenn es keinen gibt, das ist die L\u00fccke. Die Unternehmen, die es intern schaffen, haben alle jemanden, der KI end-to-end verantwortet. Wenn Sie diese Person haben, brauchen Sie mich nicht.",
+          "Oft könnt ihr das, und wo ihr es könnt, solltet ihr es auch. Aber es gut zu machen, ist eine eigene Disziplin. Wir bauen Skills auf eine standardisierte Weise, dieselbe, mit der wir unsere eigene Praxis betreiben, damit sie halten, statt einmal zu funktionieren und dann abzudriften. Wenn wir höchste Reproduzierbarkeit brauchen, erzwingen wir Skills mit echten Skripten. Das ist näher an Softwareentwicklung als an Prompt-Schreiberei. Wir machen es verlässlich, sorgen für Akzeptanz, übergeben es und gehen. Wenn euer Team das schon kann und die Zeit hat, es robust zu machen, braucht ihr uns nicht, und das sagen wir euch auch.",
       },
       {
         question:
-          "Was, wenn wir nicht sicher sind, ob wir KI-F\u00fchrung brauchen \u2014 wir brauchen nur besseres Tooling?",
+          "Was kostet nach dem Einstiegs-Audit der ganze Build? Wir wollen keine Blackbox.",
         answer:
-          "Tooling ohne Ownership stagniert. Deshalb liefern 95% der KI-Piloten keinen ROI. Die Tools sind nicht das Problem, der fehlende Verantwortliche ist es. Ein 2-w\u00f6chiger Assessment-Sprint zeigt Ihnen, wie \u201everantwortet\u201c im Vergleich zu dem, was Sie jetzt haben, aussieht.",
+          "Das Audit hat einen Festpreis, und seine Aufgabe ist es, genau dieses Rätselraten zu beenden. Am Ende habt ihr den Prozess schriftlich, einen abgesteckten Plan und einen Preis für den Build, bevor ihr euch festlegt. Ihr entscheidet, was gebaut wird und was nicht. Keine automatische Eskalation, keine Überraschungssumme. Wenn sich der Build nicht lohnt, hat das Audit euch das gezeigt, und ihr hört dort auf.",
       },
       {
-        question: "Wie messen Sie, ob es funktioniert?",
+        question:
+          "Können wir das später selbst pflegen und erweitern, oder sind wir für jede Änderung an euch gebunden?",
         answer:
-          "Das ist normalerweise das Erste, was ich \u00e4ndere. Die meisten Unternehmen fahren KI auf \u201egef\u00fchlter Wahrheit\u201c \u2014 das Team glaubt, es hilft, kann es aber nicht beweisen. Ich etabliere konkrete Metriken von Anfang an: Adoptionsraten, Iterationszyklen, Feature-Performance, Time-to-Value. Was wir nicht messen k\u00f6nnen, k\u00f6nnen wir nicht verbessern.",
+          "Die Übergabe ist von Tag eins an eingebaut. Die Skills liegen in euren eigenen Repositories als einfaches Markdown. So kann euer Team sie lesen, ändern und erweitern, ohne uns. Wenn ihr lieber wollt, dass wir die Pflege übernehmen, können wir das, aber das ist eure Wahl, keine Abhängigkeit, die wir einbauen.",
+      },
+      {
+        question:
+          "Wie können wir der KI bei kritischer Arbeit vertrauen, wenn die Zahlen oder das Urteil stimmen müssen?",
+        answer:
+          "Das ist die richtige Sorge, und es ist ein Engineering-Problem, keine Hoffnung. Wenn Genauigkeit zählt, etwa bei Zahlen, Regeln und Schwellenwerten, lassen wir echten Code laufen. So liefert dieselbe Eingabe immer dieselbe Ausgabe. Das Modell übernimmt nur, was echte Erfahrung braucht, und ihr legt die Messlatte dafür fest. Wenn ein Experte einem Ergebnis widerspricht, kalibrieren wir an euren echten Fällen. Nichts hier ist eine Blackbox.",
+      },
+      {
+        question:
+          "Wie ist das mehr als eine dünne Hülle um einen manuellen Prozess? Wir wollen nicht für Hype zahlen.",
+        answer:
+          "Einverstanden, und wir messen es genauso wie ihr. Eine Hülle, die manuelle Schritte nur neu etikettiert, ist nichts wert. Wir schreiben den Prozess auf und ändern dann, wie die Arbeit fließt: Wir bestimmen, was von Anfang bis Ende durchläuft, wo echter Code manuelle Arbeit ersetzt und wo das Modell Zeit für menschliche Erfahrung freischaufelt. Wenn wir an euren echten Daten nicht zeigen können, was anders läuft, haben wir die Ausgabe nicht verdient.",
       },
     ],
   },
   finalCta: {
-    title: "KI liefert, wenn jemand sie verantwortet. Lassen Sie uns reden.",
+    title: "Mehr schaffen mit dem Team, das ihr schon habt.",
     subtitle:
-      "30 Minuten Erstgespr\u00e4ch. Keine Verpflichtung. Am Ende wissen Sie, ob es passt.",
-    cta: "KI-Leadership jetzt sichern",
+      "Ein 30-minütiges Erstgespräch, um zu sehen, ob das zu euch passt.",
+    cta: "Seht, wo KI euch voranbringt",
     guarantee: "",
   },
 };

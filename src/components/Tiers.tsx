@@ -1,6 +1,7 @@
 "use client";
 
 import { useContent } from "@/hooks/useContent";
+import { siteConfig } from "@/config/site";
 
 import { Container } from "./Container";
 
@@ -9,7 +10,7 @@ export function Tiers() {
 
   return (
     <section id="investment-options" className="scroll-mt-16 bg-gray-900">
-      <Container className="py-8 lg:py-12">
+      <Container className="py-6 lg:py-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold text-white">{tiers.title}</h2>
           <p className="mt-4 text-lg text-gray-400">{tiers.subtitle}</p>
@@ -28,22 +29,20 @@ export function Tiers() {
               >
                 {isFeatured ? (
                   <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-indigo-600 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
-                    {/* TODO(P7): localize "Most Popular" badge */}
-                    Most Popular
+                    {tiers.badge}
                   </span>
                 ) : null}
                 <div className="space-y-2 text-center">
                   <h3 className="text-xl font-semibold text-white">
                     {tier.name}
                   </h3>
-                  {tier.price ? (
-                    <p className="text-3xl font-bold text-indigo-200">
-                      {tier.price}
-                    </p>
-                  ) : null}
-                  <p className="text-gray-300">{tier.description}</p>
+                  <p className="text-gray-400">{tier.description}</p>
                 </div>
-                <ul className="mt-6 space-y-3 text-sm text-gray-200">
+                <p className="mt-4 text-gray-300">{tier.body}</p>
+                <p className="mt-6 text-xs font-semibold uppercase tracking-[0.1em] text-gray-400">
+                  {tiers.includesLabel}
+                </p>
+                <ul className="mt-3 space-y-3 text-sm text-gray-200">
                   {tier.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
                       <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-green-500/15 text-green-300">
@@ -62,26 +61,22 @@ export function Tiers() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-8">
-                  <a
-                    href={tier.bookingUrl}
-                    data-ph-booking-tier={tier.name}
-                    data-ph-booking-cta={tier.cta}
-                    data-ph-label={tier.cta}
-                    className={`inline-flex w-full items-center justify-center rounded-lg px-5 py-3 text-sm font-semibold transition ${
-                      isFeatured
-                        ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 hover:bg-indigo-700"
-                        : "border border-gray-600 bg-gray-900 text-white hover:border-indigo-500 hover:text-indigo-100"
-                    }`}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {tier.cta}
-                  </a>
-                </div>
               </div>
             );
           })}
+        </div>
+        <div className="mt-12 text-center">
+          <a
+            href={siteConfig.calendarUrl}
+            data-ph-cta="primary"
+            data-ph-label={tiers.cta}
+            data-ph-location="ladder"
+            className="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-indigo-600/30 transition hover:bg-indigo-700"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {tiers.cta}
+          </a>
         </div>
       </Container>
     </section>

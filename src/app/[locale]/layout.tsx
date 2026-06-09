@@ -60,26 +60,27 @@ function getJsonLd(locale: string) {
       {
         "@type": "Person",
         name: "Viktor Malyi",
-        jobTitle: isDE ? "Interim Head of AI" : "Fractional Head of AI",
+        jobTitle: isDE ? "KI-Berater" : "AI Consultant",
         url: "https://practical-ai-leadership.com",
-        image: "https://practical-ai-leadership.com/images/viktor-malyi.jpg",
+        image: "https://practical-ai-leadership.com/images/viktor-malyi.webp",
         sameAs: ["https://www.linkedin.com/in/viktormlyi/"],
         knowsAbout: [
-          "AI Strategy",
+          "AI Implementation",
           "Machine Learning",
-          "AI Team Enablement",
-          "AI Governance",
+          "AI Agents",
+          "Business Process Automation",
+          "AI Adoption",
           "Context Engineering",
         ],
       },
       {
         "@type": "ProfessionalService",
         name: isDE
-          ? "Viktor Malyi \u2014 Interim Head of AI"
-          : "Viktor Malyi \u2014 Fractional Head of AI",
+          ? "Built-In KI von Viktor Malyi"
+          : "Built-In AI by Viktor Malyi",
         description: isDE
-          ? "Interim Head of AI f\u00fcr DACH-Unternehmen: Strategie, Architektur, Team-Enablement, Governance."
-          : "Fractional Head of AI for DACH companies: strategy, architecture, team enablement, governance.",
+          ? "Built-In KI f\u00fcr den Mittelstand: Wir bauen KI in die Abl\u00e4ufe ein, mit denen euer Team schon arbeitet."
+          : "Built-In AI for SMEs: we build AI into the work your team already does, so the same team does more without new hires.",
         url: "https://practical-ai-leadership.com",
         areaServed: [
           { "@type": "Country", name: "Germany" },

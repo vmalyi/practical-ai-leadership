@@ -9,7 +9,7 @@ export function Problem() {
 
   return (
     <section id="problem" className="scroll-mt-16 bg-gray-900/50">
-      <Container className="py-8 lg:py-12">
+      <Container className="py-6 lg:py-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold text-white">{problem.title}</h2>
           <p className="mt-4 text-lg text-gray-400">{problem.subtitle}</p>
@@ -41,6 +41,9 @@ export function Problem() {
             </div>
           ))}
         </div>
+        <p className="mx-auto mt-10 max-w-3xl border-t border-gray-800 pt-6 text-center text-lg text-gray-200">
+          {problem.contrast}
+        </p>
         {problem.sources && problem.sources.length > 0 && (
           <div className="mt-8 text-xs text-gray-500">
             <p className="mb-1 font-medium text-gray-400">Sources:</p>

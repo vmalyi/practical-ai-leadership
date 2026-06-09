@@ -3,29 +3,32 @@
 import { useEffect, useState } from "react";
 
 import { useLocale } from "@/context/LocaleContext";
+import { siteConfig } from "@/config/site";
 
 import { Container } from "./Container";
 
 const navItemsEn = [
   { href: "#problem", label: "The Problem" },
-  { href: "#blockers", label: "Why It Happens" },
+  { href: "#blockers", label: "Why It Stalls" },
   { href: "#process", label: "How It Works" },
+  { href: "#areas", label: "What We Build" },
   { href: "#investment-options", label: "Get Started" },
-  { href: "#about", label: "Who I Am" },
+  { href: "#about", label: "About" },
   { href: "#faq", label: "FAQ" },
 ];
 
 const navItemsDe = [
   { href: "#problem", label: "Das Problem" },
-  { href: "#blockers", label: "Warum es passiert" },
-  { href: "#process", label: "So funktioniert es" },
+  { href: "#blockers", label: "Warum es stockt" },
+  { href: "#process", label: "So funktioniert's" },
+  { href: "#areas", label: "Was wir bauen" },
   { href: "#investment-options", label: "Loslegen" },
-  { href: "#about", label: "Über mich" },
+  { href: "#about", label: "Über uns" },
   { href: "#faq", label: "FAQ" },
 ];
 
-const ctaEn = "Get AI Leadership Now";
-const ctaDe = "KI-Leadership jetzt sichern";
+const ctaEn = "Book discovery call";
+const ctaDe = "Erstgespräch vereinbaren";
 
 export function Navbar() {
   const locale = useLocale();
@@ -99,9 +102,12 @@ export function Navbar() {
 
           {/* Desktop CTA */}
           <a
-            href="#investment-options"
+            href={siteConfig.calendarUrl}
+            target="_blank"
+            rel="noreferrer"
             data-ph-cta="primary"
-            data-ph-label="Navbar primary CTA"
+            data-ph-label={cta}
+            data-ph-location="navbar"
             className="hidden items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-700 lg:inline-flex"
           >
             {cta}
@@ -122,10 +128,13 @@ export function Navbar() {
               </a>
             ))}
             <a
-              href="#investment-options"
+              href={siteConfig.calendarUrl}
+              target="_blank"
+              rel="noreferrer"
               onClick={() => setMenuOpen(false)}
               data-ph-cta="primary"
-              data-ph-label="Navbar mobile CTA"
+              data-ph-label={cta}
+              data-ph-location="navbar"
               className="mt-2 inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-700"
             >
               {cta}

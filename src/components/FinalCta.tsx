@@ -20,6 +20,7 @@ export function FinalCta() {
             href="#investment-options"
             data-ph-cta="primary"
             data-ph-label={finalCta.cta}
+            data-ph-location="final"
             className="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-indigo-600/30 transition hover:bg-indigo-700"
           >
             {finalCta.cta}

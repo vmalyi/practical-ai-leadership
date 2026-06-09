@@ -1,3 +1,4 @@
+import { Areas } from "@/components/Areas";
 import { Framework } from "@/components/Framework";
 import { Hero } from "@/components/Hero";
 import { HowItWorks } from "@/components/HowItWorks";
@@ -15,6 +16,7 @@ export default function HomePage() {
       <Problem />
       <Framework />
       <HowItWorks />
+      <Areas />
       <Tiers />
       <Testimonials />
       <Credibility />

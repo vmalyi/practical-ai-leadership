@@ -15,6 +15,7 @@ const TRACKED_SECTION_IDS = [
   "problem",
   "blockers",
   "process",
+  "areas",
   "investment-options",
   "about",
   "faq",
@@ -154,6 +155,7 @@ export function PostHogTracker() {
 
       const section = getSectionId(anchor);
       const buttonText = getLinkText(anchor);
+      const ctaLocation = anchor.dataset.phLocation;
 
       if (rawHref.startsWith("#")) {
         if (
@@ -164,6 +166,7 @@ export function PostHogTracker() {
             button_text: buttonText,
             target: rawHref,
             page_section: section,
+            cta_location: ctaLocation,
           });
         }
 
@@ -190,8 +193,7 @@ export function PostHogTracker() {
           button_text: buttonText,
           href: destination.href,
           page_section: section,
-          tier_name: anchor.dataset.phBookingTier,
-          tier_cta: anchor.dataset.phBookingCta,
+          cta_location: ctaLocation,
         });
         return;
       }

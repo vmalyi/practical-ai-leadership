@@ -12,7 +12,7 @@ export function Credibility() {
 
   return (
     <section id="about" className="scroll-mt-16 bg-gray-900/50">
-      <Container className="py-8 lg:py-12">
+      <Container className="py-6 lg:py-8">
         <h2 className="mb-8 text-center text-3xl font-bold text-white">
           {credibility.sectionTitle}
         </h2>

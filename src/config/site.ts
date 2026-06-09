@@ -15,12 +15,11 @@ export type SiteConfig = {
 
 export const siteConfig: SiteConfig = {
   name: "Viktor Malyi",
-  title: "Fractional Head of AI for DACH Companies | Viktor Malyi",
+  title: "Built-In AI for SMEs | Viktor Malyi",
   description:
-    "Fractional Head of AI: strategy, architecture, team enablement, governance. For companies that invested in AI but need someone to own the outcome.",
+    "Built-In AI for SMEs. We build AI into the work your team already does, so the same team does more without new hires. Audit, build, hand over.",
   url: "https://practical-ai-leadership.com",
-  calendarUrl:
-    "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0lqb2kvUx3MPxlvUIOd28Lzflc4LgzwWB9p3PHaPc3F1umAaTKDIkplzlPJcFZ9LoX2XyYjg3a?gv=true",
+  calendarUrl: "https://calendar.app.google/pzzuz58Djem76rM26",
   images: {
     profile: "/images/viktor-malyi.webp",
     ogImage: "/images/og-image.jpg",
@@ -30,9 +29,9 @@ export const siteConfig: SiteConfig = {
 
 export const siteConfigDe: SiteConfig = {
   ...siteConfig,
-  title: "Interim Head of AI f\u00fcr DACH-Unternehmen | Viktor Malyi",
+  title: "Built-In KI für Mittelstand | Viktor Malyi",
   description:
-    "Interim Head of AI: Strategie, Architektur, Team-Enablement, Governance. F\u00fcr Unternehmen, die in KI investiert haben, aber niemanden, der es zum Ergebnis f\u00fchrt.",
+    "Built-In KI für den Mittelstand. Wir bauen KI in die Abläufe ein, mit denen euer Team schon arbeitet, so schafft dasselbe Team mehr, ohne neu einzustellen.",
 };
 
 export function getSiteConfig(locale: Locale): SiteConfig {

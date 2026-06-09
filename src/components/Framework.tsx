@@ -9,7 +9,7 @@ export function Framework() {
 
   return (
     <section id="blockers" className="scroll-mt-16 bg-gray-900">
-      <Container className="py-8 lg:py-12">
+      <Container className="py-6 lg:py-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold text-white">{framework.title}</h2>
           <p className="mt-4 text-lg text-gray-400">{framework.subtitle}</p>
@@ -30,7 +30,7 @@ export function Framework() {
                 <p className="text-gray-300">{blocker.problem}</p>
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.08em] text-yellow-300">
-                    Indicators
+                    {framework.indicatorsLabel}
                   </p>
                   <ul className="mt-3 list-disc space-y-1 pl-5 text-gray-300">
                     {blocker.indicators.map((indicator) => (
