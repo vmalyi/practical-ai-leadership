@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Wireframe v4 (EN) — Built-In AI — Hemingway pass</title>
+<style>
+  :root{
+    --ink:#1a1a1a; --muted:#6b6b6b; --faint:#8c8c8c;
+    --line:#c9c9c9; --line-soft:#e2e2e2; --card:#d8d8d8;
+    --bg:#ffffff; --tag-bg:#f6f6f6;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.5; -webkit-font-smoothing:antialiased;}
+  .container{max-width:1120px; margin:0 auto; padding:0 24px;}
+
+  .wf-note{background:var(--tag-bg); border-bottom:1px solid var(--line); font-size:12px; color:var(--muted); padding:8px 0;}
+  .wf-note .container{display:flex; gap:16px; flex-wrap:wrap; justify-content:space-between;}
+  section{position:relative; border-bottom:1px dashed var(--line-soft); padding:60px 0 56px;}
+  .wf-tag{position:absolute; top:8px; left:8px; max-width:82%; font-size:10px; letter-spacing:.04em; text-transform:uppercase; color:var(--faint); background:var(--tag-bg); border:1px solid var(--line-soft); border-radius:3px; padding:2px 7px; line-height:1.4;}
+  .wf-tag b{color:var(--muted); letter-spacing:.12em;}
+
+  .eyebrow{font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin:0 0 14px;}
+  h1{font-size:54px; line-height:1.08; letter-spacing:-.02em; margin:0 0 18px; font-weight:800;}
+  h2.section-title{font-size:30px; line-height:1.15; margin:0; font-weight:800; text-align:center;}
+  .section-sub{font-size:18px; color:var(--muted); margin:14px auto 0; max-width:780px; text-align:center;}
+  h3{font-size:19px; margin:0 0 8px; font-weight:700;}
+  p{margin:0 0 10px;}
+  .head{max-width:800px; margin:0 auto 40px;}
+
+  .btn{display:inline-block; border:1px solid var(--ink); background:#fff; color:var(--ink); font-weight:600; font-size:15px; padding:12px 22px; border-radius:7px; text-decoration:none;}
+  .btn.primary{border-width:2px; background:#efefef;}
+
+  .img-ph{border:1px dashed var(--faint); border-radius:8px; background:repeating-linear-gradient(45deg,#f0f0f0,#f0f0f0 9px,#e7e7e7 9px,#e7e7e7 18px); color:var(--muted); font-size:12px; letter-spacing:.12em; text-transform:uppercase; display:flex; align-items:center; justify-content:center; text-align:center;}
+  .avatar-ph{width:160px; height:160px; border-radius:50%; flex:none;}
+  .face-ph{width:56px; height:56px; border-radius:50%; flex:none;}
+
+  .grid{display:grid; gap:24px;}
+  .g2{grid-template-columns:repeat(2,1fr);}
+  .g3{grid-template-columns:repeat(3,1fr);}
+  .g4{grid-template-columns:repeat(4,1fr);}
+  .card{border:1px solid var(--card); border-radius:12px; padding:24px; background:#fff;}
+
+  .hero-row{display:flex; flex-wrap:wrap; align-items:center; gap:32px;}
+  .hero-col{flex:1 1 420px;}
+  .hero-text{max-width:580px;}
+  .hero-text .sub{font-size:20px; color:var(--muted); margin:0 0 26px;}
+  .hero-img{min-height:360px;}
+
+  .p-card{display:flex; gap:16px;}
+  .x-badge{width:34px; height:34px; border-radius:50%; flex:none; border:1px solid var(--faint); display:flex; align-items:center; justify-content:center; font-size:15px; color:var(--muted);}
+  .contrast{max-width:840px; margin:28px auto 0; text-align:center; font-size:18px; border-top:1px solid var(--line-soft); padding-top:22px;}
+  .contrast b{font-weight:700;}
+
+  .blocker{position:relative; overflow:hidden;}
+  .blocker .num{position:absolute; right:14px; top:8px; font-size:56px; font-weight:800; color:#ededed; line-height:1; pointer-events:none;}
+  .ind-label{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin:16px 0 8px;}
+  ul{margin:0; padding-left:18px;} li{margin:4px 0; color:#333;}
+  .why-close{max-width:800px; margin:28px auto 0; text-align:center; font-size:17px; color:#333;}
+
+  .step .circle{width:60px; height:60px; border-radius:50%; border:1px solid var(--ink); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:18px; margin-bottom:14px;}
+  .steps-wrap{position:relative;}
+  .steps-line{position:absolute; left:12%; right:12%; top:86px; height:1px; background:var(--line);}
+
+  .anchor-band{border:1px solid var(--ink); border-radius:12px; padding:22px 26px; max-width:920px; margin:0 auto 34px; text-align:center; font-size:17px; background:#fafafa;}
+  .anchor-band b{font-weight:700;}
+
+  .ladder .card{display:flex; flex-direction:column;}
+  .ladder .featured{border:2px solid var(--ink);}
+  .badge{align-self:center; font-size:10px; letter-spacing:.1em; text-transform:uppercase; border:1px solid var(--faint); border-radius:999px; padding:3px 10px; color:var(--muted); margin-bottom:10px;}
+  .ladder h3{text-align:center;}
+  .ladder .desc{text-align:center; color:var(--muted); margin-bottom:14px;}
+  .ladder .incl{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin:6px 0;}
+  .ladder ul{list-style:none; padding:0;}
+  .ladder li{padding-left:18px; position:relative;}
+  .ladder li::before{content:"+"; position:absolute; left:0; color:var(--faint);}
+  .ladder-cta{margin-top:34px; text-align:center;}
+
+  .tcards{display:flex; gap:24px; flex-wrap:wrap;}
+  .tcard{flex:1 1 380px;}
+  .tcard blockquote{margin:0 0 18px; font-size:16px; color:#333;}
+  .tmeta{display:flex; align-items:center; gap:14px;}
+  .kept-flag{font-size:11px; color:var(--faint); font-style:italic; text-align:center; margin-top:14px;}
+
+  .cred-row{display:flex; gap:40px; align-items:center; flex-wrap:wrap; max-width:820px; margin:0 auto;}
+  .chips{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;}
+  .chip{border:1px solid var(--line); border-radius:999px; padding:7px 14px; font-size:13px; color:#333;}
+
+  .faq-list{max-width:780px; margin:34px auto 0; display:flex; flex-direction:column; gap:14px;}
+  .faq-item{border:1px solid var(--card); border-radius:12px; padding:18px 22px;}
+  .faq-q{font-weight:700; display:flex; justify-content:space-between; gap:12px;}
+  .faq-q .chev{color:var(--faint);}
+  .faq-a{color:#333; margin-top:10px;}
+
+  .final{max-width:740px; margin:0 auto; text-align:center;}
+  .final h2{font-size:32px; font-weight:800; margin:0 0 12px;}
+  footer{padding:28px 0; border-top:1px solid var(--line);}
+  footer .container{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:13px; color:var(--muted);}
+
+  .topbar{border-bottom:1px solid var(--line); padding:14px 0;}
+  .topbar .container{display:flex; align-items:center; justify-content:space-between; gap:20px;}
+  .brand-ph{display:flex; align-items:center; gap:10px; font-weight:700; font-size:14px;}
+  .logo-ph{width:26px; height:26px; border:1px solid var(--ink);}
+  nav.main{display:flex; gap:18px; flex-wrap:wrap;}
+  nav.main a{font-size:13px; color:var(--muted); text-decoration:none;}
+
+  @media (max-width:860px){
+    .g2,.g3,.g4{grid-template-columns:1fr;}
+    h1{font-size:38px;}
+    .steps-line{display:none;}
+    nav.main{display:none;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="wf-note">
+    <div class="container">
+      <span><strong>WIREFRAME v4 — English</strong> · Hemingway-simplified copy</span>
+      <span>reading grade lowered via Hemingway; structure unchanged from v3</span>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <div class="topbar">
+    <div class="wf-tag"><b>Navbar</b></div>
+    <div class="container">
+      <div class="brand-ph"><span class="logo-ph"></span> Viktor Malyi</div>
+      <nav class="main">
+        <a href="#problem">The Problem</a>
+        <a href="#blockers">Why It Stalls</a>
+        <a href="#process">How It Works</a>
+        <a href="#areas">What We Build</a>
+        <a href="#start">Get Started</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn primary" href="#start">See where AI helps</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="wf-tag"><b>Hero</b> · proof line removed · CTA now outcome-named (Hormozi: "name the outcome", value-first)</div>
+    <div class="container">
+      <div class="hero-row">
+        <div class="hero-col">
+          <div class="hero-text">
+            <p class="eyebrow">Built-In AI for SME owners and teams</p>
+            <h1>AI built-in.<br>Same team, more output.</h1>
+            <p class="sub">Your team can do more with the people you already have. We build AI into the work you and your team do every day, so output goes up while headcount stays flat.</p>
+            <a class="btn primary" href="#start">See where AI makes your team more efficient</a>
+          </div>
+        </div>
+        <div class="hero-col">
+          <div class="img-ph hero-img">Image placeholder</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="problem">
+    <div class="wf-tag"><b>Problem</b> · de-duplicated (founder-bottleneck card removed) · voice locked to "you and your team"</div>
+    <div class="container">
+      <div class="head">
+        <h2 class="section-title">Recognize any of these?</h2>
+        <p class="section-sub">Every time you want to grow, the answer comes back the same: hire. But you and your team can do more with the headcount you already have, once AI is built into how the work gets done.</p>
+      </div>
+      <div class="grid g2">
+        <div class="card p-card">
+          <div class="x-badge">×</div>
+          <div>
+            <h3>Growth always means another hire.</h3>
+            <p>A new initiative, a bigger target, more demand, and the first move is always to hire. The hire is slow, expensive, and a bet, while you and your team could do more.</p>
+          </div>
+        </div>
+        <div class="card p-card">
+          <div class="x-badge">×</div>
+          <div>
+            <h3>Your best people are the bottleneck.</h3>
+            <p>The key judgment for running the business lies with a few people on your team. They are spread across various heads and scattered notes. It stays stuck there, and when they are away, it leaves with them.</p>
+          </div>
+        </div>
+        <div class="card p-card">
+          <div class="x-badge">×</div>
+          <div>
+            <h3>You cannot trust the output for real work.</h3>
+            <p>Same input, different answer. Someone has to check every result, so the AI never actually saves anyone time.</p>
+          </div>
+        </div>
+        <div class="card p-card">
+          <div class="x-badge">×</div>
+          <div>
+            <h3>You cannot tell if it is paying off.</h3>
+            <p>You rolled out AI, but nobody is measuring it. You cannot say who really uses it, or whether it made anything faster, better, or cheaper. So you are guessing.</p>
+          </div>
+        </div>
+      </div>
+      <p class="contrast"><b>Where you want to be:</b> the same team shipping more, your experts' judgment working even when they're out, and data that proves it. That is what we build.</p>
+    </div>
+  </section>
+
+  <!-- WHY IT STALLS -->
+  <section id="blockers">
+    <div class="wf-tag"><b>Why it stalls</b> · retitled "off-the-shelf AI automations" · subtitle + close now contrast shallow app-wiring vs built-in (the n8n differentiation)</div>
+    <div class="container">
+      <div class="head">
+        <h2 class="section-title">Why off-the-shelf AI automations stall</h2>
+        <p class="section-sub">Most AI automation connects your apps but stops when real human judgment is needed. Here are the four places it stalls.</p>
+      </div>
+      <div class="grid g2">
+        <div class="card blocker">
+          <div class="num">01</div>
+          <h3>No process to build on</h3>
+          <p>AI bolted onto a process nobody has written down has nothing to stand on. The tool is generic; your work is specific. We map the business workflow first, so the AI builds on how you actually work instead of guessing.</p>
+          <p class="ind-label">Indicators</p>
+          <ul>
+            <li>The real method lives in someone's head, not on paper</li>
+            <li>Every AI output needs heavy rework to match how you work</li>
+            <li>"It does not really get our process"</li>
+          </ul>
+        </div>
+        <div class="card blocker">
+          <div class="num">02</div>
+          <h3>It gives a different answer every time</h3>
+          <p>Ask a model to run a real business task and the result changes from one run to the next. Reliability comes from engineering, not a better prompt. We put real code where the work must be exact, and let the model decide only where judgment belongs.</p>
+          <p class="ind-label">Indicators</p>
+          <ul>
+            <li>Same input, different result, run to run</li>
+            <li>A person has to check every output before it is used</li>
+            <li>Hallucinations on anything that touches numbers</li>
+          </ul>
+        </div>
+        <div class="card blocker">
+          <div class="num">03</div>
+          <h3>Licenses handed out, no literacy</h3>
+          <p>Access is not adoption. If licenses are handed out without teaching literacy, a few skilled users will get ahead. Most others will just go back to their old ways. We build the literacy first, so the whole team adopts it, not just the few.</p>
+          <p class="ind-label">Indicators</p>
+          <ul>
+            <li>High adoption among the power users, near zero for everyone else</li>
+            <li>No shared standard for what good AI use looks like</li>
+            <li>Early bad experiences killed the motivation to retry</li>
+          </ul>
+        </div>
+        <div class="card blocker">
+          <div class="num">04</div>
+          <h3>Nobody instrumented it</h3>
+          <p>The spend happened, the measurement did not. With no adoption baseline and no tie to a business metric, "is this working?" has no answer beyond a feeling. We instrument it from the start, so the answer is a number.</p>
+          <p class="ind-label">Indicators</p>
+          <ul>
+            <li>No data on who uses AI, or for what</li>
+            <li>No number that ties AI to a business outcome</li>
+            <li>The board asks for ROI and the room goes quiet</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="process">
+    <div class="wf-tag"><b>How it works</b> · "business workflows" · Augment simplified (manual, refine) · Hand over to agents · Maintain = 2 options · intelligence contrast added (encode judgment, not wire apps)</div>
+    <div class="container">
+      <div class="head">
+        <h2 class="section-title">How it works</h2>
+        <p class="section-sub">We stop asking which role to hire and start asking which business workflow is the bottleneck. Then we encode the judgment the work needs as Skills, not just wire your apps together. Four stages.</p>
+      </div>
+      <div class="steps-wrap">
+        <div class="steps-line"></div>
+        <div class="grid g4">
+          <div class="card step">
+            <div class="circle">01</div>
+            <h3>Audit</h3>
+            <p>We outline your business workflows and key decisions. Then, we document the process. You cannot build AI on a process no one has written down.</p>
+          </div>
+          <div class="card step">
+            <div class="circle">02</div>
+            <h3>Augment</h3>
+            <p>We turn your business workflows into Skills, and your team runs them by hand. They use them on real work, refine them, and get a feel for what works and what does not, with us alongside.</p>
+          </div>
+          <div class="card step">
+            <div class="circle">03</div>
+            <h3>Hand over</h3>
+            <p>Once your team has a good feel for running the Skills by hand, it is time to hand them to autonomous AI agents. The agents run the business workflow start to finish, and you win back even more time.</p>
+          </div>
+          <div class="card step">
+            <div class="circle">04</div>
+            <h3>Maintain</h3>
+            <p>Two ways to keep it running. We enable your team to maintain it themselves, with no outside dependency. Or, if you prefer, we maintain it for you.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREAS / WHERE WE BUILD IT IN -->
+  <section id="areas">
+    <div class="wf-tag"><b>Where we build it in</b> · NEW · the 4 functions made concrete (content · marketing/GTM · engineering · sales) + your experience</div>
+    <div class="container">
+      <div class="head">
+        <h2 class="section-title">Built into the work your business already runs on</h2>
+        <p class="section-sub">Most SMEs run on the same four functions. We have hands-on experience automating business processes across all four. Here is the kind of work AI can take off your team's plate.</p>
+      </div>
+      <div class="grid g2">
+        <div class="card">
+          <h3>Content production</h3>
+          <p>Turn one recording into a week of posts: trend research, outline, edit, and captions, ready to publish.</p>
+        </div>
+        <div class="card">
+          <h3>Marketing &amp; GTM</h3>
+          <p>Pull your ideal accounts, research each one, and draft personalized outreach, so a small team reaches like a big one.</p>
+        </div>
+        <div class="card">
+          <h3>Engineering</h3>
+          <p>Train an agent on your codebase and standards. This lets engineers shift from writing boilerplate code to reviewing completed pull requests.</p>
+        </div>
+        <div class="card">
+          <h3>Sales</h3>
+          <p>It listens to the call, updates the CRM, and drafts the follow-up, so reps just review and send.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GET STARTED -->
+  <section id="start">
+    <div class="wf-tag"><b>Get started</b> · subheader concrete · options reflect the business · own CTA</div>
+    <div class="container">
+      <div class="head">
+        <h2 class="section-title">Where to start</h2>
+        <p class="section-sub">Three ways to start, from a focused map to a system your team fully owns.</p>
+      </div>
+
+      <div class="grid g3 ladder">
+        <div class="card">
+          <h3>Audit</h3>
+          <p class="desc">Find where AI should be built in.</p>
+          <p>We map your workflows and find key bottlenecks. Then, we give you a clear plan. It shows what to build first, what it needs, and what it will free up. Yours to act on, with us or on your own.</p>
+          <p class="incl">Includes</p>
+          <ul>
+            <li>A map of your business workflows and bottlenecks</li>
+            <li>A prioritized plan: first, next, later</li>
+            <li>The time and effort it would free</li>
+          </ul>
+        </div>
+        <div class="card featured">
+          <span class="badge">Most common</span>
+          <h3>Build</h3>
+          <p class="desc">The full arc, from audit to handover.</p>
+          <p>We create top-priority business workflows as Skills for your team. We set the standards to ensure scalability. Finally, we provide a system that your team can fully own.</p>
+          <p class="incl">Includes</p>
+          <ul>
+            <li>Everything in Audit</li>
+            <li>Skills built and validated on your real business workflows</li>
+            <li>We enable your team to run it</li>
+            <li>Impact measured against numbers that matter to you</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Maintain</h3>
+          <p class="desc">The build, kept current.</p>
+          <p>The full build, then kept current as your business changes, with new Skills added as your needs grow.</p>
+          <p class="incl">Includes</p>
+          <ul>
+            <li>Everything in Build</li>
+            <li>New Skills as needs grow</li>
+            <li>Ongoing improvement</li>
+            <li>Maintained by us</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ladder-cta">
+        <a class="btn primary" href="#">Book a discovery call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS (frozen) -->
+  <section id="testimonials">
+    <div class="wf-tag"><b>Testimonials</b> · KEPT UNCHANGED this pass</div>
+    <div class="container">
+      <h2 class="section-title">What Clients Say</h2>
+      <div class="tcards" style="margin-top:34px;">
+        <div class="card tcard">
+          <blockquote>"Viktor is an exceptional advisor who is not only extremely reliable and responsive but also deeply committed to his work. His assessments and strategic advice were incredibly valuable and were instrumental in our planning process. Viktor helped us set the right priorities for our AI-heavy startup by shifting our attention from purely technical questions to critical business factors in our target market."</blockquote>
+          <div class="tmeta">
+            <div class="img-ph face-ph">Photo</div>
+            <div>
+              <p style="margin:0; font-weight:700;">Christian Liu</p>
+              <p style="margin:0; color:var(--muted); font-size:14px;">Co-Founder &amp; CEO @ AskPally</p>
+            </div>
+          </div>
+        </div>
+        <div class="card tcard">
+          <blockquote>"Viktor has been helping us to adopt AI in simpleclub. He ran workshops for the team on how to use Claude Code, which turned out to be super useful and helped my team deliver good results faster. He also ran a system-wide initiative to cover code of our services with AGENTS.md files. After the initiative, we experienced a huge improvement in quality of the AI-generated code."</blockquote>
+          <div class="tmeta">
+            <div class="img-ph face-ph">Photo</div>
+            <div>
+              <p style="margin:0; font-weight:700;">Mateusz Prusaczyk</p>
+              <p style="margin:0; color:var(--muted); font-size:14px;">Lead Engineer @ simpleclub</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="kept-flag">(Still frozen per your call. Note: the Mateusz quote references simpleclub, which we removed from About, so this section is the place to revisit that next.)</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wf-tag"><b>About</b> · expert-encoding example generalized (no client name, no hard metric)</div>
+    <div class="container">
+      <h2 class="section-title">Built on real delivery</h2>
+      <div class="cred-row" style="margin-top:34px;">
+        <div class="img-ph avatar-ph">Photo</div>
+        <div>
+          <h3 style="font-size:24px;">Viktor Malyi</h3>
+          <p style="color:var(--muted); margin:0 0 12px;">8 years in machine learning. We build AI into businesses, and run our own on it.</p>
+          <p>We do not just advise on AI, we build it in. We run our practice with about 80 skills and agents. These help with lead discovery, outreach, research, and client delivery. We built and use them daily. We turn an expert's judgment into a Skill that operates consistently. It runs on its own, needing no one to oversee it. Eight years in machine learning taught us exactly where AI is reliable and where it breaks. That is what it takes to build AI into work a business depends on.</p>
+          <div class="chips">
+            <span class="chip">8 years in machine learning</span>
+            <span class="chip">~80 Skills run our own practice</span>
+            <span class="chip">Expert judgment encoded into Skills</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wf-tag"><b>FAQ</b> · rebuilt from real customer objections (5 items, most-blocking first)</div>
+    <div class="container">
+      <h2 class="section-title">FAQ</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q"><span>Couldn't our own people just build this in-house? Why pay you?</span><span class="chev">▾</span></div>
+          <p class="faq-a">Often you can, and where you can, you should. But doing it well is its own discipline. We build Skills a standardized way, the same one we run our own practice on, so they hold up instead of working once then drifting. When we need the highest degree of reproducibility, we enforce Skills using real scripts. This approach is more like software engineering than prompt-writing. We make it reliable, get it adopted, hand it over, and leave. If your team already has that and the time to harden it, you do not need us, and we will say so.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>After the entry Audit, what does the full build cost? We do not want a black box.</span><span class="chev">▾</span></div>
+          <p class="faq-a">The Audit is a fixed price, and its job is to remove that guesswork. You finish it with the process written down, a scoped plan, and a price for the build before you commit. You decide what to build and what to leave. No automatic escalation, no surprise total. If the build is not worth it, the Audit showed you that, and you stop there.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>Can we maintain and extend this ourselves later, or are we tied to you for every change?</span><span class="chev">▾</span></div>
+          <p class="faq-a">Handover is built in from day one. The Skills are stored in your own repositories as simple Markdown. This way, your team can read, edit, and expand them without our help. If you would rather we keep maintaining it, we can, but that is your choice, not a dependency we design in.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>How do we trust the AI's output for high-stakes work, when the numbers or the verdict have to be right?</span><span class="chev">▾</span></div>
+          <p class="faq-a">This is the right thing to worry about, and it is an engineering problem, not a hope. When accuracy matters—like with numbers, rules, and thresholds—we run real code. This way, the same input always produces the same output. The model only handles what needs real judgment, and you set the bar for that. When an expert disagrees with a verdict, we calibrate against your real cases. Nothing here is a black box.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>How is this more than a thin wrapper around a manual process? We do not want to pay for hype.</span><span class="chev">▾</span></div>
+          <p class="faq-a">Agreed, and we score it the same way you do. A wrapper that re-labels manual steps is worth nothing. We write down the process. Then we change how the work flows. We identify what runs end to end. We pinpoint where real code replaces manual effort. We also see how the model saves time for human judgment. If we cannot show what works differently on your real data, we have not earned the spend.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="final-cta">
+    <div class="wf-tag"><b>Final CTA</b> · header simplified · promise + "no pitch/commitment" removed</div>
+    <div class="container">
+      <div class="final">
+        <h2>Do more with the team you already have.</h2>
+        <p class="section-sub" style="margin-bottom:26px;">A 30-minute discovery call to see whether this is a fit for you.</p>
+        <a class="btn primary" href="#">See where AI makes your team more efficient</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wf-tag" style="position:static; display:inline-block; margin-bottom:8px;"><b>Footer</b></div>
+    <div class="container">
+      <span>© 2026 Viktor Malyi. All rights reserved.</span>
+      <span>Imprint</span>
+    </div>
+  </footer>
+
+</body>
+</html>

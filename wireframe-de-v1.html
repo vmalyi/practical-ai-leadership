@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Wireframe v1 (DE) · Built-In KI für Mittelstand · Rendering von EN v4</title>
+<style>
+  :root{
+    --ink:#1a1a1a; --muted:#6b6b6b; --faint:#8c8c8c;
+    --line:#c9c9c9; --line-soft:#e2e2e2; --card:#d8d8d8;
+    --bg:#ffffff; --tag-bg:#f6f6f6;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.5; -webkit-font-smoothing:antialiased;}
+  .container{max-width:1120px; margin:0 auto; padding:0 24px;}
+
+  .wf-note{background:var(--tag-bg); border-bottom:1px solid var(--line); font-size:12px; color:var(--muted); padding:8px 0;}
+  .wf-note .container{display:flex; gap:16px; flex-wrap:wrap; justify-content:space-between;}
+  section{position:relative; border-bottom:1px dashed var(--line-soft); padding:60px 0 56px;}
+  .wf-tag{position:absolute; top:8px; left:8px; max-width:82%; font-size:10px; letter-spacing:.04em; text-transform:uppercase; color:var(--faint); background:var(--tag-bg); border:1px solid var(--line-soft); border-radius:3px; padding:2px 7px; line-height:1.4;}
+  .wf-tag b{color:var(--muted); letter-spacing:.12em;}
+
+  .eyebrow{font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin:0 0 14px;}
+  h1{font-size:54px; line-height:1.08; letter-spacing:-.02em; margin:0 0 18px; font-weight:800;}
+  h2.section-title{font-size:30px; line-height:1.15; margin:0; font-weight:800; text-align:center;}
+  .section-sub{font-size:18px; color:var(--muted); margin:14px auto 0; max-width:780px; text-align:center;}
+  h3{font-size:19px; margin:0 0 8px; font-weight:700;}
+  p{margin:0 0 10px;}
+  .head{max-width:800px; margin:0 auto 40px;}
+
+  .btn{display:inline-block; border:1px solid var(--ink); background:#fff; color:var(--ink); font-weight:600; font-size:15px; padding:12px 22px; border-radius:7px; text-decoration:none;}
+  .btn.primary{border-width:2px; background:#efefef;}
+
+  .img-ph{border:1px dashed var(--faint); border-radius:8px; background:repeating-linear-gradient(45deg,#f0f0f0,#f0f0f0 9px,#e7e7e7 9px,#e7e7e7 18px); color:var(--muted); font-size:12px; letter-spacing:.12em; text-transform:uppercase; display:flex; align-items:center; justify-content:center; text-align:center;}
+  .avatar-ph{width:160px; height:160px; border-radius:50%; flex:none;}
+  .face-ph{width:56px; height:56px; border-radius:50%; flex:none;}
+
+  .grid{display:grid; gap:24px;}
+  .g2{grid-template-columns:repeat(2,1fr);}
+  .g3{grid-template-columns:repeat(3,1fr);}
+  .g4{grid-template-columns:repeat(4,1fr);}
+  .card{border:1px solid var(--card); border-radius:12px; padding:24px; background:#fff;}
+
+  .hero-row{display:flex; flex-wrap:wrap; align-items:center; gap:32px;}
+  .hero-col{flex:1 1 420px;}
+  .hero-text{max-width:580px;}
+  .hero-text .sub{font-size:20px; color:var(--muted); margin:0 0 26px;}
+  .hero-img{min-height:360px;}
+
+  .p-card{display:flex; gap:16px;}
+  .x-badge{width:34px; height:34px; border-radius:50%; flex:none; border:1px solid var(--faint); display:flex; align-items:center; justify-content:center; font-size:15px; color:var(--muted);}
+  .contrast{max-width:840px; margin:28px auto 0; text-align:center; font-size:18px; border-top:1px solid var(--line-soft); padding-top:22px;}
+  .contrast b{font-weight:700;}
+
+  .blocker{position:relative; overflow:hidden;}
+  .blocker .num{position:absolute; right:14px; top:8px; font-size:56px; font-weight:800; color:#ededed; line-height:1; pointer-events:none;}
+  .ind-label{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin:16px 0 8px;}
+  ul{margin:0; padding-left:18px;} li{margin:4px 0; color:#333;}
+  .why-close{max-width:800px; margin:28px auto 0; text-align:center; font-size:17px; color:#333;}
+
+  .step .circle{width:60px; height:60px; border-radius:50%; border:1px solid var(--ink); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:18px; margin-bottom:14px;}
+  .steps-wrap{position:relative;}
+  .steps-line{position:absolute; left:12%; right:12%; top:86px; height:1px; background:var(--line);}
+
+  .anchor-band{border:1px solid var(--ink); border-radius:12px; padding:22px 26px; max-width:920px; margin:0 auto 34px; text-align:center; font-size:17px; background:#fafafa;}
+  .anchor-band b{font-weight:700;}
+
+  .ladder .card{display:flex; flex-direction:column;}
+  .ladder .featured{border:2px solid var(--ink);}
+  .badge{align-self:center; font-size:10px; letter-spacing:.1em; text-transform:uppercase; border:1px solid var(--faint); border-radius:999px; padding:3px 10px; color:var(--muted); margin-bottom:10px;}
+  .ladder h3{text-align:center;}
+  .ladder .desc{text-align:center; color:var(--muted); margin-bottom:14px;}
+  .ladder .incl{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin:6px 0;}
+  .ladder ul{list-style:none; padding:0;}
+  .ladder li{padding-left:18px; position:relative;}
+  .ladder li::before{content:"+"; position:absolute; left:0; color:var(--faint);}
+  .ladder-cta{margin-top:34px; text-align:center;}
+
+  .tcards{display:flex; gap:24px; flex-wrap:wrap;}
+  .tcard{flex:1 1 380px;}
+  .tcard blockquote{margin:0 0 18px; font-size:16px; color:#333;}
+  .tmeta{display:flex; align-items:center; gap:14px;}
+  .kept-flag{font-size:11px; color:var(--faint); font-style:italic; text-align:center; margin-top:14px;}
+
+  .cred-row{display:flex; gap:40px; align-items:center; flex-wrap:wrap; max-width:820px; margin:0 auto;}
+  .chips{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;}
+  .chip{border:1px solid var(--line); border-radius:999px; padding:7px 14px; font-size:13px; color:#333;}
+
+  .faq-list{max-width:780px; margin:34px auto 0; display:flex; flex-direction:column; gap:14px;}
+  .faq-item{border:1px solid var(--card); border-radius:12px; padding:18px 22px;}
+  .faq-q{font-weight:700; display:flex; justify-content:space-between; gap:12px;}
+  .faq-q .chev{color:var(--faint);}
+  .faq-a{color:#333; margin-top:10px;}
+
+  .final{max-width:740px; margin:0 auto; text-align:center;}
+  .final h2{font-size:32px; font-weight:800; margin:0 0 12px;}
+  footer{padding:28px 0; border-top:1px solid var(--line);}
+  footer .container{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:13px; color:var(--muted);}
+
+  .topbar{border-bottom:1px solid var(--line); padding:14px 0;}
+  .topbar .container{display:flex; align-items:center; justify-content:space-between; gap:20px;}
+  .brand-ph{display:flex; align-items:center; gap:10px; font-weight:700; font-size:14px;}
+  .logo-ph{width:26px; height:26px; border:1px solid var(--ink);}
+  nav.main{display:flex; gap:18px; flex-wrap:wrap;}
+  nav.main a{font-size:13px; color:var(--muted); text-decoration:none;}
+
+  @media (max-width:860px){
+    .g2,.g3,.g4{grid-template-columns:1fr;}
+    h1{font-size:38px;}
+    .steps-line{display:none;}
+    nav.main{display:none;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="wf-note">
+    <div class="container">
+      <span><strong>WIREFRAME v1 · Deutsch</strong> · genuine DE-Rendering von EN v4 (keine Übersetzung)</span>
+      <span>Struktur identisch zu EN v4 · nach nativ-deutschem Review + Viktor-Korrekturen</span>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <div class="topbar">
+    <div class="wf-tag"><b>Navigation</b></div>
+    <div class="container">
+      <div class="brand-ph"><span class="logo-ph"></span> Viktor Malyi</div>
+      <nav class="main">
+        <a href="#problem">Das Problem</a>
+        <a href="#blockers">Warum es stockt</a>
+        <a href="#process">So funktioniert's</a>
+        <a href="#areas">Was wir bauen</a>
+        <a href="#start">Loslegen</a>
+        <a href="#about">Über uns</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn primary" href="#start">Seht, wo KI hilft</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="wf-tag"><b>Hero</b> · Slogan + Sub-Zeile LOCKED (verbatim) · CTA outcome-benannt</div>
+    <div class="container">
+      <div class="hero-row">
+        <div class="hero-col">
+          <div class="hero-text">
+            <p class="eyebrow">Built-In KI für Inhaber und Teams im Mittelstand</p>
+            <h1>KI built-in.<br>Gleiches Team, mehr Wirkung.</h1>
+            <p class="sub">Euer Team kann mehr leisten, mit den Leuten, die ihr schon habt. Wir bauen KI in die Abläufe ein, mit denen euer Team schon arbeitet. So steigt die Wirkung, ohne dass die Teamgröße wächst.</p>
+            <a class="btn primary" href="#start">Seht, wo KI euch voranbringt</a>
+          </div>
+        </div>
+        <div class="hero-col">
+          <div class="img-ph hero-img">Bildplatzhalter</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="problem">
+    <div class="wf-tag"><b>Problem</b> · Stimme auf "ihr und euer Team" festgelegt</div>
+    <div class="container">
+      <div class="head">
+        <h2 class="section-title">Kennt ihr das?</h2>
+        <p class="section-sub">Jedes Mal, wenn ihr wachsen wollt, heißt die Antwort gleich: einstellen. Dabei kann euer Team mehr leisten mit den Leuten, die ihr schon habt, sobald KI in eure Abläufe eingebaut ist.</p>
+      </div>
+      <div class="grid g2">
+        <div class="card p-card">
+          <div class="x-badge">×</div>
+          <div>
+            <h3>Wachstum heißt immer: neue Stelle.</h3>
+            <p>Ein neues Vorhaben, ein größeres Ziel, mehr Nachfrage, und der erste Schritt ist immer eine Einstellung. Die ist langsam, teuer und ein Risiko, dabei könnte euer Team mehr leisten.</p>
+          </div>
+        </div>
+        <div class="card p-card">
+          <div class="x-badge">×</div>
+          <div>
+            <h3>Eure besten Leute sind der Engpass.</h3>
+            <p>Die Erfahrung, die euer Geschäft trägt, liegt bei wenigen Leuten. Es steckt in einzelnen Köpfen und verstreuten Notizen. Dort bleibt es hängen, und wenn diese Leute fehlen, geht es mit ihnen.</p>
+          </div>
+        </div>
+        <div class="card p-card">
+          <div class="x-badge">×</div>
+          <div>
+            <h3>Den Ergebnissen könnt ihr bei echter Arbeit nicht trauen.</h3>
+            <p>Gleiche Eingabe, andere Antwort. Jemand muss jedes Ergebnis prüfen, also spart die KI am Ende niemandem Zeit.</p>
+          </div>
+        </div>
+        <div class="card p-card">
+          <div class="x-badge">×</div>
+          <div>
+            <h3>Ihr könnt nicht sagen, ob es sich rechnet.</h3>
+            <p>Ihr habt KI eingeführt, aber niemand misst sie. Ihr könnt nicht sagen, wer sie wirklich nutzt oder ob etwas schneller, besser oder günstiger wurde. Also ratet ihr.</p>
+          </div>
+        </div>
+      </div>
+      <p class="contrast"><b>Wo ihr hinwollt:</b> dasselbe Team liefert mehr, die Erfahrung eurer Experten wirkt auch dann, wenn sie nicht da sind, und Zahlen belegen es. Genau das bauen wir.</p>
+    </div>
+  </section>
+
+  <!-- WHY IT STALLS -->
+  <section id="blockers">
+    <div class="wf-tag"><b>Warum es stockt</b> · Kontrast: oberflächliche App-Verdrahtung vs. eingebaut (n8n-Abgrenzung)</div>
+    <div class="container">
+      <div class="head">
+        <h2 class="section-title">Warum KI von der Stange auf halbem Weg liegen bleibt</h2>
+        <p class="section-sub">Standard-Tools verdrahten eure Apps und sind raus, sobald echte Erfahrung gefragt ist. Hier sind die vier typischen Stellen.</p>
+      </div>
+      <div class="grid g2">
+        <div class="card blocker">
+          <div class="num">01</div>
+          <h3>Kein Prozess als Fundament</h3>
+          <p>KI, die auf einen Prozess geschraubt wird, den niemand aufgeschrieben hat, steht auf nichts. Das Tool ist generisch, eure Arbeit ist spezifisch. Wir erfassen zuerst den Geschäftsablauf, damit die KI auf eurer echten Arbeitsweise aufbaut, statt zu raten.</p>
+          <p class="ind-label">Anzeichen</p>
+          <ul>
+            <li>Die eigentliche Methode steckt in einem Kopf, nicht auf Papier</li>
+            <li>Jedes KI-Ergebnis braucht starke Nacharbeit, damit es zu eurer Arbeit passt</li>
+            <li>„Es versteht unseren Prozess nicht wirklich."</li>
+          </ul>
+        </div>
+        <div class="card blocker">
+          <div class="num">02</div>
+          <h3>Jedes Mal eine andere Antwort</h3>
+          <p>Lasst ein Modell eine echte Geschäftsaufgabe erledigen, und das Ergebnis ändert sich von Lauf zu Lauf. Verlässlichkeit kommt aus dem Engineering, nicht aus einem besseren Prompt. Wir setzen echten Code dort ein, wo die Arbeit exakt sein muss, und lassen das Modell nur dort entscheiden, wo Erfahrung zählt.</p>
+          <p class="ind-label">Anzeichen</p>
+          <ul>
+            <li>Gleiche Eingabe, anderes Ergebnis, von Lauf zu Lauf</li>
+            <li>Ein Mensch muss jedes Ergebnis prüfen, bevor es verwendet wird</li>
+            <li>Halluzinationen bei allem, was mit Zahlen zu tun hat</li>
+          </ul>
+        </div>
+        <div class="card blocker">
+          <div class="num">03</div>
+          <h3>Lizenzen verteilt, keine Kompetenz</h3>
+          <p>Zugang ist noch keine Nutzung. Werden Lizenzen verteilt, ohne Kompetenz aufzubauen, ziehen ein paar geübte Nutzer davon. Die meisten anderen fallen in alte Muster zurück. Wir bauen zuerst die Kompetenz auf, damit das ganze Team mitzieht, nicht nur die wenigen.</p>
+          <p class="ind-label">Anzeichen</p>
+          <ul>
+            <li>Hohe Nutzung bei den Power-Usern, fast null bei allen anderen</li>
+            <li>Kein gemeinsamer Standard dafür, wie guter KI-Einsatz aussieht</li>
+            <li>Schlechte erste Erfahrungen haben die Lust auf einen zweiten Versuch zerstört</li>
+          </ul>
+        </div>
+        <div class="card blocker">
+          <div class="num">04</div>
+          <h3>Niemand hat es messbar gemacht</h3>
+          <p>Das Geld floss, die Messung nicht. Ohne Ausgangswert für die Nutzung und ohne Bezug zu einer Geschäftskennzahl hat „Funktioniert das?" keine Antwort außer einem Bauchgefühl. Wir machen es von Anfang an messbar, damit die Antwort eine Zahl ist.</p>
+          <p class="ind-label">Anzeichen</p>
+          <ul>
+            <li>Keine Daten dazu, wer KI nutzt, und wofür</li>
+            <li>Keine Zahl, die KI mit einem Geschäftsergebnis verbindet</li>
+            <li>Der Beirat fragt nach dem ROI, und es wird still im Raum</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="process">
+    <div class="wf-tag"><b>So funktioniert's</b> · Phasen-Labels offen (DE vs. EN, mit Viktor klären)</div>
+    <div class="container">
+      <div class="head">
+        <h2 class="section-title">So funktioniert's</h2>
+        <p class="section-sub">Wir fragen nicht mehr, welche Stelle wir besetzen, sondern welcher Geschäftsablauf der Engpass ist. Dann fassen wir die Erfahrung, die die Arbeit braucht, in Skills, statt nur eure Apps zu verdrahten. Vier Phasen.</p>
+      </div>
+      <div class="steps-wrap">
+        <div class="steps-line"></div>
+        <div class="grid g4">
+          <div class="card step">
+            <div class="circle">01</div>
+            <h3>Audit</h3>
+            <p>Wir bilden eure Geschäftsabläufe und die wichtigsten Entscheidungen ab. Dann dokumentieren wir den Prozess. Auf einem Prozess, den niemand aufgeschrieben hat, lässt sich keine KI bauen.</p>
+          </div>
+          <div class="card step">
+            <div class="circle">02</div>
+            <h3>Augment</h3>
+            <p>Wir bauen eure Geschäftsabläufe als Skills, und euer Team führt sie von Hand aus. Sie nutzen sie an echter Arbeit, verfeinern sie und bekommen ein Gefühl dafür, was funktioniert und was nicht, mit uns an der Seite.</p>
+          </div>
+          <div class="card step">
+            <div class="circle">03</div>
+            <h3>Übergabe</h3>
+            <p>Sobald euer Team ein gutes Gefühl dafür hat, die Skills von Hand auszuführen, ist es Zeit, sie an autonome KI-Agenten zu übergeben. Die Agenten führen den Geschäftsablauf von Anfang bis Ende aus, und ihr gewinnt noch mehr Zeit zurück.</p>
+          </div>
+          <div class="card step">
+            <div class="circle">04</div>
+            <h3>Betrieb</h3>
+            <p>Zwei Wege, es am Laufen zu halten. Wir befähigen euer Team, es selbst zu pflegen, ohne Abhängigkeit von außen. Oder, wenn ihr wollt, übernehmen wir die Pflege für euch.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREAS / WHERE WE BUILD IT IN -->
+  <section id="areas">
+    <div class="wf-tag"><b>Was wir bauen</b> · die 4 Funktionen konkret (Content · Marketing/GTM · Engineering · Vertrieb)</div>
+    <div class="container">
+      <div class="head">
+        <h2 class="section-title">Eingebaut in die Arbeit, mit der euer Geschäft schon läuft</h2>
+        <p class="section-sub">Die meisten Mittelständler laufen auf denselben vier Funktionen. Wir haben praktische Erfahrung darin, Geschäftsprozesse in allen vieren zu automatisieren. Hier ist die Art von Arbeit, die KI eurem Team abnehmen kann.</p>
+      </div>
+      <div class="grid g2">
+        <div class="card">
+          <h3>Content-Produktion</h3>
+          <p>Aus einer Aufnahme wird eine Woche voller Posts: Trendrecherche, Gliederung, Schnitt und Untertitel, fertig zum Veröffentlichen.</p>
+        </div>
+        <div class="card">
+          <h3>Marketing &amp; GTM</h3>
+          <p>Eure Wunschkunden herausfiltern, jeden einzelnen recherchieren und personalisierte Ansprache entwerfen, damit ein kleines Team so viel erreicht wie ein großes.</p>
+        </div>
+        <div class="card">
+          <h3>Engineering</h3>
+          <p>Einen Agenten auf eure Codebasis und eure Standards trainieren. So schreiben Entwickler keinen Boilerplate-Code mehr, sondern prüfen fertige Pull Requests.</p>
+        </div>
+        <div class="card">
+          <h3>Vertrieb</h3>
+          <p>Die KI hört im Gespräch mit, pflegt das CRM und entwirft die Nachfass-Mail, sodass eure Leute nur noch prüfen und senden.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GET STARTED -->
+  <section id="start">
+    <div class="wf-tag"><b>Loslegen</b> · Produktnamen als Marken-Token englisch · ein CTA</div>
+    <div class="container">
+      <div class="head">
+        <h2 class="section-title">Wo ihr anfangt</h2>
+        <p class="section-sub">Drei Wege zum Start, von einer gezielten Übersicht bis zu einem System, das eurem Team ganz gehört.</p>
+      </div>
+
+      <div class="grid g3 ladder">
+        <div class="card">
+          <h3>Audit</h3>
+          <p class="desc">Findet, wo KI eingebaut gehört.</p>
+          <p>Wir erfassen eure Abläufe und finden die zentralen Engpässe. Dann geben wir euch einen klaren Plan. Er zeigt, was zuerst zu bauen ist, was es braucht und was es freisetzt. Ihr entscheidet, was ihr damit macht, mit uns oder allein.</p>
+          <p class="incl">Enthält</p>
+          <ul>
+            <li>Eine Übersicht eurer Geschäftsabläufe und Engpässe</li>
+            <li>Ein priorisierter Plan: zuerst, danach, später</li>
+            <li>Die Zeit und der Aufwand, die das freisetzt</li>
+          </ul>
+        </div>
+        <div class="card featured">
+          <span class="badge">Am häufigsten</span>
+          <h3>Build</h3>
+          <p class="desc">Der ganze Bogen, vom Audit bis zur Übergabe.</p>
+          <p>Wir bauen eure wichtigsten Geschäftsabläufe als Skills für euer Team. Wir setzen die Standards, damit es skaliert. Am Ende steht ein System, das euer Team ganz übernehmen kann.</p>
+          <p class="incl">Enthält</p>
+          <ul>
+            <li>Alles aus dem Audit</li>
+            <li>Skills, gebaut und an euren echten Geschäftsabläufen erprobt</li>
+            <li>Wir befähigen euer Team, es zu betreiben</li>
+            <li>Wirkung gemessen an Zahlen, die für euch zählen</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Maintain</h3>
+          <p class="desc">Der Build, dauerhaft aktuell gehalten.</p>
+          <p>Der komplette Build, dann aktuell gehalten, während sich euer Geschäft verändert, mit neuen Skills, sobald euer Bedarf wächst.</p>
+          <p class="incl">Enthält</p>
+          <ul>
+            <li>Alles aus dem Build</li>
+            <li>Neue Skills, wenn der Bedarf wächst</li>
+            <li>Laufende Verbesserung</li>
+            <li>Gepflegt von uns</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ladder-cta">
+        <a class="btn primary" href="#">Erstgespräch vereinbaren</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS (frozen) -->
+  <section id="testimonials">
+    <div class="wf-tag"><b>Stimmen</b> · unverändert · Zitate im Original (EN), Übersetzungsfrage offen</div>
+    <div class="container">
+      <h2 class="section-title">Was Kunden sagen</h2>
+      <div class="tcards" style="margin-top:34px;">
+        <div class="card tcard">
+          <blockquote>"Viktor is an exceptional advisor who is not only extremely reliable and responsive but also deeply committed to his work. His assessments and strategic advice were incredibly valuable and were instrumental in our planning process. Viktor helped us set the right priorities for our AI-heavy startup by shifting our attention from purely technical questions to critical business factors in our target market."</blockquote>
+          <div class="tmeta">
+            <div class="img-ph face-ph">Foto</div>
+            <div>
+              <p style="margin:0; font-weight:700;">Christian Liu</p>
+              <p style="margin:0; color:var(--muted); font-size:14px;">Co-Founder &amp; CEO @ AskPally</p>
+            </div>
+          </div>
+        </div>
+        <div class="card tcard">
+          <blockquote>"Viktor has been helping us to adopt AI in simpleclub. He ran workshops for the team on how to use Claude Code, which turned out to be super useful and helped my team deliver good results faster. He also ran a system-wide initiative to cover code of our services with AGENTS.md files. After the initiative, we experienced a huge improvement in quality of the AI-generated code."</blockquote>
+          <div class="tmeta">
+            <div class="img-ph face-ph">Foto</div>
+            <div>
+              <p style="margin:0; font-weight:700;">Mateusz Prusaczyk</p>
+              <p style="margin:0; color:var(--muted); font-size:14px;">Lead Engineer @ simpleclub</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="kept-flag">(Weiterhin eingefroren, wie besprochen. Hinweis: Das Zitat von Mateusz nennt simpleclub, das wir aus „Über uns" entfernt haben, hier wäre also der Ort, das als Nächstes zu überdenken.)</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wf-tag"><b>Über uns</b> · Experten-Encoding-Beispiel verallgemeinert (kein Kundenname, keine harte Kennzahl)</div>
+    <div class="container">
+      <h2 class="section-title">Auf echter Umsetzung gebaut</h2>
+      <div class="cred-row" style="margin-top:34px;">
+        <div class="img-ph avatar-ph">Foto</div>
+        <div>
+          <h3 style="font-size:24px;">Viktor Malyi</h3>
+          <p style="color:var(--muted); margin:0 0 12px;">8 Jahre Machine Learning. Wir bauen KI in Unternehmen ein und betreiben unser eigenes damit.</p>
+          <p>Wir beraten nicht nur zu KI, wir bauen sie ein. Unsere eigene Praxis läuft mit rund 80 Skills und Agenten. Sie helfen bei Lead-Findung, Ansprache, Recherche und Kundenarbeit. Wir haben sie gebaut und nutzen sie täglich. Wir verwandeln die Erfahrung einzelner Experten in einen Skill, der verlässlich arbeitet. Er läuft von allein, niemand muss ihn überwachen. Acht Jahre Machine Learning haben uns gelehrt, wo KI verlässlich ist und wo sie versagt. Genau das braucht es, um KI in Arbeit einzubauen, auf die sich ein Geschäft verlässt.</p>
+          <div class="chips">
+            <span class="chip">8 Jahre Machine Learning</span>
+            <span class="chip">~80 Skills betreiben unsere eigene Praxis</span>
+            <span class="chip">Erfahrung eurer Experten, in Skills gegossen</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wf-tag"><b>FAQ</b> · aus echten Kundeneinwänden gebaut (5 Punkte, blockierendster zuerst)</div>
+    <div class="container">
+      <h2 class="section-title">FAQ</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q"><span>Könnten unsere eigenen Leute das nicht einfach selbst bauen? Warum euch bezahlen?</span><span class="chev">▾</span></div>
+          <p class="faq-a">Oft könnt ihr das, und wo ihr es könnt, solltet ihr es auch. Aber es gut zu machen, ist eine eigene Disziplin. Wir bauen Skills auf eine standardisierte Weise, dieselbe, mit der wir unsere eigene Praxis betreiben, damit sie halten, statt einmal zu funktionieren und dann abzudriften. Wenn wir höchste Reproduzierbarkeit brauchen, erzwingen wir Skills mit echten Skripten. Das ist näher an Softwareentwicklung als an Prompt-Schreiberei. Wir machen es verlässlich, sorgen für Akzeptanz, übergeben es und gehen. Wenn euer Team das schon kann und die Zeit hat, es robust zu machen, braucht ihr uns nicht, und das sagen wir euch auch.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>Was kostet nach dem Einstiegs-Audit der ganze Build? Wir wollen keine Blackbox.</span><span class="chev">▾</span></div>
+          <p class="faq-a">Das Audit hat einen Festpreis, und seine Aufgabe ist es, genau dieses Rätselraten zu beenden. Am Ende habt ihr den Prozess schriftlich, einen abgesteckten Plan und einen Preis für den Build, bevor ihr euch festlegt. Ihr entscheidet, was gebaut wird und was nicht. Keine automatische Eskalation, keine Überraschungssumme. Wenn sich der Build nicht lohnt, hat das Audit euch das gezeigt, und ihr hört dort auf.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>Können wir das später selbst pflegen und erweitern, oder sind wir für jede Änderung an euch gebunden?</span><span class="chev">▾</span></div>
+          <p class="faq-a">Die Übergabe ist von Tag eins an eingebaut. Die Skills liegen in euren eigenen Repositories als einfaches Markdown. So kann euer Team sie lesen, ändern und erweitern, ohne uns. Wenn ihr lieber wollt, dass wir die Pflege übernehmen, können wir das, aber das ist eure Wahl, keine Abhängigkeit, die wir einbauen.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>Wie können wir der KI bei kritischer Arbeit vertrauen, wenn die Zahlen oder das Urteil stimmen müssen?</span><span class="chev">▾</span></div>
+          <p class="faq-a">Das ist die richtige Sorge, und es ist ein Engineering-Problem, keine Hoffnung. Wenn Genauigkeit zählt, etwa bei Zahlen, Regeln und Schwellenwerten, lassen wir echten Code laufen. So liefert dieselbe Eingabe immer dieselbe Ausgabe. Das Modell übernimmt nur, was echte Erfahrung braucht, und ihr legt die Messlatte dafür fest. Wenn ein Experte einem Ergebnis widerspricht, kalibrieren wir an euren echten Fällen. Nichts hier ist eine Blackbox.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>Wie ist das mehr als eine dünne Hülle um einen manuellen Prozess? Wir wollen nicht für Hype zahlen.</span><span class="chev">▾</span></div>
+          <p class="faq-a">Einverstanden, und wir messen es genauso wie ihr. Eine Hülle, die manuelle Schritte nur neu etikettiert, ist nichts wert. Wir schreiben den Prozess auf und ändern dann, wie die Arbeit fließt: Wir bestimmen, was von Anfang bis Ende durchläuft, wo echter Code manuelle Arbeit ersetzt und wo das Modell Zeit für menschliche Erfahrung freischaufelt. Wenn wir an euren echten Daten nicht zeigen können, was anders läuft, haben wir die Ausgabe nicht verdient.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="final-cta">
+    <div class="wf-tag"><b>Abschluss-CTA</b> · Versprechen vereinfacht</div>
+    <div class="container">
+      <div class="final">
+        <h2>Mehr schaffen mit dem Team, das ihr schon habt.</h2>
+        <p class="section-sub" style="margin-bottom:26px;">Ein 30-minütiges Erstgespräch, um zu sehen, ob das zu euch passt.</p>
+        <a class="btn primary" href="#">Seht, wo KI euch voranbringt</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wf-tag" style="position:static; display:inline-block; margin-bottom:8px;"><b>Footer</b></div>
+    <div class="container">
+      <span>© 2026 Viktor Malyi. Alle Rechte vorbehalten.</span>
+      <span>Impressum</span>
+    </div>
+  </footer>
+
+</body>
+</html>
