@@ -316,6 +316,13 @@ const en: SiteContent = {
     sectionTitle: "What Clients Say",
     testimonials: [
       {
+        name: "Gerret Halberstadt",
+        title: "Co-Founder & Managing Director @ saferspaces",
+        quote:
+          "Even though we were already using AI extensively, the audit with Viktor made clear where we could apply it even more effectively. He took the time to understand how we actually work first, and from there spotted the areas with the most potential for us. What stood out was how concrete the takeaways were. Not abstract advice, but specific places in our workflows where we could go further. Right after the audit we started implementing the first recommendations, and we're already seeing the actual time savings.",
+        image: "/images/gerret-halberstadt.jpg",
+      },
+      {
         name: "Christian Liu",
         title: "Co-Founder & CEO @ AskPally",
         quote:
@@ -579,6 +586,13 @@ const de: SiteContent = {
   testimonials: {
     sectionTitle: "Was Kunden sagen",
     testimonials: [
+      {
+        name: "Gerret Halberstadt",
+        title: "Co-Founder & Managing Director @ saferspaces",
+        quote:
+          "Even though we were already using AI extensively, the audit with Viktor made clear where we could apply it even more effectively. He took the time to understand how we actually work first, and from there spotted the areas with the most potential for us. What stood out was how concrete the takeaways were. Not abstract advice, but specific places in our workflows where we could go further. Right after the audit we started implementing the first recommendations, and we're already seeing the actual time savings.",
+        image: "/images/gerret-halberstadt.jpg",
+      },
       {
         name: "Christian Liu",
         title: "Co-Founder & CEO @ AskPally",
