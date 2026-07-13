@@ -316,6 +316,13 @@ const en: SiteContent = {
     sectionTitle: "What Clients Say",
     testimonials: [
       {
+        name: "Leah Rott",
+        title: "Co-Founder & Managing Director @ saferspaces",
+        quote:
+          "Viktor conducted an in-depth review of how we use Claude at saferspaces – with a clear outcome: concrete, immediately actionable recommendations on where we can deploy our resources even more efficiently. The context makes this especially valuable: as a small team, we already work intensively with Claude every day – from sales to proposal creation to communications – covering tasks that would otherwise require significantly more staff capacity. The fact that Viktor still identified meaningful optimization potential in this advanced setup speaks to the depth of his expertise. His knowledge of putting AI to productive use is comprehensive and impressive – and above all, practical. No abstract concepts, just recommendations we could integrate directly into our workflows. The collaboration was professional, well-structured, and on equal footing. If you're serious about advancing AI in your company in a way that pays off, Viktor is the right person. Highly recommended.",
+        image: "/images/leah-rott.jpg",
+      },
+      {
         name: "Gerret Halberstadt",
         title: "Co-Founder & Managing Director @ saferspaces",
         quote:
@@ -586,6 +593,13 @@ const de: SiteContent = {
   testimonials: {
     sectionTitle: "Was Kunden sagen",
     testimonials: [
+      {
+        name: "Leah Rott",
+        title: "Co-Founder & Managing Director @ saferspaces",
+        quote:
+          "Viktor conducted an in-depth review of how we use Claude at saferspaces – with a clear outcome: concrete, immediately actionable recommendations on where we can deploy our resources even more efficiently. The context makes this especially valuable: as a small team, we already work intensively with Claude every day – from sales to proposal creation to communications – covering tasks that would otherwise require significantly more staff capacity. The fact that Viktor still identified meaningful optimization potential in this advanced setup speaks to the depth of his expertise. His knowledge of putting AI to productive use is comprehensive and impressive – and above all, practical. No abstract concepts, just recommendations we could integrate directly into our workflows. The collaboration was professional, well-structured, and on equal footing. If you're serious about advancing AI in your company in a way that pays off, Viktor is the right person. Highly recommended.",
+        image: "/images/leah-rott.jpg",
+      },
       {
         name: "Gerret Halberstadt",
         title: "Co-Founder & Managing Director @ saferspaces",
