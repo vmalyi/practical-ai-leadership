@@ -70,8 +70,8 @@ export default async function ImprintPage({
                 {t.tmgHeading}
               </h2>
               <p className="mt-2">Viktor Malyi</p>
-              <p>Mandrystr. 7</p>
-              <p>74074 Heilbronn</p>
+              <p>Wolbecker Str. 95</p>
+              <p>48155 Münster</p>
               <p>{t.country}</p>
             </section>
 
@@ -103,8 +103,8 @@ export default async function ImprintPage({
               </h2>
               <p className="mt-2">{t.responsibilityText}</p>
               <p className="mt-1">Viktor Malyi</p>
-              <p>Mandrystr. 7</p>
-              <p>74074 Heilbronn</p>
+              <p>Wolbecker Str. 95</p>
+              <p>48155 Münster</p>
               <p>{t.country}</p>
             </section>
 
