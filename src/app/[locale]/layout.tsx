@@ -30,9 +30,11 @@ export async function generateMetadata({
     title: config.title,
     description: config.description,
     alternates: {
+      canonical: `${baseUrl}/${locale}/`,
       languages: {
         en: `${baseUrl}/en/`,
         de: `${baseUrl}/de/`,
+        "x-default": `${baseUrl}/`,
       },
     },
     openGraph: {

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { Container } from "@/components/Container";
+import { siteConfig } from "@/config/site";
 
 const imprint = {
   en: {
@@ -48,7 +49,18 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = imprint[locale === "de" ? "de" : "en"];
-  return { title: `${t.title} | Viktor Malyi` };
+  const baseUrl = siteConfig.url;
+  return {
+    title: `${t.title} | Viktor Malyi`,
+    alternates: {
+      canonical: `${baseUrl}/${locale}/imprint/`,
+      languages: {
+        en: `${baseUrl}/en/imprint/`,
+        de: `${baseUrl}/de/imprint/`,
+        "x-default": `${baseUrl}/en/imprint/`,
+      },
+    },
+  };
 }
 
 export default async function ImprintPage({
